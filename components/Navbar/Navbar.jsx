@@ -22,13 +22,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+<<<<<<< HEAD
 import Link from "next/link";
+=======
+>>>>>>> e2aaeeb08995d16c898c8b9efd9e7fd171cd47e9
 
 
 
 
 const Navbar = ({
   logo = {
+<<<<<<< HEAD
     url: "",
     src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
@@ -41,6 +45,84 @@ const Navbar = ({
     { title: "Menu", url: "#" },
     { title: "Contact", url: "#" },
  
+=======
+    url: "https://www.shadcnblocks.com",
+    src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
+    alt: "logo",
+    title: "Shadcnblocks.com",
+  },
+  menu = [
+    { title: "Home", url: "#" },
+    {
+      title: "Products",
+      url: "#",
+      items: [
+        {
+          title: "Blog",
+          description: "The latest industry news, updates, and info",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Company",
+          description: "Our mission is to innovate and empower the world",
+          icon: <Trees className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Careers",
+          description: "Browse job listing and discover our workspace",
+          icon: <Sunset className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Support",
+          description:
+            "Get in touch with our support team or visit our community forums",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Resources",
+      url: "#",
+      items: [
+        {
+          title: "Help Center",
+          description: "Get all the answers you need right here",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Contact Us",
+          description: "We are here to help you with any questions you have",
+          icon: <Sunset className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Status",
+          description: "Check the current status of our services and APIs",
+          icon: <Trees className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Terms of Service",
+          description: "Our terms and conditions for using our services",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Pricing",
+      url: "#",
+    },
+    {
+      title: "Blog",
+      url: "#",
+    },
+>>>>>>> e2aaeeb08995d16c898c8b9efd9e7fd171cd47e9
   ],
   auth = {
     login: { title: "Login", url: "#" },
@@ -49,17 +131,30 @@ const Navbar = ({
 }) => {
   return (
     <section className="py-4">
+<<<<<<< HEAD
       <div className="container px-4">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex mx-auto">
           <div className="flex items-center gap-6">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
+=======
+      <div className="container">
+        {/* Desktop Menu */}
+        <nav className="hidden justify-between lg:flex">
+          <div className="flex items-center gap-6">
+            {/* Logo */}
+            <a href={logo.url} className="flex items-center gap-2">
+>>>>>>> e2aaeeb08995d16c898c8b9efd9e7fd171cd47e9
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
               </span>
+<<<<<<< HEAD
             </Link>
+=======
+            </a>
+>>>>>>> e2aaeeb08995d16c898c8b9efd9e7fd171cd47e9
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -79,7 +174,11 @@ const Navbar = ({
         </nav>
 
         {/* Mobile Menu */}
+<<<<<<< HEAD
         <div className="mx-auto block lg:hidden">
+=======
+        <div className="block lg:hidden">
+>>>>>>> e2aaeeb08995d16c898c8b9efd9e7fd171cd47e9
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
@@ -196,4 +295,8 @@ const SubMenuLink = ({ item }) => {
   );
 };
 
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default Navbar;
+>>>>>>> e2aaeeb08995d16c898c8b9efd9e7fd171cd47e9
