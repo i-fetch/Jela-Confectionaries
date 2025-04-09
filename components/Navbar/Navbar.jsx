@@ -25,7 +25,8 @@ import {
 
 
 
-const Navbar1 = ({
+
+const Navbar = ({
   logo = {
     url: "https://www.shadcnblocks.com",
     src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
@@ -188,7 +189,7 @@ const Navbar1 = ({
   );
 };
 
-const renderMenuItem = () => {
+const renderMenuItem = (item) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title}>
@@ -216,7 +217,7 @@ const renderMenuItem = () => {
   );
 };
 
-const renderMobileMenuItem = () => {
+const renderMobileMenuItem = (item) => {
   if (item.items) {
     return (
       <AccordionItem key={item.title} value={item.title} className="border-b-0">
@@ -258,4 +259,4 @@ const SubMenuLink = ({ item }) => {
   );
 };
 
-export { Navbar1 };
+export default Navbar;
