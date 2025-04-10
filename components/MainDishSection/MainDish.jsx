@@ -47,7 +47,7 @@ const MainDish = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h3 className="uppercase flex items-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
+          <h3 className="uppercase flex items-center justify-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
             <Dot className="relative -translate-x-2" /> <span>Our Main Dishes</span>
           </h3>
           <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
