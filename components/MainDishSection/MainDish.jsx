@@ -1,4 +1,5 @@
 "use client"
+import { Dot } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -46,14 +47,12 @@ const MainDish = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm tracking-widest uppercase flex items-center justify-center mb-4">
-            <span className="inline-block w-1 h-1 bg-[#c5c5a6] rounded-full mr-2"></span>
-            Our Main Dishes
-          </p>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h3 className="uppercase flex items-center justify-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
+            <Dot className="relative -translate-x-2" /> <span>Our Main Dishes</span>
+          </h3>
+          <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
             SATISFY YOUR CRAVINGS WITH
-            <br />
+            <br className="" />
             OUR <span className="text-[#a3a378]">SIGNATURE MAINS</span>
           </h2>
         </div>
@@ -68,7 +67,7 @@ const MainDish = () => {
                   alt={category.title}
                   width={200}
                   height={200}
-                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+                  className="object-cover w-full h-full hover:scale-110 focus:scale-110 focus:outline-1  transition-transform duration-500"
                 />
               </div>
               <h3 className="text-2xl font-semibold mb-3">{category.title}</h3>
@@ -79,7 +78,7 @@ const MainDish = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-xl mb-2">
+          <p className="text-lg mb-2">
             Hungry for Something Delicious?
             <Link href="/OurMenu" className="text-[#a3a378] hover:text-[#c5c5a6] ml-2 transition-colors">
               View All Dishes!

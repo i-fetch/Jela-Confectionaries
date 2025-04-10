@@ -16,9 +16,9 @@ const Header = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-0" />
 
       {/* Content Container */}
-      <div className="relative mt-48 xl:mt-20 z-10 flex flex-col items-center justify-center h-full text-white px-4">
+      <div className="relative translate-y-40 md:translate-y-52 z-10 flex flex-col items-center justify-center h-full text-white px-4 md:pb-20">
 
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center md:pb-60">
 
           {/* Section Title */}
           <div className="text-left">
