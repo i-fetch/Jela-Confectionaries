@@ -9,7 +9,7 @@ import { Dot } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="pb-20 relative bg-fixed bg-center bg-cover bg-no-repeat h-screen overflow-hidden"
+    <header className="pb-20 relative bg-fixed bg-center bg-cover bg-no-repeat h-full overflow-hidden"
       style={{ backgroundImage: `url(${HeroBg?.src || ''})` }}
     >
       {/* Overlay */}
@@ -52,7 +52,7 @@ const Header = () => {
           {/* Section Image */}
           <div className="relative flex items-center justify-center">
             {/* Main Image */}
-            <div className="relative w-[250px] h-[350px] md:w-[400px] md:h-[600px] rounded-full overflow-hidden border-8 border-white/20 shadow-lg animate-fadeInUp z-10">
+            <div className="relative w-[250px] h-[350px] md:w-[450px] md:h-[650px] rounded-full overflow-hidden  shadow-lg animate-fadeInUp z-10">
               <Image
                 src={IllustrativeImg}
                 alt="Restaurant interior"
@@ -62,7 +62,7 @@ const Header = () => {
             </div>
 
             {/* Circle 1 */}
-            <div className="absolute w-[80px] h-[80px] md:w-[120px] md:h-[120px] left-2 bottom-2 md:left-6 lg:left-32 md:bottom-6 z-20 rounded-full overflow-hidden border-4 border-white/20 shadow-lg animate-fadeInUp">
+            <div className="absolute w-[80px] h-[80px] md:w-[150px] md:h-[140px] left-4 bottom-5 md:left-6 lg:left-32 md:bottom-6 z-20 rounded-full overflow-hidden border-8 border-white shadow-lg animate-fadeInUp">
               <Image
                 src={HeroCircle1}
                 alt="Sizzling food dish"
@@ -72,7 +72,7 @@ const Header = () => {
             </div>
 
             {/* Circle 2 */}
-            <div className="absolute w-[80px] h-[80px] md:w-[120px] md:h-[120px] right-2 top-2 md:right-6 lg:right-32 md:top-6 z-20 rounded-full overflow-hidden border-4 border-white/20 shadow-lg animate-fadeInUp">
+            <div className="absolute w-[80px] h-[80px] md:w-[150px] md:h-[140px] right-2 top-6 md:right-6 lg:right-32 md:top-6 z-20 rounded-full overflow-hidden border-8 border-white shadow-lg animate-fadeInUp">
               <Image
                 src={HeroCircle2}
                 alt="Burger with fries"
