@@ -1,4 +1,6 @@
 import { ArrowRight, ChefHat, Coffee, Crown, Users } from "lucide-react"
+import Image from "next/image"
+import ChefImg from "@/public/our-ingredients-image.png"
 
 const OurIngredient = () => {
   return (
@@ -17,10 +19,12 @@ const OurIngredient = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left column - Chef image and customer count */}
           <div className="relative">
-            <div className="relative z-10">
-              <img
-                src="/placeholder.svg?height=600&width=500"
+            <div className="border relative z-10">
+              <Image
+                src={ChefImg.src}
                 alt="Chef with food plate"
+                width={500}
+                height={600}
                 className="mx-auto lg:mx-0 object-cover"
               />
             </div>
@@ -33,21 +37,21 @@ const OurIngredient = () => {
                 <div className="flex -space-x-2">
                   <div className="w-10 h-10 rounded-full border-2 border-[#a6a182] overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=40&width=40"
+                      src={ChefImg.src}
                       alt="Customer"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="w-10 h-10 rounded-full border-2 border-[#a6a182] overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=40&width=40"
+                      src={ChefImg.src}
                       alt="Customer"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="w-10 h-10 rounded-full border-2 border-[#a6a182] overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=40&width=40"
+                      src={ChefImg.src}
                       alt="Customer"
                       className="w-full h-full object-cover"
                     />
@@ -77,7 +81,10 @@ const OurIngredient = () => {
             {/* Description */}
             <p className="text-gray-400 mb-10 max-w-lg">
               We take pride in using only the freshest, hand-picked ingredients that are free from preservatives and
-              artificial additives. Taste the difference with every bite as we serve dishes made from nature's finest.
+              artificial additives. 
+            </p>
+            <p className="text-gray-400 mb-10 max-w-lg">
+            Taste the difference with every bite as we serve dishes made from nature's finest.
             </p>
 
             {/* Features */}
@@ -86,19 +93,19 @@ const OurIngredient = () => {
                 <div className="flex justify-center mb-3">
                   <Crown className="w-10 h-10 text-[#a6a182]" />
                 </div>
-                <div className="font-medium">Best Qualities</div>
+                <div className="font-medium text-base lg:text-sm">Best Qualities</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
                   <Coffee className="w-10 h-10 text-[#a6a182]" />
                 </div>
-                <div className="font-medium">Discount System</div>
+                <div className="font-medium text-base lg:text-sm">Discount System</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
                   <Users className="w-10 h-10 text-[#a6a182]" />
                 </div>
-                <div className="font-medium">First Delivery</div>
+                <div className="font-medium text-base lg:text-sm">First Delivery</div>
               </div>
             </div>
 
