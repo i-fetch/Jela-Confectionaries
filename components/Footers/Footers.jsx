@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaPhone, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const Footers = () => {
@@ -19,12 +20,12 @@ const Footers = () => {
 
           {/* Social Media Icons Below Contact Section */}
           <div className="flex gap-4 mt-4">
-            <a href="#" aria-label="Facebook" className="bg-[#c2b47c] p-2 rounded-full text-black hover:bg-[#b1a369] transition">
+            <Link href="#" aria-label="Facebook" className="bg-[#c2b47c] p-2 rounded-full text-black hover:bg-[#b1a369] transition">
               <FaFacebook size={16} />
-            </a>
-            <a href="#" aria-label="Instagram" className="bg-[#c2b47c] p-2 rounded-full text-black hover:bg-[#b1a369] transition">
+            </Link>
+            <Link href="#" aria-label="Instagram" className="bg-[#c2b47c] p-2 rounded-full text-black hover:bg-[#b1a369] transition">
               <FaInstagram size={16} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

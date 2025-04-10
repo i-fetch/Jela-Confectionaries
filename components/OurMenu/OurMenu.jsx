@@ -16,7 +16,7 @@ const menuData = {
     {
       id: 1,
       name: "CHIPS & DIP",
-      price: "$16.00",
+      price: "₦1600",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu1.src,
@@ -24,7 +24,7 @@ const menuData = {
     {
       id: 2,
       name: "GARLIC FRIES",
-      price: "$26.00",
+      price: "₦2600",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu2.src,
@@ -32,7 +32,7 @@ const menuData = {
     {
       id: 3,
       name: "KALE SALAD",
-      price: "$10.00",
+      price: "₦1000",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu3.src,
@@ -40,7 +40,7 @@ const menuData = {
     {
       id: 4,
       name: "CAPRESE SALAD",
-      price: "$12.00",
+      price: "₦1200",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu4.src,
@@ -48,7 +48,7 @@ const menuData = {
     {
       id: 5,
       name: "TORTILLA SOUP",
-      price: "$20.00",
+      price: "₦2000",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu5.src,
@@ -56,7 +56,7 @@ const menuData = {
     {
       id: 6,
       name: "THAI CURRY",
-      price: "$22.00",
+      price: "₦2200",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu6.src,
@@ -66,7 +66,7 @@ const menuData = {
     {
       id: 1,
       name: "FISH FRY",
-      price: "$26.00",
+      price: "₦2600",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu1.src,
@@ -75,7 +75,7 @@ const menuData = {
     {
       id: 2,
       name: "PASTA ALFREDO",
-      price: "$30.00",
+      price: "₦3000",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu2.src,
@@ -84,7 +84,7 @@ const menuData = {
     {
       id: 3,
       name: "VEG BIRYANI",
-      price: "$29.00",
+      price: "₦2900",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu3.src,
@@ -93,7 +93,7 @@ const menuData = {
     {
       id: 4,
       name: "PRAWN MASALA",
-      price: "$28.00",
+      price: "₦2800",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu4.src,
@@ -102,7 +102,7 @@ const menuData = {
     {
       id: 5,
       name: "SUSHI PLATTER",
-      price: "$20.00",
+      price: "₦2000",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu5.src,
@@ -111,7 +111,7 @@ const menuData = {
     {
       id: 6,
       name: "MUTTON CURRY",
-      price: "$24.00",
+      price: "₦2400",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu6.src,
@@ -122,7 +122,7 @@ const menuData = {
     {
       id: 1,
       name: "MASHED POTATOES",
-      price: "$8.00",
+      price: "₦800",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu1.src,
@@ -131,7 +131,7 @@ const menuData = {
     {
       id: 2,
       name: "STEAMED VEGETABLES",
-      price: "$7.00",
+      price: "₦700",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu2.src,
@@ -142,7 +142,7 @@ const menuData = {
     {
       id: 1,
       name: "CHOCOLATE CAKE",
-      price: "$12.00",
+      price: "₦1200",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu3.src,
@@ -151,7 +151,7 @@ const menuData = {
     {
       id: 2,
       name: "ICE CREAM",
-      price: "$8.00",
+      price: "₦800",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
       image: menu2.src,
@@ -176,8 +176,8 @@ const OurMenu = () => {
         <h3 className="uppercase text-center flex items-center justify-center text-[#a6a182] text-sm font-medium mb-4 animate-fadeInUp">
           <Dot className="relative -translate-x-2" /> <span>From Our Menu</span>
         </h3>
-        <h5 className="uppercase text-center w-3/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
-          All inspired by the love joy of <span className="text-[#a6a182]"> sharing it with others.</span>
+        <h5 className="uppercase text-center w-3/5 md:1/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
+          All inspired by the love joy of <br className="hidden md:block" />  <span className="text-[#a6a182]"> sharing it with others.</span>
         </h5>
 
         {/* Tab Navigation */}
@@ -199,7 +199,7 @@ const OurMenu = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-16 md:px-4 gap-x-16 gap-y-12">
           {menuData[activeTab]?.map((item) => (
             <div key={item.id} className="flex gap-6">
               <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">

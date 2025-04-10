@@ -1,24 +1,14 @@
-import { ArrowRight, ChefHat, Coffee, Crown, Dot, Users } from "lucide-react"
-import Image from "next/image"
-import ChefImg from "@/public/our-ingredients-image.png"
-import Link from "next/link"
+import { ArrowRight, ChefHat, Coffee, Crown, Dot, Users } from "lucide-react";
+import Image from "next/image";
+import ChefImg from "@/public/our-ingredients-image.png";
+import Link from "next/link";
 
 const OurIngredient = () => {
   return (
     <section className="bg-black py-16 lg:py-24 relative overflow-hidden">
-      {/* Decorative chili pepper */}
-      {/* <div className="absolute top-0 left-0 w-32 h-32 opacity-80">
-        <img src="/placeholder.svg?height=128&width=128" alt="Decorative chili" className="object-contain" />
-      </div> */}
-
-      {/* Decorative burger */}
-      {/* <div className="absolute bottom-0 right-0 w-40 h-40">
-        <img src="/placeholder.svg?height=160&width=160" alt="Decorative burger" className="object-contain" />
-      </div> */}
-
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left column - Chef image and customer count */}
+          {/* Left column - Text Content */}
           <div className="text-white text-center md:text-left">
             {/* Section title */}
             <div className="flex items-center gap-2 mb-4">
@@ -48,69 +38,63 @@ const OurIngredient = () => {
                 <div className="flex justify-center mb-3">
                   <Crown className="w-8 h-8 text-[#a6a182]" />
                 </div>
-                <div className="font-medium text-base/5 lg:text-sm">Best Qualities</div>
+                <div className="font-medium text-base lg:text-sm">Best Qualities</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
                   <Coffee className="w-8 h-8 text-[#a6a182]" />
                 </div>
-                <div className="font-medium text-base/5 lg:text-sm">Discount System</div>
+                <div className="font-medium text-base lg:text-sm">Discount System</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
                   <Users className="w-8 h-8 text-[#a6a182]" />
                 </div>
-                <div className="font-medium text-base/5 lg:text-sm">First Delivery</div>
+                <div className="font-medium text-base lg:text-sm">First Delivery</div>
               </div>
             </div>
 
             {/* CTA Button */}
-            <Link href="/booktable" className="bg-[#a6a182] w-fit mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors">
+            <Link
+              href="/booktable"
+              className="bg-[#a6a182] w-fit mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors"
+            >
               Book Table <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-
-          {/* Right column - Content */}
+          {/* Right column - Image Content */}
           <div className="relative">
             <div className="relative z-10">
               <Image
-                src={ChefImg.src}
+                src={ChefImg}
                 alt="Chef with food plate"
                 width={500}
                 height={600}
                 className="mx-auto lg:mx-0 object-cover"
               />
-              {/* <div className="absolute bottom-0 left-0 bg-black bg-opacity-80 w-full h-1/4"></div> */}
             </div>
 
             {/* Customer count card */}
-            <div className="bg-[#a6a182] p-2 rounded-lg absolute bottom-4 left-4 lg:bottom-8 lg:left-8 md:translate-x-32 lg:translate-x-14 z-20 max-w-[240px]">
+            <div className="bg-[#a6a182] p-2 rounded-lg absolute bottom-4 left-4 lg:bottom-8 lg:left-8 z-20 max-w-[240px]">
               <div className="text-white">
                 <div className="text-lg font-bold">620+ Exclusive</div>
-                <div className="mb-3 text-xs font-bold">Happy Customer</div>
+                <div className="mb-3 text-xs font-bold">Happy Customers</div>
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full border-2 border-[#a6a182] overflow-hidden">
-                    <img
-                      src={ChefImg.src}
-                      alt="Customer"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-[#a6a182] overflow-hidden">
-                    <img
-                      src={ChefImg.src}
-                      alt="Customer"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-[#a6a182] overflow-hidden">
-                    <img
-                      src={ChefImg.src}
-                      alt="Customer"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  {[...Array(3)].map((_, index) => (
+                    <div
+                      key={index}
+                      className="w-8 h-8 rounded-full border-2 border-[#a6a182] overflow-hidden"
+                    >
+                      <Image
+                        src={ChefImg}
+                        alt={`Customer ${index + 1}`}
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
                   <div className="w-8 h-8 rounded-full border-2 border-[#a6a182] bg-black flex items-center justify-center text-white text-xs">
                     +
                   </div>
@@ -165,9 +149,8 @@ const OurIngredient = () => {
           </div>
         </div>
       </div>
-
     </section>
-  )
-}
+  );
+};
 
-export default OurIngredient
+export default OurIngredient;
