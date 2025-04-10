@@ -16,9 +16,9 @@ const Header = () => {
       <div className="absolute inset-0 bg-black opacity-70 z-0" />
 
       {/* Content Container */}
-      <div className="relative mt-30 z-10 flex flex-col items-center justify-center h-full text-white px-4 mt-">
+      <div className="relative mt-40 md:mt-0 z-10 flex flex-col items-center justify-center h-full text-white px-4">
 
-        <div className="container mt-36 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center">
 
           {/* Section Title */}
           <div className="text-left">
@@ -62,7 +62,7 @@ const Header = () => {
             </div>
 
             {/* Circle 1 */}
-            <div className="absolute w-[80px] h-[80px] md:w-[120px] md:h-[120px] left-2 bottom-2 md:left-6 lg:left-32 md:bottom-6 z-20 rounded-full overflow-hidden border-4 border-white/20 shadow-lg animate-fadeInUp">
+            <div className="absolute w-[80px] h-[80px] md:w-[120px] md:h-[120px] left-2 bottom-2 md:left-28 lg:left-32 md:bottom-6 z-20 rounded-full overflow-hidden border-4 border-white/20 shadow-lg animate-fadeInUp">
               <Image
                 src={HeroCircle1}
                 alt="Sizzling food dish"
@@ -72,7 +72,7 @@ const Header = () => {
             </div>
 
             {/* Circle 2 */}
-            <div className="absolute w-[80px] h-[80px] md:w-[120px] md:h-[120px] right-2 top-2 md:right-6 lg:right-32 md:top-6 z-20 rounded-full overflow-hidden border-4 border-white/20 shadow-lg animate-fadeInUp">
+            <div className="absolute w-[80px] h-[80px] md:w-[120px] md:h-[120px] right-2 top-2 md:right-28 lg:right-32 md:top-6 z-20 rounded-full overflow-hidden border-4 border-white/20 shadow-lg animate-fadeInUp">
               <Image
                 src={HeroCircle2}
                 alt="Burger with fries"
