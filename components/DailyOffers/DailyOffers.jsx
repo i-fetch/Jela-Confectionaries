@@ -14,7 +14,7 @@ const DailyOffers = () => {
       </div>
 
 
-      <div className="relative w-full md:w-1/2 flex justify-center items-center z-10">
+      <div className="relative w-full md:w-1/2 flex justify-center items-center z-10 sm:py-5">
         <Image src={BurgerImage} alt="Delicious Burger" className="w-[260px] md:w-[490px] z-10" />
 
         <div className="absolute bottom-[-20px] right-4 bg-[#b2a98f] text-white p-4 md:p-6 rounded-4xl w-[190px] h-[180px] md:h-[220px] md:w-[260px] z-20 shadow-lg">
