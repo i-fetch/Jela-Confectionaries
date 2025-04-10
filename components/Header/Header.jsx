@@ -9,11 +9,11 @@ import { Dot } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="pb-20 relative bg-fixed bg-center bg-cover bg-no-repeat h-screen overflow-hidden"
+    <header className="pb-20 relative bg-fixed bg-center bg-cover bg-no-repeat h-full overflow-hidden"
       style={{ backgroundImage: `url(${HeroBg?.src || ''})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-70 z-0" />
+      <div className="absolute inset-0 bg-black opacity-50 z-0" />
 
       {/* Content Container */}
       <div className="relative translate-y-40 md:translate-y-52 z-10 flex flex-col items-center justify-center h-full text-white px-4">
@@ -52,7 +52,7 @@ const Header = () => {
           {/* Section Image */}
           <div className="relative flex items-center justify-center">
             {/* Main Image */}
-            <div className="relative w-[250px] h-[350px] md:w-[400px] md:h-[600px] rounded-full overflow-hidden border-8 border-white/20 shadow-lg animate-fadeInUp z-10">
+            <div className="relative w-[250px] h-[350px] md:w-[450px] md:h-[650px] rounded-full overflow-hidden  shadow-lg animate-fadeInUp z-10">
               <Image
                 src={IllustrativeImg}
                 alt="Restaurant interior"
