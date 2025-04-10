@@ -1,4 +1,5 @@
 import { Dot } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const MainDish = () => {
@@ -47,7 +48,7 @@ const MainDish = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full border-2 h-full object-cover rounded-full"
                 />
               </div>
               {/* Title */}
@@ -59,10 +60,10 @@ const MainDish = () => {
         </div>
 
         <p className="text-sm mt-10">
-          Hungry for Something Delicious?{" "}
-          <a href="#" className="underline font-medium text-blue-400">
+          Hungry for Something Delicious?
+          <Link href="#" className="underline font-medium text-blue-400">
             View All Dishes!
-          </a>
+          </Link>
         </p>
       </div>
     </div>
