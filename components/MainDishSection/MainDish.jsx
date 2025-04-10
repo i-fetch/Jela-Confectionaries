@@ -1,67 +1,97 @@
-import React from "react";
+"use client"
+import Image from "next/image"
+import Link from "next/link"
 
 const MainDish = () => {
-  const items = [
+  const categories = [
     {
+      id: 1,
       title: "Soups",
-      desc: "Warm, comforting, and full of flavor, our soups are the perfect start to any meal.",
       image: "/our-dish-image-1.jpg",
+      description: "Warm, comforting, and full of flavor, our soups are the perfect start to any meal.",
     },
     {
+      id: 2,
       title: "Salads",
-      desc: "Refreshing, vibrant, and full of fresh flavors, our salads are crafted to awaken your senses.",
       image: "/our-dish-image-2.jpg",
+      description: "Refreshing, vibrant, and full of fresh flavors, our salads are crafted to senses.",
     },
     {
+      id: 3,
       title: "Main Dishes",
-      desc: "Offering bold flavors and expertly crafted recipes that cater to every taste.",
       image: "/our-dish-image-3.jpg",
+      description: "Offering bold flavors and expertly crafted recipes that cater to every taste.",
     },
     {
+      id: 4,
       title: "Appetizers",
-      desc: "Our appetizers are the perfect way to begin your dining experience flavors.",
       image: "/our-dish-image-4.jpg",
+      description: "Our appetizers are the perfect way to begin your dining experience flavors.",
     },
-  ];
+  ]
 
   return (
-    <div className="py-12 px-4 bg-black text-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-2 uppercase">Satisfy Your Cravings With</h2>
-        <h3 className="text-xl font-semibold mb-10">Our Signature Mains</h3>
+    <section className="bg-[#1a1a1a] text-white py-20 relative overflow-hidden">
+      {/* Burger Image with Animation */}
+      <div className="absolute top-5 left-1 sm:top-5 sm:left-1 lg:top-40 lg:left-2 w-[100px] h-[100px] sm:w-[80px] sm:h-[80px] md:w-[150px] md:h-[150px]">
+        <Image
+          src="/daily-offer-image hamburger.png"
+          alt="Delicious burger"
+          width={150}
+          height={150}
+          className="object-contain burger-animation"
+        />
+      </div>{/*Team remeber here is where we will add animation*/}
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="bg-black rounded-xl shadow hover:shadow-lg transition overflow-hidden text-center p-4"
-            >
-              {/* Image */}
-              <div className="w-32 h-32 mx-auto mb-4">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover rounded-full"
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p className="text-sm tracking-widest uppercase flex items-center justify-center mb-4">
+            <span className="inline-block w-1 h-1 bg-[#c5c5a6] rounded-full mr-2"></span>
+            Our Main Dishes
+          </p>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            SATISFY YOUR CRAVINGS WITH
+            <br />
+            OUR <span className="text-[#a3a378]">SIGNATURE MAINS</span>
+          </h2>
+        </div>
+
+        {/* Food Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {categories.map((category) => (
+            <div key={category.id} className="flex flex-col items-center text-center">
+              <div className="w-[200px] h-[200px] rounded-full overflow-hidden mb-6 border-4 border-[#2a2a2a] hover:border-[#a3a378] transition-colors duration-300">
+                <Image
+                  src={category.image || "/placeholder.svg"}
+                  alt={category.title}
+                  width={200}
+                  height={200}
+                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              {/* Title */}
-              <h4 className="text-lg font-bold mb-2">{item.title}</h4>
-              {/* Description */}
-              <p className="text-sm text-gray-400">{item.desc}</p>
+              <h3 className="text-2xl font-semibold mb-3">{category.title}</h3>
+              <p className="text-gray-400 max-w-xs">{category.description}</p>
             </div>
           ))}
         </div>
 
-        <p className="text-sm mt-10">
-          Hungry for Something Delicious?{" "}
-          <a href="#" className="underline font-medium text-blue-400">
-            View All Dishes!
-          </a>
-        </p>
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <p className="text-xl mb-2">
+            Hungry for Something Delicious?
+            <Link href="/OurMenu" className="text-[#a3a378] hover:text-[#c5c5a6] ml-2 transition-colors">
+              View All Dishes!
+            </Link>
+          </p>
+          <div className="flex justify-center mt-4">
+            {/* <span className="inline-block w-2 h-2 bg-[#a3a378] rounded-full"></span> */}
+          </div>
+        </div>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
 
 export default MainDish;
