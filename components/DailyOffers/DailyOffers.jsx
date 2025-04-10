@@ -1,6 +1,8 @@
 import Image from 'next/image';
-import PizzaImage from '@/public/daily-offer-image.png'; // Replace with your actual image path
-import BurgerImage from '@/public/daily-offer-image.png';   // Replace with your actual image path
+import PizzaImage from '@/public/pizza.png'; 
+import { CircleCheck } from 'lucide-react';
+
+import BurgerImage from '@/public/daily-offer-image.png'; 
 const DailyOffers = () => {
     return (
       <div className="bg-[#0e0e0e] text-white px-6 py-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
@@ -15,14 +17,16 @@ const DailyOffers = () => {
           <Image src={BurgerImage} alt="Delicious Burger" className="w-[260px] md:w-[490px] z-10" />
   
           <div className="absolute bottom-[-20px] right-4 bg-[#b2a98f] text-white p-4 md:p-6 rounded-4xl w-[190px] h-[180px] md:h-[220px] md:w-[260px] z-20 shadow-lg">
-            <h3 className="text-lg md:text-xl font-sans mb-1">Delicious Burger</h3>
+            <h3 className="text-lg md:text-xl font- mb-1">Delicious Burger</h3>
             <div className="text-yellow-400 text-base md:text-lg mb-2">★★★★★</div>
-            <ul className="text-sm md:text-base space-y-1">
-              <li>✔ Tomato Sauces</li>
-              <li>✔ Vegitables</li>
-              <li>✔ Lettuce</li>
-              <li>✔ Cheese Slice</li>
-            </ul>
+            <ul className="text-sm md:text-base space-y-2">
+            {["Tomato Sauces", "Vegitables", "Lettuce", "Cheese Slice"].map((item, index) => (
+              <li key={index} className="flex items-center gap-2">
+                <CircleCheck size={16} className="" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
           </div>
         </div>
   
@@ -52,7 +56,7 @@ const DailyOffers = () => {
         </div>
   
         {/* 🍕 Pizza on bottom right for md+ screens */}
-        <div className="hidden md:block absolute bottom-0 right-0 w-[250px] z-0 animate-spinSlow opacity-60">
+        <div className="hidden md:block absolute bottom-10 right-0 w-[250px] z-0 animate-spin opacity-60">
           <Image src={PizzaImage} alt="Pizza" className="w-full object-contain" />
         </div>
       </div>

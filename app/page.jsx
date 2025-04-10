@@ -11,6 +11,8 @@ export default function Home() {
     <main>
       <Header />
       <AboutSection />
+      <DailyOffers />
+      
       <OurMenu />
       <MainDish />
       <OurIngredient />
