@@ -2,6 +2,13 @@
 
 import React, { useState } from "react"
 import { Dot } from "lucide-react"
+import menu1 from "@/public/our-menu-image-1.png"
+import menu2 from "@/public/our-menu-image-2.png"
+import menu3 from "@/public/our-menu-image-3.png"
+import menu4 from "@/public/our-menu-image-4.png"
+import menu5 from "@/public/our-menu-image-5.png"
+import menu6 from "@/public/our-menu-image-6.png"
+import Image from "next/image"
 
 // Sample menu data
 const menuData = {
@@ -12,7 +19,7 @@ const menuData = {
       price: "$16.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu1.src,
     },
     {
       id: 2,
@@ -20,7 +27,7 @@ const menuData = {
       price: "$26.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu2.src,
     },
     {
       id: 3,
@@ -28,7 +35,7 @@ const menuData = {
       price: "$10.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu3.src,
     },
     {
       id: 4,
@@ -36,7 +43,7 @@ const menuData = {
       price: "$12.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu4.src,
     },
     {
       id: 5,
@@ -44,7 +51,7 @@ const menuData = {
       price: "$20.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu5.src,
     },
     {
       id: 6,
@@ -52,7 +59,7 @@ const menuData = {
       price: "$22.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu6.src,
     },
   ],
   mainCourses: [
@@ -62,7 +69,8 @@ const menuData = {
       price: "$26.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu1.src,
+
     },
     {
       id: 2,
@@ -70,7 +78,8 @@ const menuData = {
       price: "$30.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu2.src,
+
     },
     {
       id: 3,
@@ -78,7 +87,8 @@ const menuData = {
       price: "$29.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu3.src,
+
     },
     {
       id: 4,
@@ -86,7 +96,8 @@ const menuData = {
       price: "$28.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu4.src,
+
     },
     {
       id: 5,
@@ -94,7 +105,8 @@ const menuData = {
       price: "$20.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu5.src,
+
     },
     {
       id: 6,
@@ -102,7 +114,8 @@ const menuData = {
       price: "$24.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu6.src,
+
     },
   ],
   sides: [
@@ -112,7 +125,8 @@ const menuData = {
       price: "$8.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu1.src,
+
     },
     {
       id: 2,
@@ -120,7 +134,8 @@ const menuData = {
       price: "$7.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu2.src,
+
     },
   ],
   desserts: [
@@ -130,7 +145,8 @@ const menuData = {
       price: "$12.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu3.src,
+
     },
     {
       id: 2,
@@ -138,7 +154,8 @@ const menuData = {
       price: "$8.00",
       description:
         "A perfect pairing of crispy, freshly made chips and rich, flavorful dips that bring a burst of taste in every bite.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: menu2.src,
+
     },
   ],
 }
@@ -159,20 +176,19 @@ const OurMenu = () => {
         <h3 className="uppercase text-center flex items-center justify-center text-[#a6a182] text-sm font-medium mb-4 animate-fadeInUp">
           <Dot className="relative -translate-x-2" /> <span>From Our Menu</span>
         </h3>
-        <h5 className="uppercase font-semibold text-xl lg:text-5xl w-2/4 mx-auto text-center text-white md:text-lg mb-8 animate-fadeInUp">
-          All inspired by the love joy of sharing it with others.
+        <h5 className="uppercase text-2xl font-semibold lg:text-5xl lg:w-2/4 mx-auto text-center text-white md:text-lg mb-8 animate-fadeInUp">
+          All inspired by the love joy of <span className="text-[#a6a182]"> sharing it with others.</span>
         </h5>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-16">
-          <div className="bg-[#222222] rounded-full px-6 py-4 inline-flex items-center">
+          <div className="bg-[#222222] min-w-1/2 rounded-full px-6 py-4 flex items-center ">
             {tabs.map((tab, index) => (
               <React.Fragment key={tab.id}>
                 <button
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-1 rounded-full transition-colors ${
-                    activeTab === tab.id ? "text-white" : "text-[#a6a182]"
-                  }`}
+                  className={`text-[10px] transition-colors ${activeTab === tab.id ? "text-white" : "text-[#a6a182]"
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -187,7 +203,7 @@ const OurMenu = () => {
           {menuData[activeTab]?.map((item) => (
             <div key={item.id} className="flex gap-6">
               <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                <img src={item.image || "/placeholder.svg"} alt={item.name} className="w-full h-full object-cover" />
+                <Image src={item.image || "/placeholder.svg"} width={100} height={100} alt={item.name} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">

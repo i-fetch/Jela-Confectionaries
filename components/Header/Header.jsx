@@ -16,7 +16,7 @@ const Header = () => {
       <div className="absolute inset-0 bg-black opacity-70 z-0" />
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 mt-">
+      <div className="relative mt-30 z-10 flex flex-col items-center justify-center h-full text-white px-4 mt-">
 
         <div className="container mt-36 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center">
 
@@ -25,7 +25,7 @@ const Header = () => {
             <h3 className="uppercase flex items-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
               <Dot className="relative -translate-x-2" /> <span>Art of Fine Dining</span>
             </h3>
-            <h1 className="uppercase text-white text-2xl md:text-7xl font-bold mb-6 animate-fadeInUp">
+            <h1 className="uppercase text-white text-3xl md:text-7xl font-bold mb-6 animate-fadeInUp">
               Dining Redefined with <span className='text-[#a6a182]'>Every Bite</span>
             </h1>
             <p className="text-base md:text-lg mb-8 animate-fadeInUp max-w-prose">

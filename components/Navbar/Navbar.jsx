@@ -30,7 +30,7 @@ const Navbar = ({
   },
 }) => {
   return (
-    <section className="absolute top-0 left-0 w-full z-50 bg-transparent">
+    <section className="absolute border-b-2 top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Desktop Menu */}
         <nav className="hidden lg:flex justify-between items-center">
@@ -77,7 +77,7 @@ const Navbar = ({
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="border-white text-white">
+                <Button variant="outline" size="icon" className="border-2 border-white/20">
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
