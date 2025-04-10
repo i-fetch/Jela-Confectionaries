@@ -1,6 +1,7 @@
 import { ArrowRight, ChefHat, Coffee, Crown, Users } from "lucide-react"
 import Image from "next/image"
 import ChefImg from "@/public/our-ingredients-image.png"
+import Link from "next/link"
 
 const OurIngredient = () => {
   return (
@@ -63,10 +64,9 @@ const OurIngredient = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="bg-[#a6a182] w-fit mx-0 xl
-            :mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors">
+            <Link href="/booktable" className="bg-[#a6a182] w-fit mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors">
               Book Table <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
 
 

@@ -16,7 +16,7 @@ const Header = () => {
       <div className="absolute inset-0 bg-black opacity-70 z-0" />
 
       {/* Content Container */}
-      <div className="relative mt-40 md:mt-0 z-10 flex flex-col items-center justify-center h-full text-white px-4">
+      <div className="relative mt-48 xl:mt-20 z-10 flex flex-col items-center justify-center h-full text-white px-4">
 
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center">
 
