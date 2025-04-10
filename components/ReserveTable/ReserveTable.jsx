@@ -24,7 +24,7 @@ const ReserveTable  =() => {
         </div>
 
         {/* Right - Reservation Form */}
-        <div className="bg-[#ffff] rounded-lg shadow-md p-8 space-y-4 text-black -mb-40 z-10 relative min-h-[400px]">
+        <div className="bg-[#ffff] rounded-lg shadow-md p-8 space-y-4 text-black -mb-32 z-10 relative min-h-[400px]">
           <div>
             <label className="block text-sm font-medium mb-1">Your Name</label>
             <input type="text" placeholder="e.g. John" className="w-full border border-gray-300 rounded-md px-4 py-2" />

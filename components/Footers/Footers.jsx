@@ -2,14 +2,14 @@ import { FaPhone, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa
 
 const Footers = () => {
   return (
-    <footer className="bg-[#0e110d] text-white px-4 py-10 md:px-20">
+    <footer className="bg-[#0e110d] text-white px-4 py-16 sm:py-52  md:py-10 md:px-20 ">
       <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
         <div>
           <h3 className="text-xl font-bold mb-2">Spicyhunt</h3>
           <div className="text-sm text-[#b1b19e] space-y-1">
             <p className="flex items-start gap-2">
               <FaMapMarkerAlt className="w-4 h-4 text-[#c2b47c]" />
-              4517 Washingt, Kentucky 39495
+              4517 Unizik, Anambra 39495
             </p>
             <p className="flex items-center gap-2">
               <FaPhone className="w-4 h-4 text-[#c2b47c]" />
