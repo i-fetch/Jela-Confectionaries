@@ -36,12 +36,12 @@ const DailyOffers = () => {
         <h3 className="uppercase flex items-center text-[#b2a98f]0 text-sm font-medium mb-4 animate-fadeInUp">
           <Dot className="relative -translate-x-2" /> <span>OUR DAILY OFFERS</span>
         </h3>
-        <h1 className="text-3xl md:text-4xl font-extrabold leading-snug mb-4">
-          TASTE THE SAVINGS WITH OUR <br />
+        <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
+        TASTE THE SAVINGS WITH OUR <br className='hidden md:block' />
           <span className="text-[#b2a98f]">DAILY SPECIALS</span>
-        </h1>
-        <p className="text-gray-300 text-sm md:text-base mb-6">
-          Every day is an opportunity to enjoy your favorites at a discounted price. Explore our daily rotating specials and indulge in flavorful meals at a fraction of the cost.
+        </h2>
+        <p className="text-base text-white md:text-lg mb-8 animate-fadeInUp">
+        Every day is an opportunity to enjoy your favorites at a discounted price. Explore our daily rotating specials and indulge in flavorful meals at a fraction of the cost.
         </p>
         <ul className="text-gray-300 text-sm md:text-base space-y-2 mb-8">
           <li className='flex space-x-2'> <CircleCheckBig /> <span>Seasonal & Locally Sourced Ingredients</span></li>

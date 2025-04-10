@@ -176,18 +176,18 @@ const OurMenu = () => {
         <h3 className="uppercase text-center flex items-center justify-center text-[#a6a182] text-sm font-medium mb-4 animate-fadeInUp">
           <Dot className="relative -translate-x-2" /> <span>From Our Menu</span>
         </h3>
-        <h5 className="uppercase text-2xl font-semibold lg:text-5xl lg:w-2/4 mx-auto text-center text-white md:text-lg mb-8 animate-fadeInUp">
+        <h5 className="uppercase text-center w-3/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
           All inspired by the love joy of <span className="text-[#a6a182]"> sharing it with others.</span>
         </h5>
 
         {/* Tab Navigation */}
         <div className="flex items-center justify-center mb-16">
-          <div className="bg-[#222222] border min-w-1/2 md:min-w-3/5 mx-auto rounded-full px-6 py-4 flex items-center justify-center ">
+          <div className="bg-[#222222] border min-w-1/2 md:min-w-2/5 mx-auto rounded-full px-6 py-4 flex items-center justify-center ">
             {tabs.map((tab, index) => (
               <React.Fragment key={tab.id}>
                 <span
                   onClick={() => setActiveTab(tab.id)}
-                  className={`text-xs md:text-lg font-semibold text-center  transition-colors ${activeTab === tab.id ? "text-white" : "text-[#a6a182]"
+                  className={`cursor-pointer text-xs md:text-lg font-semibold text-center  transition-colors ${activeTab === tab.id ? "text-white" : "text-[#a6a182]"
                     }`}
                 >
                   {tab.label}
