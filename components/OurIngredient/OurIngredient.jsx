@@ -1,4 +1,4 @@
-import { ArrowRight, ChefHat, Coffee, Crown, Users } from "lucide-react"
+import { ArrowRight, ChefHat, Coffee, Crown, Dot, Users } from "lucide-react"
 import Image from "next/image"
 import ChefImg from "@/public/our-ingredients-image.png"
 import Link from "next/link"
@@ -19,15 +19,16 @@ const OurIngredient = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left column - Chef image and customer count */}
-          <div className="text-white">
+          <div className="text-white text-center md:text-left">
             {/* Section title */}
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-1 h-1 rounded-full bg-[#a6a182]"></span>
-              <span className="text-[#a6a182] uppercase text-sm tracking-wider">OUR INGREDIENTS</span>
+              <h3 className="uppercase flex items-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
+                <Dot className="relative -translate-x-2" /> <span>OUR INGREDIENTS</span>
+              </h3>
             </div>
 
             {/* Main heading */}
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
               CRAFTING DISHES WITH <br className="block lg:hidden" />
               <span className="text-[#a6a182]">FRESHEST FLAVORS</span>
             </h2>
@@ -84,7 +85,7 @@ const OurIngredient = () => {
             </div>
 
             {/* Customer count card */}
-            <div className="bg-[#a6a182] p-2 rounded-lg absolute bottom-4 left-4 lg:bottom-8 lg:left-8 lg:translate-x-32 z-20 max-w-[240px]">
+            <div className="bg-[#a6a182] p-2 rounded-lg absolute bottom-4 left-4 lg:bottom-8 lg:left-8 md:translate-x-32 lg:translate-x-14 z-20 max-w-[240px]">
               <div className="text-white">
                 <div className="text-lg font-bold">620+ Exclusive</div>
                 <div className="mb-3 text-xs font-bold">Happy Customer</div>
