@@ -67,7 +67,7 @@ const MainDish = () => {
                   alt={category.title}
                   width={200}
                   height={200}
-                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+                  className="object-cover w-full h-full hover:scale-110 focus:scale-110 focus:outline-1  transition-transform duration-500"
                 />
               </div>
               <h3 className="text-2xl font-semibold mb-3">{category.title}</h3>
