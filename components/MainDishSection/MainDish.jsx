@@ -59,8 +59,8 @@ const MainDish = () => {
           ))}
         </div>
 
-        <p className="text-sm mt-10">
-          Hungry for Something Delicious?
+        <p className="text-sm space-x-1.5 mt-10">
+          <span className="">Hungry for Something Delicious?</span>
           <Link href="#" className="underline font-medium text-blue-400">
             View All Dishes!
           </Link>
