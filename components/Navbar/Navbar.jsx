@@ -30,7 +30,7 @@ const Navbar = ({
   },
 }) => {
   return (
-    <section className="absolute border-b-2 border-[#c3c0c06b] top-0 left-0 w-full z-50 bg-transparent border-bottom">
+    <section className="absolute py-2 border-b-2 border-[#c3c0c06b] top-0 left-0 w-full z-50 bg-transparent border-bottom">
       <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Desktop Menu */}
         <nav className="hidden lg:flex justify-between items-center">

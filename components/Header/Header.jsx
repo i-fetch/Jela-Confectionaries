@@ -16,7 +16,7 @@ const Header = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-0" />
 
       {/* Content Container */}
-      <div className="relative translate-y-40 md:translate-y-52 z-10 flex flex-col items-center justify-center h-full text-white px-4 md:pb-20">
+      <div className="relative translate-y-40 md:translate-y-28 z-10 flex flex-col items-center justify-center h-full text-white px-4 md:pb-20">
 
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:pl-7 gap-8 items-center md:pb-60">
 
@@ -52,7 +52,7 @@ const Header = () => {
           {/* Section Image */}
           <div className="relative flex items-center justify-center">
             {/* Main Image */}
-            <div className="relative w-[250px] h-[350px] md:w-[450px] md:h-[650px] rounded-full overflow-hidden  shadow-lg animate-fadeInUp z-10">
+            <div className="relative w-[240px] h-[300px] md:w-[440px] md:h-[600px] rounded-full overflow-hidden  shadow-lg animate-fadeInUp z-10">
               <Image
                 src={IllustrativeImg}
                 alt="Restaurant interior"
