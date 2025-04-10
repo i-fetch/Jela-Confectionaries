@@ -1,5 +1,6 @@
 import AboutSection from "@/components/AboutSection/AboutSection";
 import Header from "@/components/Header/Header";
+import MainDish from "@/components/MainDishSection/MainDish";
 import OurIngredient from "@/components/OurIngredient/OurIngredient";
 import OurMenu from "@/components/OurMenu/OurMenu";
 import Image from "next/image";
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <AboutSection />
       <OurMenu />
+      <MainDish />
       <OurIngredient />
 
     </main>
