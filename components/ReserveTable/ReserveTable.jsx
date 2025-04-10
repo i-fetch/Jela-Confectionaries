@@ -1,4 +1,17 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from "react";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -10,6 +23,8 @@ import {
 } from "@/components/ui/select";
 
 const ReserveTable = () => {
+  const [date, setDate] = useState(null);
+
   return (
     <section className="bg-[#1f2120] text-white py-20 px-4 md:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -23,11 +38,20 @@ const ReserveTable = () => {
 
           <div className="mt-8">
             <h4 className="text-lg font-semibold mb-2">Open Hours</h4>
-            <ul className="space-y-1 text-sm text-[#b1b19e]">
-              <li>Mon - Thu &nbsp; 10:00 AM - 09:00 PM</li>
-              <li>Fri - Sat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 AM - 10:00 PM</li>
-              <li>Sun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Closed</li>
-            </ul>
+            <dl className="space-y-1 text-sm text-[#b1b19e]">
+              <div className="flex space-x-4">
+                <dt className="font-medium">Mon - Thu:</dt>
+                <dd>10:00 AM - 09:00 PM</dd>
+              </div>
+              <div className="flex space-x-4">
+                <dt className="font-medium">Fri - Sat:</dt>
+                <dd>09:00 AM - 10:00 PM</dd>
+              </div>
+              <div className="flex space-x-4">
+                <dt className="font-medium">Sun:</dt>
+                <dd>Closed</dd>
+              </div>
+            </dl>
           </div>
         </div>
 
@@ -50,10 +74,33 @@ const ReserveTable = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Updated Date Picker */}
             <div>
               <Label className="block text-sm font-medium mb-1">Date</Label>
-              <Input type="date" className="w-full" />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant={"outline"}
+                    className={cn(
+                      "w-full justify-start text-left font-normal",
+                      !date && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {date ? format(date, "PPP") : <span>Pick a date</span>}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
+
             <div>
               <Label className="block text-sm font-medium mb-1">Time</Label>
               <Select>
