@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -8,99 +8,104 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import LogoImg from "@/public/logo-img.jpg";
+import Image from "next/image";
 
 const Navbar = ({
   logo = {
-    url: "",
-    src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
-    alt: "logo",
+    url: "/",
+    alt: "Jela's Confectionary Logo",
     title: "Jela's Confectionary",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     { title: "About", url: "/about" },
-    { title: "Service", url: "#" },
-    { title: "Menu", url: "#" },
-    { title: "Contact", url: "#" },
+    { title: "Service", url: "/service" },
+    { title: "Menu", url: "/menu" },
+    { title: "Contact", url: "/contact" },
   ],
   auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
+    login: { title: "Login", url: "/login" },
+    signup: { title: "Sign up", url: "/signup" },
   },
 }) => {
   return (
-    <section className="py-4">
-      <div className="container px-4">
+    <section className="absolute top-0 left-0 w-full z-50 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Desktop Menu */}
-        <nav className="max-w-7xl mx-auto flex justify-between items-center lg:flex">
-          <div className="flex items-center gap-6">
-            {/* Logo */}
-            <Link href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
-              <span className="text-lg font-semibold tracking-tighter">
+        <nav className="hidden lg:flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">
+              <Image src={LogoImg} alt={logo.alt} width={40} height={40} className="rounded-full" />
+              <span className="text-lg font-semibold tracking-tighter text-white">
                 {logo.title}
               </span>
             </Link>
           </div>
           <div className="flex items-center gap-8">
-            {/* Navigation Links */}
             {menu.map((item) => (
               <Link
                 key={item.title}
                 href={item.url}
-                className="text-sm font-medium text-gray-700 hover:text-gray-900"
+                className="text-sm font-medium text-white hover:text-primary"
               >
                 {item.title}
               </Link>
             ))}
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
+            {/* <Button asChild variant="outline" size="sm" className=" border-white hover:opacity-15">
+              <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
+            <Button asChild size="sm" className="bg-white text-black hover:bg-gray-200">
+              <Link href={auth.signup.url}>{auth.signup.title}</Link>
+            </Button> */}
+            <button size="sm" className="bg-[#a6a182] px-6 py-3 rounded-4xl text-black hover:bg-opacity-90">
+            <Link className="flex items-center  text-white space-x-1.5" href="/book-table"><span>Book a Table</span> <ArrowRight /></Link> 
+            </button>
+
           </div>
         </nav>
 
         {/* Mobile Menu */}
-        <div className="mx-auto block lg:hidden">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
-            </a>
+        <div className="block lg:hidden">
+          <div className="flex justify-between items-center">
+            <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">
+              <Image src={LogoImg} alt={logo.alt} width={32} height={32} className="rounded-full" />
+              <span className="text-base font-semibold text-white">{logo.title}</span>
+            </Link>
+
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
+                <Button variant="outline" size="icon" className="border-white text-white">
+                  <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="max-h-8" alt={logo.alt} />
-                    </a>
+                    <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">
+                      <Image src={LogoImg} alt={logo.alt} width={32} height={32} />
+                      <span className="text-base font-semibold">{logo.title}</span>
+                    </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 p-4">
                   {menu.map((item) => (
-                    <a
+                    <Link
                       key={item.title}
                       href={item.url}
                       className="text-md font-semibold"
                     >
                       {item.title}
-                    </a>
+                    </Link>
                   ))}
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
+                      <Link href={auth.login.url}>{auth.login.title}</Link>
                     </Button>
                     <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
+                      <Link href={auth.signup.url}>{auth.signup.title}</Link>
                     </Button>
                   </div>
                 </div>
