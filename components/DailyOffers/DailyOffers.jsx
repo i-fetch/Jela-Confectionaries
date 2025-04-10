@@ -9,16 +9,17 @@ const DailyOffers = () => {
     <div className="bg-[#0e0e0e] text-white px-6 py-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
 
 
-      <div className="absolute inset-0 md:hidden z-0 flex justify-center items-center opacity-10 pointer-events-none animate-spinSlow">
+      <div className="absolute inset-0 md:hidden z-0 flex justify-center items-center text-center opacity-10 pointer-events-none animate-spinSlow">
         <Image src={PizzaImage} alt="Pizza Overlay" className="w-[300px] h-auto object-contain" />
       </div>
 
 
-      <div className="relative w-full md:w-1/2 flex justify-center items-center z-10 sm:py-5">
+      <div className="relative w-full md:w-1/2 flex justify-center items-center z-10 sm:h-44">
         <Image src={BurgerImage} alt="Delicious Burger" className="w-[260px] md:w-[490px] z-10" />
 
-        <div className="absolute bottom-[-20px] right-4 bg-[#b2a98f] text-white p-4 md:p-6 rounded-4xl w-[190px] h-[180px] md:h-[220px] md:w-[260px] z-20 shadow-lg">
-          <h3 className="text-lg md:text-xl font- mb-1">Delicious Burger</h3>
+        <div className="absolute bottom-[-20px] right-2 sm:right-4 bg-[#b2a98f] text-white p-3 sm:p-4 md:p-6 rounded-3xl w-[170px] sm:w-[190px] md:w-[260px] z-20 shadow-lg
+  h-auto md:h-[220px]">
+        <h3 className="text-lg md:text-xl font- mb-1">Delicious Burger</h3>
           <div className="text-yellow-400 text-base md:text-lg mb-2">★★★★★</div>
           <ul className="text-sm md:text-base space-y-2">
             {["Tomato Sauces", "Vegitables", "Lettuce", "Cheese Slice"].map((item, index) => (
