@@ -6,6 +6,7 @@ import MainDish from "@/components/MainDishSection/MainDish";
 import OurIngredient from "@/components/OurIngredient/OurIngredient";
 import OurMenu from "@/components/OurMenu/OurMenu";
 import ReserveTable from "@/components/ReserveTable/ReserveTable";
+import Testimonials from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <OurMenu />
       <MainDish />
       <OurIngredient />
+      <Testimonials/>
       <ReserveTable/>
       <Footers/>
 

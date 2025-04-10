@@ -13,7 +13,7 @@ const Header = () => {
       style={{ backgroundImage: `url(${HeroBg?.src || ''})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 z-0" />
+      <div className="absolute inset-0 c" />
 
       {/* Content Container */}
       <div className="relative translate-y-40 md:translate-y-28 z-10 flex flex-col items-center justify-center h-full text-white px-4 md:pb-20">
