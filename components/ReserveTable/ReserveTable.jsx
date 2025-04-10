@@ -1,7 +1,15 @@
-// components/ReserveForm.js
 import React from 'react';
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-const ReserveTable  =() => {
+const ReserveTable = () => {
   return (
     <section className="bg-[#1f2120] text-white py-20 px-4 md:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -26,43 +34,53 @@ const ReserveTable  =() => {
         {/* Right - Reservation Form */}
         <div className="bg-[#ffff] rounded-lg shadow-md p-8 space-y-4 text-black -mb-32 z-10 relative min-h-[400px]">
           <div>
-            <label className="block text-sm font-medium mb-1">Your Name</label>
-            <input type="text" placeholder="e.g. John" className="w-full border border-gray-300 rounded-md px-4 py-2" />
+            <Label className="block text-sm font-medium mb-1">Your Name</Label>
+            <Input type="text" placeholder="e.g. John" className="w-full" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Email Address</label>
-              <input type="email" placeholder="e.g. John@example.com" className="w-full border border-gray-300 rounded-md px-4 py-2" />
+              <Label className="block text-sm font-medium mb-1">Email Address</Label>
+              <Input type="email" placeholder="e.g. John@example.com" className="w-full" />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Phone Number</label>
-              <input type="text" placeholder="e.g. +123 456 8792" className="w-full border border-gray-300 rounded-md px-4 py-2" />
+              <Label className="block text-sm font-medium mb-1">Phone Number</Label>
+              <Input type="text" placeholder="e.g. +123 456 8792" className="w-full" />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Date</label>
-              <input type="date" className="w-full border border-gray-300 rounded-md px-4 py-2" />
+              <Label className="block text-sm font-medium mb-1">Date</Label>
+              <Input type="date" className="w-full" />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Time</label>
-              <select className="w-full border border-gray-300 rounded-md px-4 py-2">
-                <option>Select time</option>
-                <option>10:00 AM</option>
-                <option>01:00 PM</option>
-                <option>06:00 PM</option>
-              </select>
+              <Label className="block text-sm font-medium mb-1">Time</Label>
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select time" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="10:00 AM">10:00 AM</SelectItem>
+                  <SelectItem value="01:00 PM">01:00 PM</SelectItem>
+                  <SelectItem value="06:00 PM">06:00 PM</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Number Of Person</label>
-              <select className="w-full border border-gray-300 rounded-md px-4 py-2">
-                <option>number of person</option>
-                {[1,2,3,4,5,6].map(n => (
-                  <option key={n}>{n}</option>
-                ))}
-              </select>
+              <Label className="block text-sm font-medium mb-1">Number Of Person</Label>
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Number of person" />
+                </SelectTrigger>
+                <SelectContent>
+                  {[1, 2, 3, 4, 5, 6].map((n) => (
+                    <SelectItem key={n} value={n.toString()}>
+                      {n}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
@@ -73,6 +91,6 @@ const ReserveTable  =() => {
       </div>
     </section>
   );
-}
+};
 
 export default ReserveTable;
