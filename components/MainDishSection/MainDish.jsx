@@ -1,3 +1,4 @@
+import { Dot } from "lucide-react";
 import React from "react";
 
 const MainDish = () => {
@@ -25,17 +26,21 @@ const MainDish = () => {
   ];
 
   return (
-    <div className="py-12 px-4 bg-black text-white">
+    <div className="py-12 px-4 bg-[#1f2120] text-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-2 uppercase">Satisfy Your Cravings With</h2>
-        <h3 className="text-xl font-semibold mb-10">Our Signature Mains</h3>
+        <h3 className="uppercase text-center flex items-center justify-center text-[#a6a182] text-sm font-medium mb-4 animate-fadeInUp">
+          <Dot className="relative -translate-x-2" /> <span>Our Main Dishes</span>
+        </h3>
+        <h5 className="uppercase text-2xl font-semibold lg:text-5xl lg:w-2/4 mx-auto text-center text-white md:text-lg mb-8 animate-fadeInUp">
+         Satisfy your caraving with our <span className="text-[#a6a182]"> signature main.</span>
+        </h5>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, index) => (
             <div
               key={index}
-              className="bg-black rounded-xl shadow hover:shadow-lg transition overflow-hidden text-center p-4"
+              className="bg-transparent rounded-xl shadow hover:shadow-lg transition overflow-hidden text-center p-4"
             >
               {/* Image */}
               <div className="w-32 h-32 mx-auto mb-4">

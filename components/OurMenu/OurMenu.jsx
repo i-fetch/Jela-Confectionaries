@@ -181,17 +181,17 @@ const OurMenu = () => {
         </h5>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-[#222222] min-w-1/2 rounded-full px-6 py-4 flex items-center ">
+        <div className="flex items-center justify-center mb-16">
+          <div className="bg-[#222222] border min-w-1/2 md:min-w-3/5 mx-auto rounded-full px-6 py-4 flex items-center justify-center ">
             {tabs.map((tab, index) => (
               <React.Fragment key={tab.id}>
-                <button
+                <span
                   onClick={() => setActiveTab(tab.id)}
-                  className={`text-[10px] transition-colors ${activeTab === tab.id ? "text-white" : "text-[#a6a182]"
+                  className={`text-xs md:text-lg font-semibold text-center  transition-colors ${activeTab === tab.id ? "text-white" : "text-[#a6a182]"
                     }`}
                 >
                   {tab.label}
-                </button>
+                </span>
                 {index < tabs.length - 1 && <span className="text-[#a6a182] mx-2">•</span>}
               </React.Fragment>
             ))}

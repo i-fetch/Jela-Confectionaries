@@ -7,12 +7,12 @@ const DailyOffers = () => {
     return (
       <div className="bg-[#0e0e0e] text-white px-6 py-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
         
-        {/* 🍕 Pizza Overlay - visible on mobile behind text */}
+        
         <div className="absolute inset-0 md:hidden z-0 flex justify-center items-center opacity-10 pointer-events-none animate-spinSlow">
           <Image src={PizzaImage} alt="Pizza Overlay" className="w-[300px] h-auto object-contain" />
         </div>
   
-        {/* 🍔 Left - Burger Image + Info */}
+        
         <div className="relative w-full md:w-1/2 flex justify-center items-center z-10">
           <Image src={BurgerImage} alt="Delicious Burger" className="w-[260px] md:w-[490px] z-10" />
   
