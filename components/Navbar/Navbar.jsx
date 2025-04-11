@@ -14,8 +14,8 @@ import Image from "next/image";
 const Navbar = ({
   logo = {
     url: "/",
-    alt: "Jela's Confectionary Logo",
-    title: "Jela's Confectionary",
+    alt: "Jela's Café Logo",
+    title: "Jela's Café",
   },
   menu = [
     { title: "Home", url: "/" },

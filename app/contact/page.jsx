@@ -4,6 +4,7 @@ import PageHeader from '@/public/page-header-bg.jpg';
 import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
+import ContactUs from "@/components/ContactUs/ContactUs";
 
 
 export default function page() {
@@ -23,7 +24,7 @@ export default function page() {
         </div>
 
       </header>
-     
+      <ContactUs />     
       <ReserveTable />
       <Footers />
     
