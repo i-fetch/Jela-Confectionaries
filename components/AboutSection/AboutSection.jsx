@@ -28,13 +28,13 @@ const AboutSection = () => {
             </p>
             <ul className="mb-8">
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Seasonal & locally sourced ingredients</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-xl text-white">Seasonal & locally sourced ingredients</span>
               </li>
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Vegetarian & dietary-friendly options</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-xl text-white">Vegetarian & dietary-friendly options</span>
               </li>
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Exquisite pairings & unique flavors</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-xl text-white">Exquisite pairings & unique flavors</span>
               </li>
             </ul>
 

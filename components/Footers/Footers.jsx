@@ -6,7 +6,7 @@ const Footers = () => {
     <footer className="bg-[#0e110d] text-white px-4 py-16 sm:py-52 md:py-10 md:px-20">
       <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
         <div className='pt-16 md:pt-10'>
-          <h3 className="text-xl font-bold mb-2">Jela's Confectionary</h3>
+          <h3 className="text-xl font-bold mb-2">Jela's Café</h3>
           <div className="text-sm text-[#f7dd9b] space-y-1">
             <p className="flex items-start gap-2">
               <FaMapMarkerAlt className="w-4 h-4 text-[#cd9d22]" />
