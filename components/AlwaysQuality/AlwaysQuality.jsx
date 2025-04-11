@@ -1,27 +1,28 @@
 "use client";
 
+import { Dot } from "lucide-react";
 import Image from "next/image";
 
 const teamMembers = [
   {
     name: "Sophia Martinez",
     role: "Executive Chef",
-    image: "/alwaysquality/sophia.jpg",
+    image: "/team-1.jpg",
   },
   {
     name: "Liam Patel",
     role: "Sous Chef",
-    image: "/alwaysquality/liam.jpg",
+    image: "/team-2.jpg",
   },
   {
     name: "Isabella Carter",
     role: "Pastry Chef",
-    image: "/alwaysquality/isabella.jpg",
+    image: "/team-3.jpg",
   },
   {
     name: "Ethan Johnson",
     role: "Restaurant Manager",
-    image: "/alwaysquality/ethan.jpg",
+    image: "/team-4.jpg",
   },
 ];
 
@@ -29,12 +30,13 @@ export default function AlwaysQuality() {
   return (
     <section className="bg-[#0d100c] text-white py-16 px-4 sm:px-6 lg:px-20">
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <p className="text-sm text-[#b7a97a] tracking-wide font-medium">• ALWAYS QUALITY</p>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-2">
-          THE TALENTED MINDS BEHIND<br />
-          EVERY <span className="text-[#c3ba91]">FLAVOURFUL</span> DISH
-        </h2>
+      <div className="text-center max-w-3xl mx-auto mb-12">    
+        <h3 className="uppercase text-center flex items-center justify-center text-[#a6a182] text-sm font-medium mb-4 animate-fadeInUp">
+          <Dot className="relative -translate-x-2" /> <span>Always Quality</span>
+        </h3>
+        <h5 className="uppercase text-center w-4/5 md:1/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
+          The talented minds behind <br className="hidden lg:block" /> every  <span className="text-[#cd9d22]"> flavoured confectionary.</span>
+        </h5>
       </div>
 
       {/* Grid of Team Members */}

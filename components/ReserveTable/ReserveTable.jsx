@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Dot } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -30,7 +30,7 @@ const ReserveTable = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Left - Heading and Open Hours */}
         <div>
-          <p className="text-xs tracking-wide text-[#b1b19e] uppercase mb-2">Reserve a Table</p>
+          <p className="text-xs flex space-x-1 text-[#b1b19e] uppercase mb-2"><Dot className="relative -translate-x-2" /> Reserve a Table</p>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-snug">
             Reserve Now Your Table <br />
             And <span className="text-[#cd9d22]">Enjoy Dining Experience.</span>
