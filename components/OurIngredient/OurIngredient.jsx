@@ -12,7 +12,7 @@ const OurIngredient = () => {
           <div className="text-white text-center md:text-left">
             {/* Section title */}
             <div className="flex items-center gap-2 mb-4">
-              <h3 className="uppercase flex items-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
+              <h3 className="text-left lg:text-center uppercase flex items-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
                 <Dot className="relative -translate-x-2" /> <span>OUR INGREDIENTS</span>
               </h3>
             </div>
