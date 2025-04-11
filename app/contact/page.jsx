@@ -20,9 +20,9 @@ export default function page() {
         </div>
 
       </header>
-      <ReserveTable />
-      <Footers />
-    
+      {/* <ReserveTable />
+      <Footers /> */}
+  
 
     </div>
   )
