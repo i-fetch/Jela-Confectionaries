@@ -4,6 +4,7 @@ import AboutSection from '@/components/AboutSection/AboutSection';
 import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
+import FaQ from '@/components/FaQ/FaQ';
 
 
 export default function page() {
@@ -23,6 +24,8 @@ export default function page() {
       </header>
       <AboutSection />
       <DailyOffers />
+      <FaQ/>
+
       <ReserveTable />
       <Footers />
     

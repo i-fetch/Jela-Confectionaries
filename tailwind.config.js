@@ -2,7 +2,7 @@ module.exports = {
     theme: {
       extend: {
         animation: {
-          spinSlow: 'spin 2s linear infinite',
+          spinSlow: 'bounce 2s linear infinite',
         },
       },
     },
