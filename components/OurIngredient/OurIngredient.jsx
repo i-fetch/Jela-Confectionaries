@@ -55,12 +55,12 @@ const OurIngredient = () => {
             </div>
 
             {/* CTA Button */}
-            <Link
-              href="/booktable"
-              className="bg-[#cd9d22] w-fit mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors"
-            >
-              Book Table <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="my-2 flex justify-center lg:justify-start">
+              <Link href="/menu"
+                className="bg-[#cd9d22] w-fit mx-0 lg:mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors">
+                Book Table <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           {/* Right column - Image Content */}
@@ -76,7 +76,7 @@ const OurIngredient = () => {
             </div>
 
             {/* Customer count card */}
-            <div className="bg-[#a6a182] p-2 rounded-lg absolute bottom-4 left-4 lg:bottom-8 lg:left-8 z-20 max-w-[240px]">
+            <div className="bg-[#a6a182] p-2 rounded-lg absolute bottom-4 left-4 lg:bottom-8 md:left-10 lg:left-8 z-20 max-w-[240px]">
               <div className="text-white">
                 <div className="text-lg font-bold">620+ Exclusive</div>
                 <div className="mb-3 text-xs font-bold">Happy Customers</div>
