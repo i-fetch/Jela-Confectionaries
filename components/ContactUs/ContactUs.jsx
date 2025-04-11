@@ -25,7 +25,7 @@ const ContactUs = () => {
           <div className="mt-10 space-y-2 text-gray-400">
             <p>28 DLA Road, Delta State, 320104, Nigeria</p>
             <p>+234 80 859 6322</p>
-            <p>info@domainname.com</p>
+            <p>info@jelaconfectionaries.com</p>
           </div>
 
           <div className="flex gap-4 mt-8">
