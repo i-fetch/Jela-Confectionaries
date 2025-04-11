@@ -176,7 +176,7 @@ const OurMenu = () => {
         <h3 className="uppercase text-center flex items-center justify-center text-[#a6a182] text-sm font-medium mb-4 animate-fadeInUp">
           <Dot className="relative -translate-x-2" /> <span>From Our Menu</span>
         </h3>
-        <h5 className="uppercase text-center w-3/5 md:1/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
+        <h5 className="uppercase text-center w-4/5 md:1/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
           All inspired by the love joy of <br className="hidden lg:block" />  <span className="text-[#cd9d22]"> sharing it with others.</span>
         </h5>
 

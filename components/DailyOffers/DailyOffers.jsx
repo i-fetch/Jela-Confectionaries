@@ -17,7 +17,7 @@ const DailyOffers = () => {
       <div className="relative w-full md:w-1/2 flex justify-center items-center z-10 sm:h-44">
         <Image src={BurgerImage} alt="Delicious Burger" className="w-[260px] md:w-[490px] z-10" />
 
-        <div className="absolute bottom-[-20px] right-2 sm:right-4 bg-[#b2a98f] text-white p-2 sm:p-4 md:p-6 rounded-3xl w-[170px] sm:w-[190px] md:w-[260px] z-20 shadow-lg h-auto md:h-[220px]">
+        <div className="absolute bottom-[-20px] right-2 sm:right-4 bg-[#b2a98f] text-white p-3 sm:p-4 md:p-6 rounded-3xl w-[170px] sm:w-[190px] md:w-[260px] z-20 shadow-lg h-auto md:h-[220px]">
           <h5 className="text-lg md:text-xl font-bold">Delicious Burger</h5>
           <span className="text-yellow-400 text-base md:text-lg mb-2" aria-label="Rating: 5 stars">★★★★★</span>
           <ul className="text-sm md:text-base space-y-2" aria-label="Burger Ingredients">
@@ -44,9 +44,9 @@ const DailyOffers = () => {
           Every day is an opportunity to enjoy your favorites at a discounted price. Explore our daily rotating specials and indulge in flavorful meals at a fraction of the cost.
         </p>
         <ul className="text-gray-300 text-sm md:text-base space-y-2 mb-8">
-          <li className='flex space-x-2'> <CircleCheckBig /> <span>Seasonal & Locally Sourced Ingredients</span></li>
-          <li className='flex space-x-2'> <CircleCheckBig /> <span>Vegetarian & Dietary-Friendly Options</span></li>
-          <li className='flex space-x-2'> <CircleCheckBig /> <span> Exquisite Pairings & Unique Flavors</span></li>
+          <li className='flex items-center space-x-2'> <CircleCheckBig size={15} className="text-white" /> <span>Seasonal & Locally Sourced Ingredients</span></li>
+          <li className='flex items-center space-x-2'> <CircleCheckBig size={15} className="text-white" /> <span>Vegetarian & Dietary-Friendly Options</span></li>
+          <li className='flex items-center space-x-2'> <CircleCheckBig size={15} className="text-white" /> <span> Exquisite Pairings & Unique Flavors</span></li>
         </ul>
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
           <Link href="#"

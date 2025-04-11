@@ -15,11 +15,10 @@ export default function Home() {
     <main>
       <Header />
       <AboutSection />
-      <DailyOffers />
-      
+      <DailyOffers /> 
       <OurMenu />
       <MainDish />
-      <OurVideo />
+      {/* <OurVideo /> */}
       <OurIngredient />
       <TestimonialSlider/>
       <ReserveTable />
