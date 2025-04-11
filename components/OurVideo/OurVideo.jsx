@@ -31,10 +31,10 @@ const OurVideo = () => {
 
         {/* Play Button */}
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full border-2 border-white bg-black/30 backdrop-blur-sm flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-black/50"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white bg-black/30 backdrop-blur-sm flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-black/50"
           onClick={openModal}
         >
-          <span className="text-white font-medium tracking-wider text-sm">PLAY</span>
+          <span className="text-white font-medium tracking-wider text-xs sm:text-sm">PLAY</span>
         </div>
       </div>
 
