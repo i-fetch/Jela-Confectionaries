@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React from "react";
 import PageHeader from '@/public/page-header-bg.jpg';
 import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
@@ -6,9 +7,11 @@ import Footers from '@/components/Footers/Footers';
 
 
 export default function page() {
+
+  
   return (
     <div>
-      <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[28vh] overflow-hidden"
+      <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
         style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-70 z-10" />
@@ -20,6 +23,7 @@ export default function page() {
         </div>
 
       </header>
+     
       <ReserveTable />
       <Footers />
     
@@ -27,5 +31,7 @@ export default function page() {
     </div>
   )
 }
+
+
 
 
