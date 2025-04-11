@@ -17,7 +17,7 @@ const DailyOffers = () => {
       <div className="relative w-full md:w-1/2 flex justify-center items-center z-10 sm:h-44">
         <Image src={BurgerImage} alt="Delicious Burger" className="w-[260px] md:w-[490px] z-10" />
 
-        <div className="absolute bottom-[-20px] right-2 sm:right-4 bg-[#b2a98f] text-white p-3 sm:p-4 md:p-6 rounded-3xl w-[170px] sm:w-[190px] md:w-[260px] z-20 shadow-lg h-auto md:h-[220px]">
+        <div className="absolute bottom-[-20px] md:bottom-[-120px]  right-2 sm:right-4 bg-[#b2a98f] text-white p-3 sm:p-4 md:p-6 rounded-3xl w-[170px] sm:w-[190px] md:w-[220px] z-20 shadow-lg h-auto md:h-[220px]">
           <h5 className="text-lg md:text-xl font-bold">Delicious Burger</h5>
           <span className="text-yellow-400 text-base md:text-lg mb-2" aria-label="Rating: 5 stars">★★★★★</span>
           <ul className="text-sm md:text-base space-y-2" aria-label="Burger Ingredients">
