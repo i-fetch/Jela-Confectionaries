@@ -3,6 +3,7 @@ import PageHeader from '@/public/page-header-bg.jpg';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import TestimonialSlider from '@/components/Testimonials/Testimonials';
 import Footers from '@/components/Footers/Footers';
+import ServiceSection from '@/components/ServiceSection/ServiceSection';
 
 
 export default function page() {
@@ -20,6 +21,7 @@ export default function page() {
         </div>
 
       </header>
+      <ServiceSection />
       <TestimonialSlider />
       <ReserveTable />
       <Footers />
