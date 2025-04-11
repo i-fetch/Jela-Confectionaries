@@ -86,7 +86,7 @@ const TestimonialSlider = () => {
 
   return (
     <div
-      className="relative h-screen overflow-hidden flex items-center justify-center bg-fixed bg-center bg-cover"
+      className="relative h-screen overflow-hidden flex items-center justify-center bg-fixed bg-center bg-cover bg-black"
       style={{ backgroundImage: "url('/testimonials-bg.jpg')" }}
     >
       <div className="absolute inset- bg-opacity-70 z-0" />
