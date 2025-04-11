@@ -18,8 +18,8 @@ export default function Home() {
       <DailyOffers /> 
       <OurMenu />
       <MainDish />
-      <OurIngredient />
       <OurVideo />
+      <OurIngredient />
       <TestimonialSlider/>
       <ReserveTable />
       <Footers />
