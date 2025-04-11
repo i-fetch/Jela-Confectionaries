@@ -10,7 +10,7 @@ const Footers = () => {
           <div className="text-sm text-[#f7dd9b] space-y-1">
             <p className="flex items-start gap-2">
               <FaMapMarkerAlt className="w-4 h-4 text-[#cd9d22]" />
-              4517 Unizik, Anambra 39495
+               Asaba, Delta State
             </p>
             <p className="flex items-center gap-2">
               <FaPhone className="w-4 h-4 text-[#cd9d22]" />

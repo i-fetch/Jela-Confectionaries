@@ -27,7 +27,6 @@ export default function page() {
       <OurApproach />
       <DailyOffers />
       <FaQ/>
-
       <ReserveTable />
       <Footers />
     
