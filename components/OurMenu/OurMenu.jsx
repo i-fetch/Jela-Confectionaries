@@ -199,7 +199,7 @@ const OurMenu = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 px-16 md:px-4 gap-x-16 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-1 md:px-4 gap-x-16 gap-y-12">
           {menuData[activeTab]?.map((item) => (
             <div key={item.id} className="flex gap-6">
               <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">

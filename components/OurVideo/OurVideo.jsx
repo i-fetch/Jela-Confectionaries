@@ -7,31 +7,35 @@ const OurVideo = () => {
 
   const openModal = () => {
     setIsModalOpen(true)
-    document.body.style.overflow = "hidden" // Prevent scrolling when modal is open
+    document.body.style.overflow = "hidden"
   }
 
   const closeModal = () => {
     setIsModalOpen(false)
-    document.body.style.overflow = "auto" // Re-enable scrolling
+    document.body.style.overflow = "auto"
   }
 
   return (
     <>
       {/* Background Video */}
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full aspect-video overflow-hidden">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="/spicyhunt-intro-bg-video.mp4"
           autoPlay
           muted
           loop
+          playsInline
         >
           Your browser does not support the video tag.
         </video>
 
         {/* Play Button */}
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white bg-black/30 backdrop-blur-sm flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-black/50"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+          w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white bg-black/30 
+          backdrop-blur-sm flex items-center justify-center cursor-pointer 
+          transition-all duration-300 hover:scale-110 hover:bg-black/50"
           onClick={openModal}
         >
           <span className="text-white font-medium tracking-wider text-xs sm:text-sm">PLAY</span>
