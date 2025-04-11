@@ -16,8 +16,6 @@ const JelaCafeMap = () => {
 
     // Load Google Maps script
     const loadGoogleMapsScript = () => {
-      // For development, we can use the map without an API key
-      // This will show a development watermark but will work for testing
       const googleMapsScript = document.createElement("script")
       googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=places&v=weekly`
       googleMapsScript.async = true
@@ -41,7 +39,7 @@ const JelaCafeMap = () => {
         // Create map instance
         const map = new window.google.maps.Map(mapRef.current, {
           center: nigeriaCoordinates,
-          zoom: 6, // Zoomed out to show the entire country
+          zoom: 6,
           mapTypeId: "roadmap",
           mapTypeControl: true,
           mapTypeControlOptions: {
@@ -75,7 +73,7 @@ const JelaCafeMap = () => {
 
         // Create markers for each landmark
         landmarks.forEach((landmark) => {
-          const marker = new window.google.maps.Marker({
+          new window.google.maps.Marker({
             position: landmark.position,
             map: map,
             title: landmark.title,
@@ -119,7 +117,7 @@ const JelaCafeMap = () => {
               Map data ©2023 Google | Terms | Report a map error
             </div>
 
-            {/* Search box placeholder (for visual matching) */}
+            {/* Search box placeholder */}
             <div className="absolute top-4 left-4 bg-white rounded-md shadow-md w-64 z-10">
               <div className="flex items-center p-2">
                 <div className="flex-shrink-0 mr-2">
@@ -145,32 +143,6 @@ const JelaCafeMap = () => {
                   readOnly
                 />
               </div>
-            </div>
-
-            {/* Zoom controls */}
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-md shadow-md z-10">
-              <button className="p-2 hover:bg-gray-100 block w-full border-b border-gray-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mx-auto text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
-              </button>
-              <button className="p-2 hover:bg-gray-100 block w-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mx-auto text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-                </svg>
-              </button>
             </div>
           </>
         )}
