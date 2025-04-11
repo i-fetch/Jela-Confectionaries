@@ -7,6 +7,7 @@ import Image from 'next/image';
 import pesin from '@/public/happy-customer-img-1.jpg';
 import pesin1 from '@/public/happy-customer-img-2.jpg';
 import pesin2 from '@/public/happy-customer-img-3.jpg';
+import { Dot } from 'lucide-react';
 
 const testimonials = [
   {
@@ -85,28 +86,26 @@ const TestimonialSlider = () => {
   );
 
   return (
-    <div
-      className="relative h-screen overflow-hidden flex items-center justify-center bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/testimonials-bg.jpg')" }}
-    >
+    <div className="relative h-screen overflow-hidden flex flex-col items-center justify-center bg-fixed bg-center bg-cover"
+      style={{ backgroundImage: "url('/testimonials-bg.jpg')" }}>
       <div className="absolute inset- bg-opacity-70 z-0" />
 
-      <div
-        ref={sliderRef}
-        className="keen-slider max-w-5xl w-full text-center text-white px-4 z-10"
-      >
+      <div className='text-center pb-5'>
+        <h3 className="uppercase flex items-center justify-center text-white/60 text-sm font-medium mb-4 animate-fadeInUp">
+          <Dot className="relative -translate-x-2" /> <span>Our Testimonial</span>
+        </h3>
+        <h2 className="text-2xl md:text-4xl text-gray-300 font-bold mb-6">
+          REAL STORIES OF MEMORABLE <br className='hidden lg:block' />
+          <span className="text-[#cd9d22]">MEALS AND EXPERIENCES</span>
+        </h2>
+      </div>
+
+      <div ref={sliderRef} className="keen-slider max-w-5xl w-full text-center text-white px-2 z-10">
+
+
         {testimonials.map((t, i) => (
-          <div
-            key={i}
-            className="keen-slider__slide flex flex-col items-center justify-center px-4"
-          >
-            <div className="uppercase text-sm text-[#d6cba1] mb-2">
-              Our Testimonials
-            </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">
-              REAL STORIES OF MEMORABLE <br />
-              <span className="text-[#d6cba1]">MEALS AND EXPERIENCES</span>
-            </h2>
+          <div key={i}
+            className="keen-slider__slide flex flex-col items-center justify-center pr-5">
 
             <p className="text-lg md:text-xl font-medium leading-relaxed mb-6 max-w-xl">
               “{t.quote}”
@@ -131,13 +130,13 @@ const TestimonialSlider = () => {
         <>
           <button
             onClick={() => instanceRef.current.prev()}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-2 rounded-full text-lg"
+            className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-2 rounded-full text-lg"
           >
             &#8592;
           </button>
           <button
             onClick={() => instanceRef.current.next()}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-2 rounded-full text-lg"
+            className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-2 rounded-full text-lg"
           >
             &#8594;
           </button>
@@ -150,9 +149,8 @@ const TestimonialSlider = () => {
             <button
               key={idx}
               onClick={() => instanceRef.current.moveToIdx(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === idx ? 'bg-[#d6cba1]' : 'bg-white opacity-40'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === idx ? 'bg-[#d6cba1]' : 'bg-white opacity-40'
+                }`}
             />
           ))}
         </div>
