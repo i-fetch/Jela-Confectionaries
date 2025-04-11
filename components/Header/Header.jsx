@@ -13,7 +13,7 @@ const Header = () => {
       style={{ backgroundImage: `url(${HeroBg?.src || ''})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 z-0" />
+      <div className="absolute inset-0 bg-black opacity-70 z-10" />
 
       {/* Content Container */}
       <div className="relative translate-y-40 md:translate-y-28 z-10 flex flex-col items-center justify-center h-full text-white px-4 md:pb-20">
@@ -50,7 +50,7 @@ const Header = () => {
           </div>
 
           {/* Section Image */}
-          <div className="relative flex items-center justify-center">
+          <div className="mb-36 relative flex items-center justify-center">
             {/* Main Image */}
             <div className="relative w-[240px] h-[300px] md:w-[440px] md:h-[600px] rounded-full overflow-hidden  shadow-lg animate-fadeInUp z-10">
               <Image

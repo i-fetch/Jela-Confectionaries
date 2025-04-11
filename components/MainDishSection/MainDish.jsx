@@ -53,7 +53,7 @@ const MainDish = () => {
           <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
             SATISFY YOUR CRAVINGS WITH
             <br className="" />
-            OUR <span className="text-[#a3a378]">SIGNATURE MAINS</span>
+            OUR <span className="text-[#cd9d22]">SIGNATURE MAINS</span>
           </h2>
         </div>
 

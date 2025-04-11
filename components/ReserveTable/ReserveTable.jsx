@@ -33,7 +33,7 @@ const ReserveTable = () => {
           <p className="text-xs tracking-wide text-[#b1b19e] uppercase mb-2">Reserve a Table</p>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-snug">
             Reserve Now Your Table <br />
-            And <span className="text-[#c2b47c]">Enjoy Dining Experience.</span>
+            And <span className="text-[#cd9d22]">Enjoy Dining Experience.</span>
           </h2>
 
           <div className="mt-8">
@@ -131,7 +131,7 @@ const ReserveTable = () => {
             </div>
           </div>
 
-          <button className="mt-4 bg-[#c2b47c] text-white py-2 px-6 rounded-md font-semibold">
+          <button className="mt-4 bg-[#cd9d22] text-white py-2 px-6 rounded-md font-semibold">
             Reserve Now
           </button>
         </div>

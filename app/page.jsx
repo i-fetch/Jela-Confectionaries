@@ -7,6 +7,7 @@ import OurIngredient from "@/components/OurIngredient/OurIngredient";
 import OurMenu from "@/components/OurMenu/OurMenu";
 import OurVideo from "@/components/OurVideo/OurVideo";
 import ReserveTable from "@/components/ReserveTable/ReserveTable";
+import TestimonialSlider from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,12 +15,12 @@ export default function Home() {
     <main>
       <Header />
       <AboutSection />
-      <DailyOffers />
-      
+      <DailyOffers /> 
       <OurMenu />
       <MainDish />
-      <OurVideo />
+      {/* <OurVideo /> */}
       <OurIngredient />
+      <TestimonialSlider/>
       <ReserveTable />
       <Footers />
 

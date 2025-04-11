@@ -21,20 +21,20 @@ const AboutSection = () => {
               <Dot className="relative -translate-x-2" /> <span>About Us</span>
             </h3>
             <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
-              Our Commitment to Authenticity & <span className="text-[#a6a182]">Excellence</span>
+              Our Commitment to Authenticity & <span className="text-[#cd9d22]">Excellence</span>
             </h2>
             <p className="text-base text-white md:text-lg mb-8 animate-fadeInUp">
               Every dish we create is a celebration of connection, crafted with passion and inspired by diverse flavors. Join us in an inviting space where every bite sparks joy and every moment becomes a cherished memory.
             </p>
             <ul className="mb-8">
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-white">Seasonal & locally sourced ingredients</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Seasonal & locally sourced ingredients</span>
               </li>
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-white">Vegetarian & dietary-friendly options</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Vegetarian & dietary-friendly options</span>
               </li>
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-white">Exquisite pairings & unique flavors</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Exquisite pairings & unique flavors</span>
               </li>
             </ul>
 
@@ -96,7 +96,7 @@ const AboutSection = () => {
       </div>
 
       {/* Grid Container */}
-      <div className="mt-5 container max-w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-8">
+      <div className="mt-5 container max-w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-8">
         <div className="flex space-x-4">
           <Image src={AboutDetail1} alt="Premium Dining Icon" className="w-15 h-15 lg:w-16 lg:h-16" />
           <div>

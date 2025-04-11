@@ -20,7 +20,7 @@ const Navbar = ({
   menu = [
     { title: "Home", url: "/" },
     { title: "About", url: "/about" },
-    { title: "Service", url: "/service" },
+    { title: "Service", url: "/services" },
     { title: "Menu", url: "/menu" },
     { title: "Contact", url: "/contact" },
   ],
