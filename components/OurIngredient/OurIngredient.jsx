@@ -20,7 +20,7 @@ const OurIngredient = () => {
             {/* Main heading */}
             <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
               CRAFTING DISHES WITH <br className="block lg:hidden" />
-              <span className="text-[#a6a182]">FRESHEST FLAVORS</span>
+              <span className="text-[#cd9d22]">FRESHEST FLAVORS</span>
             </h2>
 
             {/* Description */}
@@ -36,19 +36,19 @@ const OurIngredient = () => {
             <div className="grid grid-cols-3 gap-4 mb-10">
               <div className="text-center">
                 <div className="flex justify-center mb-3">
-                  <Crown className="w-8 h-8 text-[#a6a182]" />
+                  <Crown className="w-8 h-8 text-[#cd9d22]" />
                 </div>
                 <div className="font-medium text-base lg:text-sm">Best Qualities</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
-                  <Coffee className="w-8 h-8 text-[#a6a182]" />
+                  <Coffee className="w-8 h-8 text-[#cd9d22]" />
                 </div>
                 <div className="font-medium text-base lg:text-sm">Discount System</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-3">
-                  <Users className="w-8 h-8 text-[#a6a182]" />
+                  <Users className="w-8 h-8 text-[#cd9d22]" />
                 </div>
                 <div className="font-medium text-base lg:text-sm">First Delivery</div>
               </div>
@@ -57,7 +57,7 @@ const OurIngredient = () => {
             {/* CTA Button */}
             <Link
               href="/booktable"
-              className="bg-[#a6a182] w-fit mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors"
+              className="bg-[#cd9d22] w-fit mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors"
             >
               Book Table <ArrowRight className="w-4 h-4" />
             </Link>
@@ -109,7 +109,7 @@ const OurIngredient = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
               <div className="p-3 rounded-full bg-black border border-gray-800">
-                <ChefHat className="w-6 h-6 text-[#a6a182]" />
+                <ChefHat className="w-6 h-6 text-[#cd9d22]" />
               </div>
               <div className="text-center lg:text-left">
                 <p className="text-white text-3xl font-bold">309</p>
@@ -119,7 +119,7 @@ const OurIngredient = () => {
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
               <div className="p-3 rounded-full bg-black border border-gray-800">
-                <Coffee className="w-6 h-6 text-[#a6a182]" />
+                <Coffee className="w-6 h-6 text-[#cd9d22]" />
               </div>
               <div className="text-center lg:text-left">
                 <p className="text-white text-3xl font-bold">453</p>
@@ -129,7 +129,7 @@ const OurIngredient = () => {
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
               <div className="p-3 rounded-full bg-black border border-gray-800">
-                <Crown className="w-6 h-6 text-[#a6a182]" />
+                <Crown className="w-6 h-6 text-[#cd9d22]" />
               </div>
               <div className="text-center lg:text-left">
                 <p className="text-white text-3xl font-bold">25+</p>
@@ -139,7 +139,7 @@ const OurIngredient = () => {
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
               <div className="p-3 rounded-full bg-black border border-gray-800">
-                <Users className="w-6 h-6 text-[#a6a182]" />
+                <Users className="w-6 h-6 text-[#cd9d22]" />
               </div>
               <div className="text-center lg:text-left">
                 <p className="text-white text-3xl font-bold">300+</p>

@@ -21,7 +21,7 @@ const AboutSection = () => {
               <Dot className="relative -translate-x-2" /> <span>About Us</span>
             </h3>
             <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
-              Our Commitment to Authenticity & <span className="text-[#a6a182]">Excellence</span>
+              Our Commitment to Authenticity & <span className="text-[#cd9d22]">Excellence</span>
             </h2>
             <p className="text-base text-white md:text-lg mb-8 animate-fadeInUp">
               Every dish we create is a celebration of connection, crafted with passion and inspired by diverse flavors. Join us in an inviting space where every bite sparks joy and every moment becomes a cherished memory.

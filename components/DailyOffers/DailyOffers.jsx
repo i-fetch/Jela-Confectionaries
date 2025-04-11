@@ -37,8 +37,8 @@ const DailyOffers = () => {
           <Dot className="relative -translate-x-2" /> <span>OUR DAILY OFFERS</span>
         </h3>
         <h2 className="uppercase text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
-          TASTE THE SAVINGS WITH OUR <br className='hidden md:block' />
-          <span className="text-[#b2a98f]">DAILY SPECIALS</span>
+          TASTE THE SAVINGS WITH OUR <br className='hidden lg:block' />
+          <span className="text-[#cd9d22]">DAILY SPECIALS</span>
         </h2>
         <p className="text-base text-white md:text-lg mb-8 animate-fadeInUp">
           Every day is an opportunity to enjoy your favorites at a discounted price. Explore our daily rotating specials and indulge in flavorful meals at a fraction of the cost.

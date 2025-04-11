@@ -177,7 +177,7 @@ const OurMenu = () => {
           <Dot className="relative -translate-x-2" /> <span>From Our Menu</span>
         </h3>
         <h5 className="uppercase text-center w-3/5 md:1/5 mx-auto text-white text-2xl md:text-3xl font-bold mb-6 animate-fadeInUp">
-          All inspired by the love joy of <br className="hidden md:block" />  <span className="text-[#a6a182]"> sharing it with others.</span>
+          All inspired by the love joy of <br className="hidden lg:block" />  <span className="text-[#cd9d22]"> sharing it with others.</span>
         </h5>
 
         {/* Tab Navigation */}
@@ -187,7 +187,7 @@ const OurMenu = () => {
               <React.Fragment key={tab.id}>
                 <span
                   onClick={() => setActiveTab(tab.id)}
-                  className={`cursor-pointer text-xs md:text-lg font-semibold text-center  transition-colors ${activeTab === tab.id ? "text-white" : "text-[#a6a182]"
+                  className={`cursor-pointer text-xs md:text-lg font-semibold text-center  transition-colors ${activeTab === tab.id ? "text-white" : "text-[#aa935b]"
                     }`}
                 >
                   {tab.label}
