@@ -9,7 +9,7 @@ import ServiceSection from '@/components/ServiceSection/ServiceSection';
 export default function page() {
   return (
     <div>
-      <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[28vh] overflow-hidden"
+      <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
         style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-70 z-10" />
