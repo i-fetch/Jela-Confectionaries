@@ -18,7 +18,7 @@ export default function Home() {
       <DailyOffers /> 
       <OurMenu />
       <MainDish />
-      {/* <OurVideo /> */}
+      <OurVideo />
       <OurIngredient />
       <TestimonialSlider/>
       <ReserveTable />

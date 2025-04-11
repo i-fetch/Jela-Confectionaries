@@ -50,7 +50,7 @@ const Header = () => {
           </div>
 
           {/* Section Image */}
-          <div className="relative flex items-center justify-center">
+          <div className="mb-36 relative flex items-center justify-center">
             {/* Main Image */}
             <div className="relative w-[240px] h-[300px] md:w-[440px] md:h-[600px] rounded-full overflow-hidden  shadow-lg animate-fadeInUp z-10">
               <Image

@@ -28,13 +28,13 @@ const AboutSection = () => {
             </p>
             <ul className="mb-8">
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-white">Seasonal & locally sourced ingredients</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Seasonal & locally sourced ingredients</span>
               </li>
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-white">Vegetarian & dietary-friendly options</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Vegetarian & dietary-friendly options</span>
               </li>
               <li className="flex items-center space-x-2 mb-2 animate-fadeInUp">
-                <CircleCheck color="#a6a182" /> <span className="text-white">Exquisite pairings & unique flavors</span>
+                <CircleCheck color="#a6a182" /> <span className="text-sm md:text-lg text-white">Exquisite pairings & unique flavors</span>
               </li>
             </ul>
 
@@ -96,7 +96,7 @@ const AboutSection = () => {
       </div>
 
       {/* Grid Container */}
-      <div className="mt-5 container max-w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-8">
+      <div className="mt-5 container max-w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-8">
         <div className="flex space-x-4">
           <Image src={AboutDetail1} alt="Premium Dining Icon" className="w-15 h-15 lg:w-16 lg:h-16" />
           <div>

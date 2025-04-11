@@ -182,7 +182,7 @@ const OurMenu = () => {
 
         {/* Tab Navigation */}
         <div className="flex items-center justify-center mb-16">
-          <div className="bg-[#222222] border min-w-1/2 md:min-w-2/5 mx-auto rounded-full px-6 py-4 flex items-center justify-center ">
+          <div className="bg-[#222222] min-w-1/2 md:min-w-2/5 mx-auto rounded-full px-6 py-4 flex items-center justify-center ">
             {tabs.map((tab, index) => (
               <React.Fragment key={tab.id}>
                 <span
@@ -199,7 +199,7 @@ const OurMenu = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 px-16 md:px-4 gap-x-16 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-1 md:px-4 lg:px-5 gap-x-16 gap-y-12">
           {menuData[activeTab]?.map((item) => (
             <div key={item.id} className="flex gap-6">
               <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
