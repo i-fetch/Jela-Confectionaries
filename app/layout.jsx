@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Jela's Confectionary",
+  title: "Jela's Café",
   description: "Experience the art of fine confectionery with handcrafted treats, delightful desserts, and exquisite flavors made with love and precision.",
 };
 
