@@ -1,7 +1,5 @@
 import React from 'react';
 import PageHeader from '@/public/page-header-bg.jpg';
-import AboutSection from '@/components/AboutSection/AboutSection';
-import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
 
@@ -22,7 +20,7 @@ export default function page() {
 
       </header>
 
-    
+
       <ReserveTable />
       <Footers />
     
