@@ -21,8 +21,8 @@ export default function page() {
         </div>
 
       </header>
-      <AboutSection />
-      <DailyOffers />
+
+    
       <ReserveTable />
       <Footers />
     
