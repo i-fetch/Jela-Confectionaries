@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import MainDish from "@/components/MainDishSection/MainDish";
 import OurIngredient from "@/components/OurIngredient/OurIngredient";
 import OurMenu from "@/components/OurMenu/OurMenu";
+import OurVideo from "@/components/OurVideo/OurVideo";
 import ReserveTable from "@/components/ReserveTable/ReserveTable";
 import Image from "next/image";
 
@@ -17,9 +18,10 @@ export default function Home() {
       
       <OurMenu />
       <MainDish />
+      <OurVideo />
       <OurIngredient />
-      <ReserveTable/>
-      <Footers/>
+      <ReserveTable />
+      <Footers />
 
     </main>
   );
