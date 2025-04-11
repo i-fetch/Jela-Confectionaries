@@ -7,7 +7,7 @@ import OurIngredient from "@/components/OurIngredient/OurIngredient";
 import OurMenu from "@/components/OurMenu/OurMenu";
 import OurVideo from "@/components/OurVideo/OurVideo";
 import ReserveTable from "@/components/ReserveTable/ReserveTable";
-import Testimonials from "@/components/Testimonials/Testimonials";
+import TestimonialSlider from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <MainDish />
       <OurVideo />
       <OurIngredient />
-      <Testimonials/>
+      <TestimonialSlider/>
       <ReserveTable />
       <Footers />
 
