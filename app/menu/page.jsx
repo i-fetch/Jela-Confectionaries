@@ -5,7 +5,7 @@ import Footers from '@/components/Footers/Footers';
 import SpecialMenu from '@/app/menu/_component/Menu';
 import StartersMenu from './_component/StartersMenu';
 import Beverages from './_component/Beverages';
-import { Dessert } from 'lucide-react';
+import Dessert from './_component/Dessert';
 
 
 export default function page() {
@@ -27,7 +27,6 @@ export default function page() {
       <StartersMenu />
       <Beverages />
       <Dessert />
-
       <ReserveTable />
 
       <Footers />
