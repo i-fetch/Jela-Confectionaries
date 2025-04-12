@@ -1,5 +1,9 @@
-const bookingSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+const bookingSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     name: String,
     phone: String,
     email: String,
@@ -7,8 +11,17 @@ const bookingSchema = new mongoose.Schema({
     date: Date,
     time: String,
     notes: String,
-    status: { type: String, enum: ['pending', 'confirmed', 'cancelled'], default: 'pending' }
-  }, { timestamps: true });
-  
-  export default mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
-  
+    status: {
+      type: String,
+      enum: ["pending", "confirmed", "cancelled"],
+      default: "pending",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const Booking =
+  mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
+export default Booking;
