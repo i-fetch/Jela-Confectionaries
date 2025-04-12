@@ -2,8 +2,9 @@ import React from 'react';
 import PageHeader from '@/public/page-header-bg.jpg';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
-import SpecialMenu from '@/app/menu/Menu';
-import StartersMenu from './StartersMenu';
+import SpecialMenu from '@/app/menu/_component/Menu';
+import StartersMenu from './_component/StartersMenu';
+import Beverages from './_component/Beverages';
 
 
 export default function page() {
@@ -23,6 +24,7 @@ export default function page() {
       </header>
       <SpecialMenu />
       <StartersMenu/>
+      <Beverages/>
 
       <ReserveTable />
       
