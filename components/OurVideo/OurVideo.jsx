@@ -3,6 +3,7 @@ import { useState } from "react"
 import { X } from "lucide-react"
 
 const OurVideo = () => {
+  const [isVideoError, setIsVideoError] = useState(false) // State to track video playback error
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -19,18 +20,27 @@ const OurVideo = () => {
     <>
       {/* Background Video */}
       <div className="relative w-full aspect-video overflow-hidden">
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          src="/spicyhunt-intro-bg-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          Your browser does not support the video tag.
-        </video>
+        {!isVideoError ? (
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            src="/spicyhunt-intro-bg-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onError={() => setIsVideoError(true)} // Set error state if video fails to load
+          >
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <img
+            src="/Playbackimg.JPG"
+            alt="Fallback for video"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        )}
 
-        {/* Play Button */}
+        {/* Play or Pause Button */}
         <div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
           w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white bg-black/30 
@@ -38,7 +48,9 @@ const OurVideo = () => {
           transition-all duration-300 hover:scale-110 hover:bg-black/50"
           onClick={openModal}
         >
-          <span className="text-white font-medium tracking-wider text-xs sm:text-sm">PLAY</span>
+          <span className="text-white font-medium tracking-wider text-xs sm:text-sm">
+            {isVideoError ? "PAUSE" : "PLAY"}
+          </span>
         </div>
       </div>
 
