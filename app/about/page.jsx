@@ -5,6 +5,8 @@ import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
 import OurApproach from '@/components/OurApproach/OurApproach';
+import AlwaysQuality from '@/components/AlwaysQuality/AlwaysQuality';
+import OurVideo from '@/components/OurVideo/OurVideo';
 import FaQ from '@/components/FaQ/FaQ';
 
 
@@ -26,7 +28,6 @@ export default function page() {
       <AboutSection />
       <OurApproach />
       <DailyOffers />
-      <FaQ/>
       <ReserveTable />
       <Footers />
     

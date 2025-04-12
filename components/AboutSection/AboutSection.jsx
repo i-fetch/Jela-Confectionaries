@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AboutUsImg from '@/public/hero-bg.jpg';
 import ExperienceBadge from '@/public/icon-company-experience.svg';
-import IllustrativeImg from '@/public/hero-img.jpg';
+import IllustrativeImg from '@/public/about-img-3.jpg';
 import AboutDetail1 from '@/public/icon-about-detail-1.svg';
 import AboutDetail2 from '@/public/icon-about-detail-2.svg';
 import AboutDetail3 from '@/public/icon-about-detail-3.svg';
