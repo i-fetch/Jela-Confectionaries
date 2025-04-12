@@ -1,27 +1,27 @@
 import React from 'react';
 
-const StartersMenu = () => {
+const Dessert = () => {
   const menuItems = [
     {
-      title: 'Spring Rolls',
+      title: 'Ice Coffee',
       description: 'Crispy rolls filled with vegetables, served with dipping sauce.',
       price: '$16.00',
       img: '/starters-img-1.png',
     },
     {
-      title: 'Aloo Tikki',
+      title: 'Mango lassi',
       description: 'Golden potato patties served with chutney.',
       price: '$12.00',
       img: '/starters-img-2.png',
     },
     {
-      title: 'Paneer Tikka',
+      title: 'Lemonade',
       description: 'Grilled paneer cubes, spiced to perfection.',
       price: '$26.00',
       img: '/starters-img-3.png',
     },
     {
-      title: 'Hara Kebab',
+      title: 'Coconut Water',
       description: 'Green vegetable and herb kebabs, grilled to perfection.',
       price: '$20.00',
       img: '/starters-img-4.png',
@@ -32,19 +32,14 @@ const StartersMenu = () => {
       price: '$10.00',
       img: '/starters-img-5.png',
     },
-    {
-      title: 'Veg Pakoras',
-      description: 'Crispy vegetable fritters with a dip.',
-      price: '$22.00',
-      img: '/starters-img-6.png',
-    },
+    
   ];
 
   return (
-    <section id='starters' className="bg-[#1a1c1a] text-white py-16 px-6 md:px-20 ">
+    <section id='dessert' className="bg-black text-white py-16 px-6 md:px-20 ">
       <div className="mb-10">
         <p className="text-xs text-yellow-500 tracking-widest mb-2">• MENU & PRICING</p>
-        <h2 className="text-3xl font-bold">STARTERS</h2>
+        <h2 className="text-3xl font-bold">Des</h2>
       </div>
       <div className="grid md:grid-cols-2 gap-10">
         {menuItems.map((item, idx) => (
@@ -68,4 +63,4 @@ const StartersMenu = () => {
   );
 };
 
-export default StartersMenu;
+export default Dessert;
