@@ -9,8 +9,7 @@ import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
 
 
 export default function page() {
-
-
+  
   return (
     <div>
       <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
