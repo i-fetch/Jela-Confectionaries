@@ -41,7 +41,7 @@ const StartersMenu = () => {
   ];
 
   return (
-    <section className="bg-[#1a1c1a] text-white py-16 px-6 md:px-20 ">
+    <section id='starters' className="bg-[#1a1c1a] text-white py-16 px-6 md:px-20 ">
       <div className="mb-10">
         <p className="text-xs text-yellow-500 tracking-widest mb-2">• MENU & PRICING</p>
         <h2 className="text-3xl font-bold">STARTERS</h2>
