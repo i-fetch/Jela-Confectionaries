@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SpecialMenu = () => {
+const Menu = () => {
   const menuItems = [
     {
       title: 'Starters',
@@ -17,7 +17,7 @@ const SpecialMenu = () => {
   ];
 
   return (
-    <section className="bg-[#0e100f] text-white py-16 text-center">
+    <section className="bg-[#0e100f] text-white py-16 text-center ">
       <div className="max-w-5xl mx-auto px-4">
         <p className="text-xs text-yellow-500 mb-1 tracking-widest">• TASTE THE BEST THAT SURPRISE YOU</p>
         <h2 className="text-3xl font-bold mb-2">
@@ -47,4 +47,4 @@ const SpecialMenu = () => {
   );
 };
 
-export default SpecialMenu;
+export default Menu;
