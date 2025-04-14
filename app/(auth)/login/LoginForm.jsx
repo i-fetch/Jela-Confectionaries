@@ -3,12 +3,18 @@ import React from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+import { useToast } from "@/hooks/use-toast";
 
 const LoginForm = () => {
+  const { toast } = useToast();
+
   const router = useRouter();
 
   const handleSubmit = async (formData) => {
-    
     const email = formData.get("email");
     const password = formData.get("password");
 
@@ -17,8 +23,6 @@ const LoginForm = () => {
     }
 
     try {
-    
-      // Proceed with NextAuth signIn
       const result = await signIn("credentials", {
         redirect: false,
         email,
@@ -41,51 +45,59 @@ const LoginForm = () => {
         <h2 className="text-3xl font-bold text-white text-center mb-6">Welcome Back</h2>
         <p className="text-sm text-gray-400 text-center mb-8">Login to access our special menu</p>
         
-        <form action={async (formData) => {
-          'use client';
-          const result = await handleSubmit(formData);
-          if (result?.error) {
-            alert(result.error); // Replace with your toast notification
-          }
-          if (result?.success) {
-            router.push(result.redirectUrl);
-          }
-        }} className="space-y-5">
-          
-          <div>
-            <label className="text-sm text-gray-300">Email</label>
-            <input
+        <form 
+          action={async (formData) => {
+            const result = await handleSubmit(formData);
+            if (result?.error) {
+              toast({
+                variant: "destructive",
+                title: "Error",
+                description: "An error occurred. Please try again later.",
+              });
+              // alert(result.error); // Replace with your toast notification
+            }
+            if (result?.success) {
+              router.push(result.redirectUrl);
+            }
+          }} 
+          className="space-y-5"
+        >
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-gray-300">Email</Label>
+            <Input
               type="email"
+              id="email"
               name="email"
               required
-              className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
+              className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
           
-          <div>
-            <label className="text-sm text-gray-300">Password</label>
-            <input
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-gray-300">Password</Label>
+            <Input
               type="password"
+              id="password"
               name="password"
               required
-              className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
+              className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
           
-          <button
+          <Button
             type="submit"
-            className="w-full py-3 bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-lg transition duration-300"
+            className="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-lg"
           >
             Login
-          </button>
+          </Button>
         </form>
         
-        <p className="text-center text-sm text-gray-400 mt-6">
-          Don't have an account? 
-          <Link href="/register" className="text-yellow-500 hover:underline ml-1">
+        <div className="mt-6 text-center text-sm text-gray-400">
+          Don't have an account?{' '}
+          <Link href="/register" className="text-yellow-500 hover:underline">
             Sign up
           </Link>
-        </p>
+        </div>
       </div>
     </section>
   );
