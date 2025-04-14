@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LayoutWrapper from "./LayoutWrapper";
+import SessionProviderWrapper from "./SessionProviderWrapper";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/auth";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +21,21 @@ export const metadata = {
     "Experience the art of fine confectionery with handcrafted treats, delightful desserts, and exquisite flavors made with love and precision.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  // Fetch the session from the server
+  const session = await getServerSession(authOptions);
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <LayoutWrapper>{children}</LayoutWrapper>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        cz-shortcut-listen="true"
+        suppressHydrationWarning
+      >
+        <SessionProviderWrapper session={session}>
+          {children}
+        </SessionProviderWrapper>
+        <Toaster />
       </body>
     </html>
   );

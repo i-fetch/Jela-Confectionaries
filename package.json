@@ -26,14 +26,17 @@
     "mongoose": "^8.13.2",
     "next": "15.2.5",
     "next-auth": "^4.24.11",
+    "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-day-picker": "^9.6.5",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
     "tw-animate-css": "^1.2.5",
+    "uuid": "^11.1.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
