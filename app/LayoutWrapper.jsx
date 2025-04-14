@@ -6,12 +6,17 @@ import Navbar from "@/components/Navbar/Navbar";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
-  const [showNavbar, setShowNavbar] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+
 
   useEffect(() => {
-    const hiddenRoutes = ["/login", "/register"];
-    setShowNavbar(!hiddenRoutes.includes(pathname));
-  }, [pathname]);
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null; // or return a loader if needed
+
+  const hiddenRoutes = ["/login", "/register"];
+  const showNavbar = !hiddenRoutes.includes(pathname);
 
   return (
     <>
