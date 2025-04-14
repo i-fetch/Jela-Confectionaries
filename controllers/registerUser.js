@@ -1,12 +1,12 @@
 "use server";
 
-import { connectToDB } from "@/lib/connectDB";
 import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 import User from "@/models/User";
 import Wallet from "@/models/Wallet";
 import { sendMagicLink } from "@/lib/sendEmail";
 import Otp from "@/models/Otp";
+import { connectToDB } from "@/lib/ConnectDB";
 
 const verificationEmailTemplate = (verificationLink, otp) => {
   return `
