@@ -1,5 +1,5 @@
-import { registerUser } from '@/controllers/registerUser';
 import React from 'react';
+import { registerUser } from '@/controllers/registerUser';
 
 const RegisterForm = () => {
   const handleSubmit = async (formData) => {
