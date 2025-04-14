@@ -8,7 +8,6 @@ const LoginForm = () => {
   const router = useRouter();
 
   const handleSubmit = async (formData) => {
-    'use server';
     
     const email = formData.get("email");
     const password = formData.get("password");
