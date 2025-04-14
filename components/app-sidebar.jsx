@@ -2,20 +2,25 @@
 
 import * as React from "react"
 import {
-  BookOpen,
-  Bot,
+  ArrowDownToLine,
+  ChartNoAxesCombined,
+  CircleDollarSign,
   Command,
-  Frame,
+  CreditCard,
+  Gem,
+  HandCoins,
+  IdCard,
+  Landmark,
+  LayoutDashboard,
   LifeBuoy,
-  Map,
-  PieChart,
   Send,
-  Settings2,
-  SquareTerminal,
+  SquareMenu,
+  TvMinimal,
+  Users,
+  Wallet,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -28,97 +33,75 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
+
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
+   
     {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
+      title: "Dashboard",
+      icon: LayoutDashboard,
+      url: "/dashboard",
       isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
     },
     {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
+      title: "Make Deposit",
+      icon: ArrowDownToLine,
+      url: "/dashboard/deposit",
     },
     {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
+      title: "Deposit History",
+      icon: TvMinimal,
+      url: "/dashboard/desposit-history",
     },
     {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      title: "Investment",
+      icon: CircleDollarSign,
+      url: "/dashboard/investment",
+    },
+    {
+      title: "Investment History",
+      icon: ChartNoAxesCombined,
+      url: "/dashboard/investment-history",
+    },
+    {
+      title: "Withdraw Funds",
+      icon: HandCoins,
+      url: "/dashboard/withdraw",
+    },
+    {
+      title: "Withdraw History",
+      icon: SquareMenu,
+      url: "/dashboard/withdraw-history",
+    },
+    {
+      title: "Manage Assets",
+      icon: Gem,
+      url: "/dashboard/manage-assets",
+    },
+    {
+      title: "Manage Wallet", 
+      icon: Wallet,
+      url: "/dashboard/manage-wallet",
+    },
+    {
+      title: "Manage KYC",
+      icon: IdCard,
+      url: "/dashboard/kyc",
+    },
+    {
+      title: "Manage Accounts",
+      icon: Users,
+      url: "/dashboard/accounts",
+    },
+    {
+      title: "Manage Bank",
+      icon: Landmark,
+      url: "/dashboard/bank",
+    },
+    {
+      title: "Manage Cards",
+      icon: CreditCard,
+      url: "/dashboard/cards",
     },
   ],
   navSecondary: [
@@ -133,23 +116,7 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+
 }
 
 export function AppSidebar({
@@ -161,13 +128,13 @@ export function AppSidebar({
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <a href="/dashboard">
                 <div
-                  className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+                  className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
+                  <span className="truncate font-semibold">AstroInvest</span>
                   <span className="truncate text-xs">Enterprise</span>
                 </div>
               </a>
@@ -177,11 +144,10 @@ export function AppSidebar({
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser  />
       </SidebarFooter>
     </Sidebar>)
   );
