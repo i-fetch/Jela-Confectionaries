@@ -66,7 +66,7 @@ const RegistrationForm = () => {
           </button>
         </form>
         <p className="text-center text-sm text-gray-400 mt-6">
-          Already have an account? <a href="#" className="text-yellow-500 hover:underline">Login</a>
+          Already have an account? <a href="/login" className="text-yellow-500 hover:underline">Login</a>
         </p>
       </div>
     </section>
