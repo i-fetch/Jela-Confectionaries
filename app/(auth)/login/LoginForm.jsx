@@ -1,17 +1,67 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { Loader } from "lucide-react";
 
 const LoginForm = () => {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const { toast } = useToast();
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here (API call or validation)
-    console.log(formData);
+    setLoading(true);
+    
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    if (!email || !password) {
+      toast({
+        variant: "destructive",
+        title: "Validation Error",
+        description: "Both email and password are required",
+      });
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
+      });
+
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Login Failed",
+          description: "Invalid email or password",
+        });
+        return;
+      }
+
+      toast({
+        title: "Login Successful",
+        description: "Redirecting to your dashboard...",
+      });
+      router.push("/cafestore");
+    } catch (err) {
+      toast({
+        variant: "destructive",
+        title: "Login Error",
+        description: err.message || "An unexpected error occurred",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -19,39 +69,49 @@ const LoginForm = () => {
       <div className="bg-[#1a1c1a] w-full max-w-md p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-white text-center mb-6">Welcome Back</h2>
         <p className="text-sm text-gray-400 text-center mb-8">Login to access our special menu</p>
+        
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <label className="text-sm text-gray-300">Email</label>
-            <input
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-gray-300">Email</Label>
+            <Input
               type="email"
+              id="email"
               name="email"
               required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
+              disabled={loading}
+              className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
-          <div>
-            <label className="text-sm text-gray-300">Password</label>
-            <input
+          
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-gray-300">Password</Label>
+            <Input
               type="password"
+              id="password"
               name="password"
               required
-              value={formData.password}
-              onChange={handleChange}
-              className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
+              disabled={loading}
+              className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
-          <button
+          
+          <Button
             type="submit"
-            className="w-full py-3 bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-lg transition duration-300"
+            disabled={loading}
+            className="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-lg"
           >
-            Login
-          </button>
+            {loading ? (
+              <Loader className="animate-spin mr-2 h-4 w-4" />
+            ) : "Login"}
+          </Button>
         </form>
-        <p className="text-center text-sm text-gray-400 mt-6">
-          Don't have an account? <a href="register" className="text-yellow-500 hover:underline">Sign up</a>
-        </p>
+        
+        <div className="mt-6 text-center text-sm text-gray-400">
+          Don't have an account?{' '}
+          <Link href="/register" className="text-yellow-500 hover:underline">
+            Sign up
+          </Link>
+        </div>
       </div>
     </section>
   );
