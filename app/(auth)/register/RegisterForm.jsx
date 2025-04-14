@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { registerUser } from '@/controllers/registerUser';
 import { useRouter } from "next/navigation";
@@ -7,52 +7,54 @@ import { useToast } from "@/hooks/use-toast";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { Loader } from "lucide-react";
 
-
 const RegisterForm = () => {
-
   const { toast } = useToast();
   const router = useRouter();
-
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (formData) => {
-    'use server';
-
-    const username = formData.get('username');
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const confirmPassword = formData.get('confirmPassword');
-    const phone = formData.get('phone');
-
-    if (password !== confirmPassword) {
-      return { success: false, message: "Passwords do not match." };
-    }
-
     try {
+      setLoading(true);
+      const username = formData.get('username');
+      const email = formData.get('email');
+      const password = formData.get('password');
+      const confirmPassword = formData.get('confirmPassword');
+      const phone = formData.get('phone');
+
+      if (password !== confirmPassword) {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: "Passwords do not match.",
+        });
+        return;
+      }
+
       const response = await registerUser({ username, email, password, phone });
 
-
-      if (response.success) {
+      if (response?.success) {
         toast({
           title: "Registration successful!",
-          description: "you are now redirected to Login.",
+          description: "You are now redirected to login.",
         });
-        router.push('/cafestore');
+        router.push('/login');
       } else {
         toast({
           variant: "destructive",
           title: "Error",
-          description: response.message || "An error occurred while registering.",
+          description: response?.message || "An error occurred while registering.",
         });
       }
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "An error occurred. Please try again later.",
+        description: error.message || "An error occurred. Please try again later.",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,7 +64,15 @@ const RegisterForm = () => {
         <h2 className="text-3xl font-bold text-white text-center mb-6">Create an Account</h2>
         <p className="text-sm text-gray-400 text-center mb-8">Sign up to access our special menu</p>
 
-        <form action={handleSubmit} className="space-y-5">
+        <form 
+          action={handleSubmit} 
+          className="space-y-5"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            handleSubmit(formData);
+          }}
+        >
           <div className="space-y-2">
             <Label htmlFor="username" className="text-gray-300">Username</Label>
             <Input
@@ -120,10 +130,12 @@ const RegisterForm = () => {
 
           <Button
             type="submit"
-            disabled={loading} // Disable button while loading
+            disabled={loading}
             className="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-lg transition duration-300"
           >
-            {loading ? <Loader className='animate-spin' size={20} /> : "Register"}
+            {loading ? (
+              <Loader className="animate-spin mr-2" size={20} />
+            ) : "Register"}
           </Button>
         </form>
 

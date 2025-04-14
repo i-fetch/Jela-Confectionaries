@@ -1,25 +1,35 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { useToast } from "@/hooks/use-toast";
+import { Loader } from "lucide-react";
 
 const LoginForm = () => {
   const { toast } = useToast();
-
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (formData) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    
+    const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
 
     if (!email || !password) {
-      return { error: "Email and password are required" };
+      toast({
+        variant: "destructive",
+        title: "Validation Error",
+        description: "Both email and password are required",
+      });
+      setLoading(false);
+      return;
     }
 
     try {
@@ -30,12 +40,27 @@ const LoginForm = () => {
       });
 
       if (result?.error) {
-        return { error: "Invalid email or password" };
+        toast({
+          variant: "destructive",
+          title: "Login Failed",
+          description: "Invalid email or password",
+        });
+        return;
       }
 
-      return { success: true, redirectUrl: "/dashboard" };
+      toast({
+        title: "Login Successful",
+        description: "Redirecting to your dashboard...",
+      });
+      router.push("/cafestore");
     } catch (err) {
-      return { error: "An error occurred during login" };
+      toast({
+        variant: "destructive",
+        title: "Login Error",
+        description: err.message || "An unexpected error occurred",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -45,23 +70,7 @@ const LoginForm = () => {
         <h2 className="text-3xl font-bold text-white text-center mb-6">Welcome Back</h2>
         <p className="text-sm text-gray-400 text-center mb-8">Login to access our special menu</p>
         
-        <form 
-          action={async (formData) => {
-            const result = await handleSubmit(formData);
-            if (result?.error) {
-              toast({
-                variant: "destructive",
-                title: "Error",
-                description: "An error occurred. Please try again later.",
-              });
-              // alert(result.error); // Replace with your toast notification
-            }
-            if (result?.success) {
-              router.push(result.redirectUrl);
-            }
-          }} 
-          className="space-y-5"
-        >
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
             <Label htmlFor="email" className="text-gray-300">Email</Label>
             <Input
@@ -69,6 +78,7 @@ const LoginForm = () => {
               id="email"
               name="email"
               required
+              disabled={loading}
               className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
@@ -80,15 +90,19 @@ const LoginForm = () => {
               id="password"
               name="password"
               required
+              disabled={loading}
               className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
           
           <Button
             type="submit"
+            disabled={loading}
             className="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded-lg"
           >
-            Login
+            {loading ? (
+              <Loader className="animate-spin mr-2 h-4 w-4" />
+            ) : "Login"}
           </Button>
         </form>
         
