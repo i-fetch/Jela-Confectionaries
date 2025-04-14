@@ -1,24 +1,25 @@
+import { registerUser } from '@/controllers/registerUser';
 import React from 'react';
 
 const RegisterForm = () => {
   const handleSubmit = async (formData) => {
     'use server';
     
+    const username = formData.get('username');
     const email = formData.get('email');
     const password = formData.get('password');
     const confirmPassword = formData.get('confirmPassword');
+    const phone = formData.get('phone');
 
-    // Handle registration logic here (API call or validation)
     if (password !== confirmPassword) {
-      return { error: "Passwords do not match." };
+      return { success: false, message: "Passwords do not match." };
     }
 
     try {
-      // Handle registration success logic (e.g., redirect or success message)
-      const response = await registerUser({ email, password });
-      return { success: true, data: response };
+      const response = await registerUser({ username, email, password, phone });
+      return response;
     } catch (error) {
-      return { error: error.message };
+      return { success: false, message: error.message };
     }
   };
 
@@ -29,10 +30,28 @@ const RegisterForm = () => {
         <p className="text-sm text-gray-400 text-center mb-8">Sign up to access our special menu</p>
         <form action={handleSubmit} className="space-y-5">
           <div>
+            <label className="text-sm text-gray-300">Username</label>
+            <input
+              type="text"
+              name="username"
+              required
+              className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
+            />
+          </div>
+          <div>
             <label className="text-sm text-gray-300">Email</label>
             <input
               type="email"
               name="email"
+              required
+              className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
+            />
+          </div>
+          <div>
+            <label className="text-sm text-gray-300">Phone Number</label>
+            <input
+              type="tel"
+              name="phone"
               required
               className="w-full mt-1 p-3 bg-[#2b2e2b] text-white rounded-lg outline-none focus:ring-2 focus:ring-yellow-600"
             />
