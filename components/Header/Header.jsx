@@ -41,7 +41,7 @@ const Header = () => {
                 Book a Table
               </Link>
               <Link
-                href="#"
+                href="/login"
                 className="px-5 py-3 bg-[#a6a182] font-bold text-white rounded-4xl hover:bg-opacity-90 transition"
               >
                 Get Started

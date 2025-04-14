@@ -61,7 +61,7 @@ const Navbar = ({
               <Link href={auth.signup.url}>{auth.signup.title}</Link>
             </Button> */}
             <button size="sm" className="bg-[#a6a182] px-6 py-3 rounded-4xl text-black hover:bg-opacity-90">
-            <Link className="flex items-center  text-white space-x-1.5" href="/book-table"><span>Book a Table</span> <ArrowRight /></Link> 
+            <Link className="flex items-center  text-white space-x-1.5" href="/login"><span>Book a Table</span> <ArrowRight /></Link> 
             </button>
 
           </div>

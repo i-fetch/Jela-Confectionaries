@@ -23,6 +23,7 @@ export default function Home() {
       <TestimonialSlider/>
       <ReserveTable />
       <Footers />
+      
 
     </main>
   );
