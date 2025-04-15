@@ -1,11 +1,11 @@
 
 import React from "react";
 import PageHeader from '@/public/page-header-bg.jpg';
-import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
 import ContactUs from "@/components/ContactUs/ContactUs";
 import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
+import CafeMap from "@/components/JelaCafeMap/CafeMap";
 
 
 export default function page() {
@@ -25,7 +25,8 @@ export default function page() {
 
       </header>
       <ContactUs />
-      <JelaCafeMap />
+      {/* <JelaCafeMap /> */}
+      <CafeMap />
       <ReserveTable />
       <Footers />
 
