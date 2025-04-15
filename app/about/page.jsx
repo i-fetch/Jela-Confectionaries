@@ -8,11 +8,13 @@ import OurApproach from '@/components/OurApproach/OurApproach';
 import AlwaysQuality from '@/components/AlwaysQuality/AlwaysQuality';
 import OurVideo from '@/components/OurVideo/OurVideo';
 import FaQ from '@/components/FaQ/FaQ';
+import Navbar from '@/components/Navbar/Navbar';
 
 
 export default function page() {
   return (
     <div>
+      <Navbar />
       <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
         style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
         {/* Overlay */}

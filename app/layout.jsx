@@ -34,7 +34,7 @@ export default async function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <SessionProviderWrapper session={session}>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </SessionProviderWrapper>
         <Toaster />

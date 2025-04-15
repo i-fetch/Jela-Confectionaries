@@ -6,12 +6,14 @@ import Footers from '@/components/Footers/Footers';
 import ContactUs from "@/components/ContactUs/ContactUs";
 import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
 import CafeMap from "@/components/JelaCafeMap/CafeMap";
+import Navbar from "@/components/Navbar/Navbar";
 
 
 export default function page() {
   
   return (
     <div>
+      <Navbar />
       <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
         style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
         {/* Overlay */}

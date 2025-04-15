@@ -7,13 +7,13 @@ import StartersMenu from './_component/StartersMenu';
 import Beverages from './_component/Beverages';
 import Dessert from './_component/Dessert';
 import Menu2 from '@/components/Menu2/Menu2';
+import Navbar from '@/components/Navbar/Navbar';
 
 
 export default function page() {
   return (
     <div>
- 
-
+      <Navbar />
       <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
         style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
         {/* Overlay */}
@@ -31,7 +31,7 @@ export default function page() {
       <Beverages />
       <Dessert />
       <ReserveTable />
-      
+
       <Footers />
 
 
