@@ -9,21 +9,21 @@ const CafeStorePage = () => {
       name: "Jela Cafe Onitsha",
       address: "123 Main Street, City Center",
       image: "/free-photo-of-friends-hugging-in-front-of-the-four-boroughs-coffee-shop.jpg", // Replace with your actual image paths
-      slug: "Jela"
+      slug: "/cafestore/cafeonitsha"
     },
     {
       id: 2,
       name: "Riverside Branch",
       address: "456 River Road, Waterfront District",
       image: "/cafe-rouge.jpg", // Replace with your actual image paths
-      slug: "riverside"
+      slug: "/cafestore/cafeonitsha"
     },
     {
       id: 3,
       name: "Downtown Branch",
       address: "456 River Road, Waterfront District",
       image: "/la-paris-rome.jpg", // Replace with your actual image paths
-      slug: "riverside"
+      slug: "/cafestore/cafeonitsha"
     }
   ]
 

@@ -72,15 +72,14 @@ const Navbar = ({
               <Link href={auth.signup.url}>{auth.signup.title}</Link>
             </Button>
 
-            {/* Cart System Icon  */}
-            <Cart />
 
           </div>
         </nav>
 
+        {/* Cart System Icon  */}
+        <Cart />
+
         {/* Mobile Menu */}
-
-
         <div className="block lg:hidden">
           <div className="flex justify-between items-center">
             <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">

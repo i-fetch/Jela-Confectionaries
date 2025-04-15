@@ -51,8 +51,8 @@ const Cart = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <ShoppingBag className="text-3xl text-white font-bold" />
+    <span className="flex items-center justify-center max-w-fit border mx-auto p-1">
+      <ShoppingBag className="text-2xl text-white font-bold" />
       {loading ? (
         <Loader size={10} className="animate-spin" />
       ) : cartItems.length === 0 ? (
@@ -91,8 +91,8 @@ const Cart = () => {
           </div>
         </div>
       )}
-    </div>
+    </span>
   );
 };
 
-export default Cart;
+export default Cart; 

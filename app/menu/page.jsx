@@ -29,7 +29,6 @@ export default function page() {
       <SpecialMenu />
       <StartersMenu />
       <Beverages />
-      <Menu2/>
       <Dessert />
       <ReserveTable />
       
