@@ -38,12 +38,12 @@ const data = {
       url: "/cafestore/cafeonitsha/menu",
     },
     {
-      title: "Place Order",
+      title: "Orders",
       icon: SquareMenu,
-      url: "/cafestore/cafeonitsha/order",
+      url: "/cafestore/cafeonitsha/orders",
     },
     {
-      title: "Book Reservation",
+      title: "Reservations",
       icon: SquareMenu,
       url: "/cafestore/cafeonitsha/reservations",
     },
