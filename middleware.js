@@ -15,16 +15,16 @@ export async function middleware(req) {
 
   const userRole = token.role; 
 
-  // User restrictions: Can only access /dashboard
+  // User restrictions: Can only access /cafestore
   if (userRole === "user") {
     if (url.pathname === "/admin" || url.pathname === "/login" || url.pathname === "/register") {
-      return NextResponse.redirect(new URL("/dashboard", req.url));
+      return NextResponse.redirect(new URL("/cafestore", req.url));
     }
   }
 
   // Admin restrictions: Can only access /admin
   if (userRole === "admin") {
-    if (url.pathname === "/dashboard" || url.pathname === "/login" || url.pathname === "/register") {
+    if (url.pathname === "/cafestore" || url.pathname === "/login" || url.pathname === "/register") {
       return NextResponse.redirect(new URL("/admin", req.url));
     }
   }
@@ -34,5 +34,5 @@ export async function middleware(req) {
 
 // Apply middleware only to relevant routes
 export const config = {
-  matcher: ["/admin", "/dashboard", "/login", "/register"],
+  matcher: ["/admin", "/cafestore", "/login", "/register"],
 };

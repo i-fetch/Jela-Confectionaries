@@ -55,7 +55,7 @@ const CafeStorePage = () => {
                     {cafe.name}
                   </h2>
                   <p className="text-gray-600 mt-2">{cafe.address}</p>
-                  <button href="/cafestore/cafeonitsha" className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 transition-colors">
+                  <button className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 transition-colors">
                     Visit Cafe
                   </button>
                 </div>

@@ -1,5 +1,5 @@
-// "use client";
-// import { useState } from 'react';
+"use client";
+import { useState } from 'react';
 
 
 import { ArrowRight, Menu } from "lucide-react";
@@ -14,6 +14,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LogoImg from "@/public/logo-img.jpg";
 import Image from "next/image";
+import Cart from '../Cart/Cart';
 
 
 
@@ -37,7 +38,7 @@ const Navbar = ({
   },
 }) => {
 
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <section className="absolute py-2 border-b-2 border-[#c3c0c06b] top-0 left-0 w-full z-50 bg-transparent border-bottom">
@@ -70,6 +71,8 @@ const Navbar = ({
             <Button asChild size="sm" className="bg-white text-black hover:bg-gray-200">
               <Link href={auth.signup.url}>{auth.signup.title}</Link>
             </Button> */}
+<Cart />
+
             <button size="sm" className="bg-[#a6a182] px-6 py-3 rounded-4xl text-black hover:bg-opacity-90">
               <Link className="flex items-center  text-white space-x-1.5" href="/login"><span>Book a Table</span> <ArrowRight /></Link>
             </button>
@@ -78,7 +81,7 @@ const Navbar = ({
         </nav>
 
         {/* Mobile Menu */}
-        <div className="block lg:hidden">
+        {/* <div className="block lg:hidden">
           <div className="flex justify-between items-center">
             <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">
               <Image src={LogoImg} alt={logo.alt} width={32} height={32} className="rounded-full" />
@@ -122,12 +125,12 @@ const Navbar = ({
               </SheetContent>
             </Sheet>
           </div>
-        </div>
+        </div> */}
 
-        {/* <div className="block lg:hidden">
+        <div className="block lg:hidden">
           <div className="flex justify-between items-center">
             <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">
-              <Image src={logo.image} alt={logo.alt} width={32} height={32} className="rounded-full" />
+              <Image src={LogoImg} alt={logo.alt} width={32} height={32} className="rounded-full" />
               <span className="text-base font-semibold text-white">{logo.title}</span>
             </Link>
 
@@ -146,7 +149,7 @@ const Navbar = ({
                       aria-label="Home"
                       onClick={() => setOpen(false)}
                     >
-                      <Image src={logo.image} alt={logo.alt} width={32} height={32} />
+                      <Image src={LogoImg} alt={logo.alt} width={32} height={32} />
                       <span className="text-base font-semibold">{logo.title}</span>
                     </Link>
                   </SheetTitle>
@@ -178,7 +181,7 @@ const Navbar = ({
               </SheetContent>
             </Sheet>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
