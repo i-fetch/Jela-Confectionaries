@@ -6,16 +6,23 @@ const CafeStorePage = () => {
   const cafes = [
     {
       id: 1,
-      name: "Downtown Branch",
+      name: "Jela Cafe Onitsha",
       address: "123 Main Street, City Center",
-      image: "/cafe-downtown.jpg", // Replace with your actual image paths
-      slug: "downtown"
+      image: "/free-photo-of-friends-hugging-in-front-of-the-four-boroughs-coffee-shop.jpg", // Replace with your actual image paths
+      slug: "Jela"
     },
     {
       id: 2,
       name: "Riverside Branch",
       address: "456 River Road, Waterfront District",
-      image: "/cafe-riverside.jpg", // Replace with your actual image paths
+      image: "/cafe-rouge.jpg", // Replace with your actual image paths
+      slug: "riverside"
+    },
+    {
+      id: 3,
+      name: "Downtown Branch",
+      address: "456 River Road, Waterfront District",
+      image: "/la-paris-rome.jpg", // Replace with your actual image paths
       slug: "riverside"
     }
   ]
@@ -48,7 +55,7 @@ const CafeStorePage = () => {
                     {cafe.name}
                   </h2>
                   <p className="text-gray-600 mt-2">{cafe.address}</p>
-                  <button className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 transition-colors">
+                  <button href="/cafestore/cafeonitsha" className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 transition-colors">
                     Visit Cafe
                   </button>
                 </div>
