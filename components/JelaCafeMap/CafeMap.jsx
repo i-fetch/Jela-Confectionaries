@@ -16,7 +16,7 @@ const CafeMap = () => {
           </iframe>
           {/* Map attribution */}
           <div className="absolute bottom-0 right-0 bg-white px-2 py-1 text-xs text-gray-600 z-10">
-            JelaCafe Map | Nigeria
+            JelaCafe Café Location | Nigeria
           </div>
         </div>
       </Card>
