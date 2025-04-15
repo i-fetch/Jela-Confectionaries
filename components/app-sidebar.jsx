@@ -33,14 +33,14 @@ const data = {
       isActive: true,
     },
     {
+      title: "Place Order",
+      icon: SquareMenu,
+      url: "/cafestore/cafeonitsha/order",
+    },
+    {
       title: "Book Reservation",
       icon: SquareMenu,
       url: "/cafestore/cafeonitsha/reservations",
-    },
-    {
-      title: "Book Order",
-      icon: SquareMenu,
-      url: "/cafestore/cafeonitsha/order",
     },
     {
       title: "Favourites",
