@@ -28,11 +28,11 @@ const CafeStorePage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-500 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto mt-32">
         <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Choose Your Cafe</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {cafes.map((cafe) => (
             <Link 
               key={cafe.id} 
