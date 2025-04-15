@@ -43,6 +43,7 @@ export default async function Page() {
         </header>
 
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+          <h3 className="text-lg font-semibold">My Orders</h3>
           {/* Left Section */}
           <div className="flex-1 space-y-6 basis-0">
             <Orders />

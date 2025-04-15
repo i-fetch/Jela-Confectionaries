@@ -137,8 +137,8 @@ const Menu2 = () => {
                   key={option.id}
                   onClick={() => toggleDietary(option.label)}
                   className={`flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium ${isSelected
-                      ? "bg-white text-gray-900" // Match the selected category style
-                      : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                    ? "bg-white text-gray-900" // Match the selected category style
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                     }`}
                 >
                   <Icon size={16} className="mr-1" />
@@ -155,8 +155,8 @@ const Menu2 = () => {
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-md text-sm font-medium ${selectedCategory === category
-                    ? "bg-white text-gray-900"
-                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                  ? "bg-white text-gray-900"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                   }`}
               >
                 {category}
@@ -166,8 +166,8 @@ const Menu2 = () => {
         </div>
 
         {/* Food Items Grid */}
+        <h2 className="text-2xl font-semibold text-center text-white my-5">Our Special Menu</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <h2 className="text-center text-white">Our Special Menu</h2>
 
           {filteredItems.length > 0 ? (
             filteredItems.map((item) => (

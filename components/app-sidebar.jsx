@@ -7,6 +7,9 @@ import {
   LayoutDashboard,
   Send,
   SquareMenu,
+  ShoppingCart,
+  Calendar,
+  Heart,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -22,34 +25,32 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-
 const data = {
   navMain: [
-   
     {
       title: "Dashboard",
-      icon: LayoutDashboard,
+      icon: LayoutDashboard, // Dashboard icon
       url: "/cafestore/cafeonitsha",
       isActive: true,
     },
     {
       title: "Special Menu",
-      icon: SquareMenu,
+      icon: SquareMenu, // Menu icon
       url: "/cafestore/cafeonitsha/menu",
     },
     {
-      title: "Place Order",
-      icon: SquareMenu,
-      url: "/cafestore/cafeonitsha/order",
+      title: "Orders",
+      icon: ShoppingCart, // Shopping cart icon for orders
+      url: "/cafestore/cafeonitsha/orders",
     },
     {
-      title: "Book Reservation",
-      icon: SquareMenu,
+      title: "Reservations",
+      icon: Calendar, // Calendar icon for reservations
       url: "/cafestore/cafeonitsha/reservations",
     },
     {
       title: "Favourites",
-      icon: Gem,
+      icon: Heart, // Heart icon for favourites
       url: "/dashboard/cafeonitsha/favourites",
     },
   ],
@@ -57,17 +58,14 @@ const data = {
     {
       title: "Feedback",
       url: "#",
-      icon: Send,
+      icon: Send, // Send icon for feedback
     },
   ],
-
 }
 
-export function AppSidebar({
-  ...props
-}) {
+export function AppSidebar({ ...props }) {
   return (
-    (<Sidebar variant="inset" {...props}>
+    <Sidebar variant="inset" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -91,8 +89,8 @@ export function AppSidebar({
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser  />
+        <NavUser />
       </SidebarFooter>
-    </Sidebar>)
-  );
+    </Sidebar>
+  )
 }

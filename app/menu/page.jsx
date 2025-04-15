@@ -6,7 +6,6 @@ import SpecialMenu from '@/app/menu/_component/Menu';
 import StartersMenu from './_component/StartersMenu';
 import Beverages from './_component/Beverages';
 import Dessert from './_component/Dessert';
-import Menu2 from '@/components/Menu2/Menu2';
 import Navbar from '@/components/Navbar/Navbar';
 
 
