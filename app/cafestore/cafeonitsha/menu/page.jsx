@@ -44,7 +44,6 @@ export default async function Page() {
         
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {/* Left Section */}
-          <p>Dashboard Menu</p>
           <div className="flex-1 space-y-6 basis-0">
             {/* <DashboardView /> */}
 <Menu2 />
