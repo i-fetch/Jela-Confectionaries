@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Cart from "@/components/Cart";
+import CartItem from '@/components/Cart/CartItem';
 
 const CartPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Cart />
+      <CartItem />
     </div>
   );
 };

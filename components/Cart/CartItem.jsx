@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Loader, ShoppingBag, Trash } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const Cart = () => {
+const CartItem = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
@@ -95,4 +95,4 @@ const Cart = () => {
   );
 };
 
-export default Cart; 
+export default CartItem; 

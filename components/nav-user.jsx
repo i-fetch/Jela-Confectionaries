@@ -32,10 +32,14 @@ import {
 import LogOutBtn from "./LogOut/LogOutBtn"
 
 export function NavUser({
-  user
+
 }) {
   const { isMobile } = useSidebar()
-
+  const user = {
+    name: "Guest",
+    email: "user@example.com",
+    avatar: "/default-avatar.png"
+  }
   return (
     (<SidebarMenu>
       <SidebarMenuItem>

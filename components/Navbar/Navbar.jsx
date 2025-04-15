@@ -14,7 +14,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LogoImg from "@/public/logo-img.jpg";
 import Image from "next/image";
-import Cart from '../Cart/Cart';
+import CartItem from '../Cart/CartItem';
+// import Cart from '@/components/Cart/CartItem';
 
 
 
@@ -77,7 +78,7 @@ const Navbar = ({
         </nav>
 
         {/* Cart System Icon  */}
-        <Cart />
+        <CartItem />
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">

@@ -40,38 +40,25 @@ const data = {
     {
       title: "Dashboard",
       icon: LayoutDashboard,
-      url: "/dashboard",
+      url: "/cafestore/cafeonitsha",
       isActive: true,
     },
+
     {
-      title: "Make Deposit",
-      icon: ArrowDownToLine,
-      url: "/dashboard/deposit",
-    },
-    {
-      title: "Deposit History",
-      icon: TvMinimal,
-      url: "/dashboard/desposit-history",
-    },
-    {
-      title: "Investment",
+      title: "Orders",
       icon: CircleDollarSign,
-      url: "/dashboard/investment",
+      url: "/cafestore/investment",
     },
-    {
-      title: "Investment History",
-      icon: ChartNoAxesCombined,
-      url: "/dashboard/investment-history",
-    },
+
     {
       title: "Withdraw Funds",
       icon: HandCoins,
-      url: "/dashboard/withdraw",
+      url: "/cafestore/withdraw",
     },
     {
       title: "Withdraw History",
       icon: SquareMenu,
-      url: "/dashboard/withdraw-history",
+      url: "/cafestore/withdraw-history",
     },
     {
       title: "Manage Assets",
@@ -87,29 +74,9 @@ const data = {
       title: "Manage KYC",
       icon: IdCard,
       url: "/dashboard/kyc",
-    },
-    {
-      title: "Manage Accounts",
-      icon: Users,
-      url: "/dashboard/accounts",
-    },
-    {
-      title: "Manage Bank",
-      icon: Landmark,
-      url: "/dashboard/bank",
-    },
-    {
-      title: "Manage Cards",
-      icon: CreditCard,
-      url: "/dashboard/cards",
-    },
+    }
   ],
   navSecondary: [
-    {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
-    },
     {
       title: "Feedback",
       url: "#",
