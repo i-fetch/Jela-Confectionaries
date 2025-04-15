@@ -4,6 +4,7 @@ import SessionProviderWrapper from "./SessionProviderWrapper";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/auth";
 import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/Navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <SessionProviderWrapper session={session}>
+          <Navbar />
           {children}
         </SessionProviderWrapper>
         <Toaster />
