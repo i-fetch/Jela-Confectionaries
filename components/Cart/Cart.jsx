@@ -52,12 +52,11 @@ const Cart = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <ShoppingBag className="text-3xl font-bold mb-8" />
+      <ShoppingBag className="text-3xl text-white font-bold" />
       {loading ? (
         <Loader size={10} className="animate-spin" />
-        // <span>Loading...</span>
       ) : cartItems.length === 0 ? (
-        <div className="text-center text-gray-500">Your cart is empty</div>
+        <span className="text-xs text-center text-gray-100">Your cart is empty</span>
       ) : (
         <div className="space-y-6">
           {cartItems.map((item) => (
@@ -71,7 +70,6 @@ const Cart = () => {
                 <div>
                   <h3 className="font-semibold">{item.product.name}</h3>
                   <p className="text-gray-500">Quantity: {item.quantity}</p>
-                  {item.size && <p className="text-gray-500">Size: {item.size}</p>}
                 </div>
               </div>
               <div className="flex items-center gap-4">
