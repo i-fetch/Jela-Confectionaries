@@ -2,22 +2,11 @@
 
 import * as React from "react"
 import {
-  ArrowDownToLine,
-  ChartNoAxesCombined,
-  CircleDollarSign,
   Command,
-  CreditCard,
   Gem,
-  HandCoins,
-  IdCard,
-  Landmark,
   LayoutDashboard,
-  LifeBuoy,
   Send,
   SquareMenu,
-  TvMinimal,
-  Users,
-  Wallet,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -43,38 +32,21 @@ const data = {
       url: "/cafestore/cafeonitsha",
       isActive: true,
     },
-
     {
-      title: "Orders",
-      icon: CircleDollarSign,
-      url: "/cafestore/investment",
-    },
-
-    {
-      title: "Withdraw Funds",
-      icon: HandCoins,
-      url: "/cafestore/withdraw",
-    },
-    {
-      title: "Withdraw History",
+      title: "Place Order",
       icon: SquareMenu,
-      url: "/cafestore/withdraw-history",
+      url: "/cafestore/cafeonitsha/order",
     },
     {
-      title: "Manage Assets",
+      title: "Book Reservation",
+      icon: SquareMenu,
+      url: "/cafestore/cafeonitsha/reservations",
+    },
+    {
+      title: "Favourites",
       icon: Gem,
-      url: "/dashboard/manage-assets",
+      url: "/dashboard/cafeonitsha/favourites",
     },
-    {
-      title: "Manage Wallet", 
-      icon: Wallet,
-      url: "/dashboard/manage-wallet",
-    },
-    {
-      title: "Manage KYC",
-      icon: IdCard,
-      url: "/dashboard/kyc",
-    }
   ],
   navSecondary: [
     {

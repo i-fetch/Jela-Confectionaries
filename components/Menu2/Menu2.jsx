@@ -9,54 +9,54 @@ const foodItems = [
   {
     id: "1",
     name: "Classic Croissant",
-    price: 4.5,
+    price: 45,
     description: "Buttery, flaky layers of hand-rolled pastry",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/classic-croissant.jpg",
     categories: ["Pastries"],
     dietary: ["Nut-Free"],
   },
   {
     id: "2",
     name: "Chocolate Éclair",
-    price: 5.0,
+    price: 50,
     description: "Choux pastry filled with vanilla cream and topped with chocolate",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/chocolate-clair.jpg",
     categories: ["Pastries", "Cakes"],
     dietary: ["Vegetarian"],
   },
   {
     id: "3",
     name: "Berry Tart",
-    price: 6.5,
+    price: 65,
     description: "Fresh seasonal berries atop vanilla custard in a sweet pastry shell",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/berry-tart.jpg",
     categories: ["Pastries", "Cakes"],
     dietary: ["Vegetarian"],
   },
   {
     id: "4",
     name: "Cappuccino",
-    price: 3.75,
+    price: 375,
     description: "Espresso with steamed milk and a light layer of foam",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/cappuccino.jpg",
     categories: ["Beverages"],
     dietary: ["Vegetarian", "Vegan", "Gluten-Free"],
   },
   {
     id: "5",
     name: "Sourdough Bread",
-    price: 5.25,
+    price: 525,
     description: "Artisanal sourdough with a crispy crust and chewy interior",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/sourdough-bread.jpg",
     categories: ["Breads"],
     dietary: ["Vegetarian", "Vegan"],
   },
   {
     id: "6",
     name: "Carrot Cake",
-    price: 5.75,
+    price: 575,
     description: "Moist cake with carrots, walnuts, and cream cheese frosting",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/carrot-cake.jpg",
     categories: ["Cakes"],
     dietary: ["Vegetarian"],
   },
@@ -136,11 +136,10 @@ const Menu2 = () => {
                 <button
                   key={option.id}
                   onClick={() => toggleDietary(option.label)}
-                  className={`flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium ${
-                    isSelected
+                  className={`flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium ${isSelected
                       ? "bg-white text-gray-900" // Match the selected category style
                       : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                  }`}
+                    }`}
                 >
                   <Icon size={16} className="mr-1" />
                   {option.label}
@@ -155,11 +154,10 @@ const Menu2 = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-md text-sm font-medium ${
-                  selectedCategory === category
+                className={`px-4 py-2 rounded-md text-sm font-medium ${selectedCategory === category
                     ? "bg-white text-gray-900"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -169,6 +167,8 @@ const Menu2 = () => {
 
         {/* Food Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h2 className="text-center text-white">Our Special Menu</h2>
+
           {filteredItems.length > 0 ? (
             filteredItems.map((item) => (
               <div key={item.id} className="bg-gray-900 rounded-lg overflow-hidden">
@@ -178,7 +178,8 @@ const Menu2 = () => {
                 <div className="p-4">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-bold">{item.name}</h3>
-                    <span className="text-xl font-bold">${item.price.toFixed(2)}</span>
+                    <span className="text-xl font-bold">₦{item.price}</span>
+                    {/* <span className="text-xl font-bold">₦{item.price.toFixed(2)}</span> */}
                   </div>
                   <p className="text-gray-400 mb-3">{item.description}</p>
                   <div className="flex flex-wrap gap-1">

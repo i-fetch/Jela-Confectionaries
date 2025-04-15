@@ -1,5 +1,4 @@
 import { AppSidebar } from "@/components/app-sidebar"
-import Menu2 from "@/components/Menu2/Menu2";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,6 +13,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import Orders from "./Orders";
 
 
 export default async function Page() {
@@ -35,7 +35,7 @@ export default async function Page() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Menu</BreadcrumbPage>
+                  <BreadcrumbPage>Orders</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -45,8 +45,7 @@ export default async function Page() {
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {/* Left Section */}
           <div className="flex-1 space-y-6 basis-0">
-            {/* Menu List */}
-            <Menu2 />
+            <Orders />
 
           </div>
 

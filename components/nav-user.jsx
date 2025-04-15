@@ -80,7 +80,7 @@ export function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
-                Account
+                Profile
               </DropdownMenuItem>
             <DropdownMenuSeparator />
               <DropdownMenuItem>
