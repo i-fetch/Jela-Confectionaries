@@ -16,7 +16,6 @@ export default function SessionProviderWrapper({ children, session }) {
         userID: session.user.id, // adjust if your session provides a different property name
         username: session.user.name,
         email: session.user.email,
-        
       });
     }
   }, [session, setUser]);
