@@ -43,38 +43,21 @@ const data = {
       url: "/cafestore/cafeonitsha",
       isActive: true,
     },
-
     {
-      title: "Orders",
-      icon: CircleDollarSign,
-      url: "/cafestore/investment",
-    },
-
-    {
-      title: "Withdraw Funds",
-      icon: HandCoins,
-      url: "/cafestore/withdraw",
-    },
-    {
-      title: "Withdraw History",
+      title: "Book Reservation",
       icon: SquareMenu,
-      url: "/cafestore/withdraw-history",
+      url: "/cafestore/reservations",
     },
     {
-      title: "Manage Assets",
+      title: "Book Order",
+      icon: SquareMenu,
+      url: "/cafestore/order",
+    },
+    {
+      title: "Favourites",
       icon: Gem,
-      url: "/dashboard/manage-assets",
+      url: "/dashboard/favourites",
     },
-    {
-      title: "Manage Wallet", 
-      icon: Wallet,
-      url: "/dashboard/manage-wallet",
-    },
-    {
-      title: "Manage KYC",
-      icon: IdCard,
-      url: "/dashboard/kyc",
-    }
   ],
   navSecondary: [
     {
