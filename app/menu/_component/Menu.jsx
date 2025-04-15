@@ -36,7 +36,7 @@ const Menu = () => {
         <h2 className="text-3xl font-bold mb-2">
           OUR SPECIAL <span className="text-yellow-600">MENU</span>
         </h2>
-        <p className="text-sm text-gray-300 mb-12">
+        <p className="text-sm text-center w-8/12 lg:10/12 mx-auto text-gray-300 mb-12">
           Enjoy the unique dishes from the basilico restaurant that only our restaurant has.<br />
           Fusce malesuada, lorem vitae euismod lobortis.
         </p>

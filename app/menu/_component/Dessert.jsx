@@ -5,31 +5,31 @@ const Dessert = () => {
     {
       title: 'Ice Coffee',
       description: 'Crispy rolls filled with vegetables, served with dipping sauce.',
-      price: '$16.00',
+      price: '₦16.00',
       img: '/starters-img-1.png',
     },
     {
       title: 'Mango lassi',
       description: 'Golden potato patties served with chutney.',
-      price: '$12.00',
+      price: '₦12.00',
       img: '/starters-img-2.png',
     },
     {
       title: 'Lemonade',
       description: 'Grilled paneer cubes, spiced to perfection.',
-      price: '$26.00',
+      price: '₦26.00',
       img: '/starters-img-3.png',
     },
     {
       title: 'Coconut Water',
       description: 'Green vegetable and herb kebabs, grilled to perfection.',
-      price: '$20.00',
+      price: '₦20.00',
       img: '/starters-img-4.png',
     },
     {
       title: 'Chili Mushrooms',
       description: 'Spicy, crispy mushrooms with a tangy twist.',
-      price: '$10.00',
+      price: '₦10.00',
       img: '/starters-img-5.png',
     },
     
