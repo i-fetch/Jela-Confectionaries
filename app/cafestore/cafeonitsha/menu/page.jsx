@@ -41,12 +41,12 @@ export default async function Page() {
             </Breadcrumb>
           </div>
         </header>
-        
+
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {/* Left Section */}
           <div className="flex-1 space-y-6 basis-0">
-            {/* <DashboardView /> */}
-<Menu2 />
+            {/* Menu List */}
+            <Menu2 />
 
           </div>
 
