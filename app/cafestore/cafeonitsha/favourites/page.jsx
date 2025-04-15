@@ -13,7 +13,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import Orders from "./Orders";
+import Favourites from "./Favourites";
 
 
 export default async function Page() {
@@ -35,7 +35,7 @@ export default async function Page() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Orders</BreadcrumbPage>
+                  <BreadcrumbPage>Favourites</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -45,7 +45,7 @@ export default async function Page() {
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {/* Left Section */}
           <div className="flex-1 space-y-6 basis-0">
-            <Orders />
+            <Favourites />
 
           </div>
 
