@@ -5,7 +5,7 @@ const Beverages = () => {
     // {
     //   title: 'ICED COFEE',
     //   description: 'Crispy rolls filled with vegetables, served with dipping sauce.',
-    //   price: '$16.00',
+    //   price: '₦16.00',
     //   img: '/starters-img-1.png',
     // },
     {
@@ -17,25 +17,25 @@ const Beverages = () => {
     {
       title: 'Lemo',
       description: 'Grilled paneer cubes, spiced to perfection.',
-      price: '$26.00',
+      price: '₦26.00',
       img: '/starters-img-3.png',
     },
     {
       title: 'Hara Kebab',
       description: 'Green vegetable and herb kebabs, grilled to perfection.',
-      price: '$20.00',
+      price: '₦20.00',
       img: '/starters-img-4.png',
     },
     {
       title: 'Chili Mushrooms',
       description: 'Spicy, crispy mushrooms with a tangy twist.',
-      price: '$10.00',
+      price: '₦10.00',
       img: '/starters-img-5.png',
     },
     {
       title: 'Veg Pakoras',
       description: 'Crispy vegetable fritters with a dip.',
-      price: '$22.00',
+      price: '₦22.00',
       img: '/starters-img-6.png',
     },
   ];

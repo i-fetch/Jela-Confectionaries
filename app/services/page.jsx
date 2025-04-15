@@ -4,11 +4,13 @@ import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import TestimonialSlider from '@/components/Testimonials/Testimonials';
 import Footers from '@/components/Footers/Footers';
 import ServiceSection from '@/components/ServiceSection/ServiceSection';
+import Navbar from '@/components/Navbar/Navbar';
 
 
 export default function page() {
   return (
     <div>
+      <Navbar />
       <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
         style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
         {/* Overlay */}

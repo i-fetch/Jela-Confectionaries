@@ -1,4 +1,5 @@
 import { AppSidebar } from "@/components/app-sidebar"
+import Menu2 from "@/components/Menu2/Menu2";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -29,12 +30,12 @@ export default async function Page() {
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink href="#">
-                    Jela's Café
+                    Dashboard
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Dashboard</BreadcrumbPage>
+                  <BreadcrumbPage>Menu</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -43,10 +44,9 @@ export default async function Page() {
         
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {/* Left Section */}
-          <p>Dashboard Store</p>
           <div className="flex-1 space-y-6 basis-0">
             {/* <DashboardView /> */}
-
+<Menu2 />
 
           </div>
 

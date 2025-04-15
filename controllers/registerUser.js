@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 import User from "@/models/User";
 import { connectToDB } from "@/lib/ConnectDB";
+import { revalidatePath } from "next/cache";
 
 export async function registerUser({ username, email, password, phone }) {
   try {
@@ -43,23 +44,32 @@ export async function registerUser({ username, email, password, phone }) {
     const hashedPassword = await bcrypt.hash(password, 10);
     const userID = uuidv4();
 
-    // Create a new user
+
+    // Create a new user with all required fields
     const newUser = new User({
       userID,
       username,
       email,
       password: hashedPassword,
       phone,
-      isVerified: false,
+      image: "/default-avatar.png", // Default profile image
+      role: "user",
+      favorites: [],
+      reservations: [],
+      orders: [],
+      isVerified: false
     });
 
     await newUser.save();
+
+    revalidatePath("/login");
 
     return {
       success: true,
       message: "User registered successfully",
       userID: userID
     };
+    
   } catch (error) {
     console.error("Error registering user:", error);
     return { 
@@ -68,3 +78,6 @@ export async function registerUser({ username, email, password, phone }) {
     };
   }
 }
+
+
+

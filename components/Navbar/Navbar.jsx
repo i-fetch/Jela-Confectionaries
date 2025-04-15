@@ -1,3 +1,7 @@
+"use client";
+import { useState } from 'react';
+
+
 import { ArrowRight, Menu } from "lucide-react";
 import {
   Sheet,
@@ -10,6 +14,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LogoImg from "@/public/logo-img.jpg";
 import Image from "next/image";
+import CartItem from '../Cart/CartItem';
+// import Cart from '@/components/Cart/CartItem';
+
+
+
 
 const Navbar = ({
   logo = {
@@ -29,6 +38,9 @@ const Navbar = ({
     signup: { title: "Sign up", url: "/signup" },
   },
 }) => {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="absolute py-2 border-b-2 border-[#c3c0c06b] top-0 left-0 w-full z-50 bg-transparent border-bottom">
       <div className="max-w-7xl mx-auto px-4 py-4">
@@ -47,25 +59,26 @@ const Navbar = ({
               <Link
                 key={item.title}
                 href={item.url}
-                className="text-sm font-medium text-white hover:text-primary"
+                className="text-sm font-medium text-white border-b-0 hover:border-b-2 hover:border-[#cd9d22] hover:text-[#cd9d22]"
               >
                 {item.title}
               </Link>
             ))}
           </div>
           <div className="flex gap-2">
-            {/* <Button asChild variant="outline" size="sm" className=" border-white hover:opacity-15">
+            <Button asChild variant="outline" size="sm" className=" bg-white text-black hover:bg-[#cd9d22] hover:text-white">
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
-            <Button asChild size="sm" className="bg-white text-black hover:bg-gray-200">
+            <Button asChild size="sm" className="text-white bg-[#cd9d22] hover:bg-white hover:text-black">
               <Link href={auth.signup.url}>{auth.signup.title}</Link>
-            </Button> */}
-            <button size="sm" className="bg-[#a6a182] px-6 py-3 rounded-4xl text-black hover:bg-opacity-90">
-            <Link className="flex items-center  text-white space-x-1.5" href="/login"><span>Book a Table</span> <ArrowRight /></Link> 
-            </button>
+            </Button>
+
 
           </div>
         </nav>
+
+        {/* Cart System Icon  */}
+        <CartItem />
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">
@@ -75,7 +88,7 @@ const Navbar = ({
               <span className="text-base font-semibold text-white">{logo.title}</span>
             </Link>
 
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="border-2 border-white/20">
                   <Menu className="w-5 h-5" />
@@ -84,7 +97,12 @@ const Navbar = ({
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <Link href={logo.url} className="flex items-center gap-2" aria-label="Home">
+                    <Link
+                      href={logo.url}
+                      className="flex items-center gap-2"
+                      aria-label="Home"
+                      onClick={() => setOpen(false)}
+                    >
                       <Image src={LogoImg} alt={logo.alt} width={32} height={32} />
                       <span className="text-base font-semibold">{logo.title}</span>
                     </Link>
@@ -96,16 +114,21 @@ const Navbar = ({
                       key={item.title}
                       href={item.url}
                       className="text-md font-semibold"
+                      onClick={() => setOpen(false)}
                     >
                       {item.title}
                     </Link>
                   ))}
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <Link href={auth.login.url}>{auth.login.title}</Link>
+                      <Link href={auth.login.url} onClick={() => setOpen(false)}>
+                        {auth.login.title}
+                      </Link>
                     </Button>
                     <Button asChild>
-                      <Link href={auth.signup.url}>{auth.signup.title}</Link>
+                      <Link href={auth.signup.url} onClick={() => setOpen(false)}>
+                        {auth.signup.title}
+                      </Link>
                     </Button>
                   </div>
                 </div>

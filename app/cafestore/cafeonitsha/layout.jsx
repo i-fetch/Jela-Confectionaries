@@ -1,10 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import SessionProviderWrapper from "./SessionProviderWrapper";
+import "@/app/globals.css";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/auth";
 import { Toaster } from "@/components/ui/sonner";
-import Navbar from "@/components/Navbar/Navbar";
+import SessionProviderWrapper from "@/app/SessionProviderWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Jela's Café",
+  title: "Jela's Café Store",
   description:
     "Experience the art of fine confectionery with handcrafted treats, delightful desserts, and exquisite flavors made with love and precision.",
 };
 
-export default async function RootLayout({ children }) {
+export default async function CafeStoreLayout({ children }) {
   // Fetch the session from the server
   const session = await getServerSession(authOptions);
 
@@ -34,7 +33,6 @@ export default async function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <SessionProviderWrapper session={session}>
-          {/* <Navbar /> */}
           {children}
         </SessionProviderWrapper>
         <Toaster />
