@@ -1,10 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "../../../app/globals.css";
+import "@/app/globals.css";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/auth";
 import { Toaster } from "@/components/ui/sonner";
 import SessionProviderWrapper from "@/app/SessionProviderWrapper";
-// import Navbar from "@/components/Navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +33,6 @@ export default async function CafeStoreLayout({ children }) {
         suppressHydrationWarning
       >
         <SessionProviderWrapper session={session}>
-          {/* <Navbar /> */}
           {children}
         </SessionProviderWrapper>
         <Toaster />
