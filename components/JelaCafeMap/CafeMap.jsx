@@ -1,10 +1,9 @@
 import React from 'react'
-import { Card } from '../ui/card'
 
 const CafeMap = () => {
   return (
     <section>
-      <Card className="w-full h-[calc(100vh-2rem)] overflow-hidden rounded-lg shadow-lg">
+      <div className="w-full h-[calc(100vh-2rem)] overflow-hidden rounded-lg shadow-lg">
         <div className="relative w-full h-full">
           <iframe
             className="contact-map-size w-full h-full"
@@ -17,7 +16,7 @@ const CafeMap = () => {
             JelaCafe Café Location | Nigeria
           </div>
         </div>
-      </Card>
+      </div>
     </section>
   )
 }
