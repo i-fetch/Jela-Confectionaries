@@ -2,22 +2,11 @@
 
 import * as React from "react"
 import {
-  ArrowDownToLine,
-  ChartNoAxesCombined,
-  CircleDollarSign,
   Command,
-  CreditCard,
   Gem,
-  HandCoins,
-  IdCard,
-  Landmark,
   LayoutDashboard,
-  LifeBuoy,
   Send,
   SquareMenu,
-  TvMinimal,
-  Users,
-  Wallet,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -46,17 +35,17 @@ const data = {
     {
       title: "Book Reservation",
       icon: SquareMenu,
-      url: "/cafestore/reservations",
+      url: "/cafestore/cafeonitsha/reservations",
     },
     {
       title: "Book Order",
       icon: SquareMenu,
-      url: "/cafestore/order",
+      url: "/cafestore/cafeonitsha/order",
     },
     {
       title: "Favourites",
       icon: Gem,
-      url: "/dashboard/favourites",
+      url: "/dashboard/cafeonitsha/favourites",
     },
   ],
   navSecondary: [
