@@ -26,17 +26,15 @@ export default async function CafeStoreLayout({ children }) {
   const session = await getServerSession(authOptions);
 
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <div>
+      <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         cz-shortcut-listen="true"
-        suppressHydrationWarning
-      >
+        suppressHydrationWarning >
         <SessionProviderWrapper session={session}>
           {children}
         </SessionProviderWrapper>
         <Toaster />
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }
