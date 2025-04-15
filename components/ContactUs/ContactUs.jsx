@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 const ContactUs = () => {
   return (
-    <section className="bg-black text-white py-20 px-4 md:px-20">
+    <section className="bg-black text-white py-20 px-4 md:px-20 h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         {/* Left - Contact Information */}
         <div>
