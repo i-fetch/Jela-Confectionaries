@@ -73,7 +73,7 @@ const CartItem = () => {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <p className="font-semibold">${(item.product.price * item.quantity).toFixed(2)}</p>
+                <p className="font-semibold">${(item.product.price * item.quantity)}</p>
                 <Button 
                   variant="destructive" 
                   size="sm"

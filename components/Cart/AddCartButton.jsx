@@ -34,10 +34,8 @@ const AddCartButton = ({ product }) => {
   };
 
   return (
-    <Button 
-      onClick={handleAddToCart}
-      className="bg-yellow-600 hover:bg-yellow-500 text-black"
-    >
+    <Button onClick={handleAddToCart}
+      className="bg-yellow-600 hover:bg-yellow-500 text-black mb-5">
       Add to Cart
     </Button>
   );

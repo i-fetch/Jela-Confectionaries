@@ -63,7 +63,8 @@ const Navbar = ({
             ))}
           </div>
           <div className="flex gap-2">
-        <CartItem />
+            {/* Cart System Icon  */}
+            <CartItem />
             <Button asChild variant="outline" size="sm" className=" bg-white text-black hover:bg-[#cd9d22] hover:text-white">
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
@@ -75,7 +76,6 @@ const Navbar = ({
           </div>
         </nav>
 
-        {/* Cart System Icon  */}
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">
