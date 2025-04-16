@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Search, Leaf, Wheat, Ban } from "lucide-react"
+import { Search, Leaf, Wheat, Ban, Heart } from "lucide-react"
 import Image from "next/image"
+import AddCartButton from "../Cart/AddCartButton"
 
 // Define the food item type
 const foodItems = [
@@ -120,7 +121,7 @@ const Menu2 = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              placeholder="Search menu..."
+              placeholder="Search..."
               className="w-full bg-gray-900 border border-gray-800 rounded-full py-2 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-gray-700"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -166,22 +167,27 @@ const Menu2 = () => {
         </div>
 
         {/* Food Items Grid */}
-        <h2 className="text-2xl font-semibold text-center text-white my-5">Our Special Menu</h2>
+        <h2 className="text-2xl font-semibold text-center text-white my-5">Our Confections</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {filteredItems.length > 0 ? (
             filteredItems.map((item) => (
               <div key={item.id} className="bg-gray-900 rounded-lg overflow-hidden">
                 <div className="relative h-48">
-                  <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+                  <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" priority/>
                 </div>
                 <div className="p-4">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-bold">{item.name}</h3>
                     <span className="text-xl font-bold">₦{item.price}</span>
-                    {/* <span className="text-xl font-bold">₦{item.price.toFixed(2)}</span> */}
                   </div>
-                  <p className="text-gray-400 mb-3">{item.description}</p>
+                  <p className="text-gray-400 text-xs">{item.description}</p>
+                  <div className="my-3 flex items-center justify-between gap-2">
+                    <AddCartButton />
+                    <button style={{all: "unset"}} className="">
+                      <Heart className="w-5 h-5 bg-transparent" fill="" />
+                    </button>
+                  </div>
                   <div className="flex flex-wrap gap-1">
                     {item.dietary.map((diet) => {
                       const dietOption = dietaryOptions.find((d) => d.label === diet)

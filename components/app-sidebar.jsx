@@ -51,7 +51,7 @@ const data = {
     {
       title: "Favourites",
       icon: Heart, // Heart icon for favourites
-      url: "/dashboard/cafeonitsha/favourites",
+      url: "/cafestore/cafeonitsha/favourites",
     },
   ],
   navSecondary: [
