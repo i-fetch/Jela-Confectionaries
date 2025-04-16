@@ -1,10 +1,11 @@
 import React from 'react';
-import PageHeader from '@/public/page-header-bg.jpg';
+import PageHeader from '@/public/page-header-bg2.jpg';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import TestimonialSlider from '@/components/Testimonials/Testimonials';
 import Footers from '@/components/Footers/Footers';
 import ServiceSection from '@/components/ServiceSection/ServiceSection';
 import Navbar from '@/components/Navbar/Navbar';
+import ServiceSection2 from '@/components/ServiceSection2/ServiceSection2';
 
 
 export default function page() {
@@ -23,6 +24,7 @@ export default function page() {
         </div>
 
       </header>
+      <ServiceSection2 />
       <ServiceSection />
       <TestimonialSlider />
       <ReserveTable />

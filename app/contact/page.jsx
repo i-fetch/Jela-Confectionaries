@@ -4,9 +4,9 @@ import PageHeader from '@/public/page-header-bg.jpg';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
 import ContactUs from "@/components/ContactUs/ContactUs";
-import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
 import CafeMap from "@/components/JelaCafeMap/CafeMap";
 import Navbar from "@/components/Navbar/Navbar";
+import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
 
 
 export default function page() {

@@ -9,6 +9,7 @@ import AlwaysQuality from '@/components/AlwaysQuality/AlwaysQuality';
 import OurVideo from '@/components/OurVideo/OurVideo';
 import FaQ from '@/components/FaQ/FaQ';
 import Navbar from '@/components/Navbar/Navbar';
+import AboutSection2 from '@/components/AboutSection2/AboutSection2';
 
 
 export default function page() {
@@ -28,6 +29,7 @@ export default function page() {
 
       </header>
       <AboutSection />
+      <AboutSection2 />
       <OurApproach />
       <DailyOffers />
       <ReserveTable />
