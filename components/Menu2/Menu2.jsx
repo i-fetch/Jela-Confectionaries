@@ -140,7 +140,7 @@ const Menu2 = () => {
 
   return (
     <div className="min-h-screen bg-[#060400] text-white p-4 md:p-2 lg:p-8 w-full">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto bg-black">
         {/* Search and Filters */}
         <div className="mb-6 space-y-4">
           {/* Search Bar */}

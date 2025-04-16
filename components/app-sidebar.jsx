@@ -70,7 +70,7 @@ export function AppSidebar({ ...props }) {
       {...props}
     >
       {/* Header Section */}
-      <SidebarHeader className="px-4 py-3 shadow shadow-lg bg-black rounded-b-none border-b border-[#333]">
+      <SidebarHeader className="px-4 py-3  shadow-lg bg-black rounded-b-none border-b border-[#333]">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
