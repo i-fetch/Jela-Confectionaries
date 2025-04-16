@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from '@/public/page-header-bg.jpg';
+import PageHeader from '@/public/page-header-bg2.jpg';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
 import Footers from '@/components/Footers/Footers';
 import SpecialMenu from '@/app/menu/_component/Menu';
