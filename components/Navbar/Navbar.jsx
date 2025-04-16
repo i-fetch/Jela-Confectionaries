@@ -1,7 +1,5 @@
 "use client";
-import { useState } from 'react';
-
-
+import { useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
 import {
   Sheet,
@@ -14,8 +12,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LogoImg from "@/public/logo-img.jpg";
 import Image from "next/image";
-import CartItem from '../Cart/CartItem';
-
+import CartItem from "../Cart/CartItem";
+import { useCartStore } from "@/store/cartStore";
 
 const Navbar = ({
   logo = {
@@ -35,8 +33,12 @@ const Navbar = ({
     signup: { title: "Sign up", url: "/signup" },
   },
 }) => {
-
   const [open, setOpen] = useState(false);
+
+  // Compute the total number of items in the cart
+  const cartCount = useCartStore((state) =>
+    state.cartItems.reduce((total, item) => total + item.quantity, 0)
+  );
 
   return (
     <section className="absolute py-2 border-b-2 border-[#c3c0c06b] top-0 left-0 w-full z-50 bg-transparent border-bottom">
@@ -62,20 +64,35 @@ const Navbar = ({
               </Link>
             ))}
           </div>
-          <div className="flex gap-2">
-            {/* Cart System Icon  */}
-            <CartItem />
-            <Button asChild variant="outline" size="sm" className=" bg-white text-black hover:bg-[#cd9d22] hover:text-white">
+          <div className="flex gap-2 items-center relative">
+            {/* Cart Icon with Badge Count */}
+            <div className="relative">
+              {/* Render the CartItem component (dropdown view) */}
+              <CartItem />
+              {/* Badge count overlay */}
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                  {cartCount}
+                </span>
+              )}
+            </div>
+            <Button 
+              asChild
+              variant="outline"
+              size="sm"
+              className="bg-white text-black hover:bg-[#cd9d22] hover:text-white"
+            >
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
-            <Button asChild size="sm" className="text-white bg-[#cd9d22] hover:bg-white hover:text-black">
+            <Button 
+              asChild
+              size="sm"
+              className="text-white bg-[#cd9d22] hover:bg-white hover:text-black"
+            >
               <Link href={auth.signup.url}>{auth.signup.title}</Link>
             </Button>
-
-
           </div>
         </nav>
-
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">

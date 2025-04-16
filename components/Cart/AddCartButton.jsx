@@ -1,41 +1,29 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { useCartStore } from "@/store/cartStore";
 
 const AddCartButton = ({ product }) => {
   const { toast } = useToast();
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const handleAddToCart = async () => {
     try {
-      const res = await fetch("/api/cart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productId: product._id,
-          quantity: 1
-        })
+      await addToCart(product);
+      toast({
+        title: "Added to cart",
+        description: `${product.name} has been added to your cart`,
       });
-
-      if (res.ok) {
-        toast({
-          title: "Added to cart",
-          description: `${product.name} has been added to your cart`
-        });
-      }
-    } catch (error) {
+    } catch {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "Failed to add item to cart"
+        description: "Failed to add item to cart",
       });
     }
   };
 
   return (
-    <Button onClick={handleAddToCart}
-      className="bg-yellow-600 hover:bg-yellow-500 text-black mb-5">
+    <Button onClick={handleAddToCart} className="bg-yellow-600 hover:bg-yellow-500 text-black mb-5">
       Add to Cart
     </Button>
   );

@@ -1,54 +1,16 @@
-"use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader, ShoppingBag, Trash } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useCartStore } from "@/store/cartStore";
 
 const CartItem = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(true);
   const { toast } = useToast();
+  const { cartItems, fetchCartItems, removeFromCart, loading } = useCartStore();
 
   useEffect(() => {
     fetchCartItems();
-  }, []);
-
-  const fetchCartItems = async () => {
-    try {
-      const res = await fetch("/api/cart");
-      const data = await res.json();
-      if (res.ok) {
-        setCartItems(data);
-      }
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to load cart items"
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const removeItem = async (itemId) => {
-    try {
-      const res = await fetch(`/api/cart/${itemId}`, { method: "DELETE" });
-      if (res.ok) {
-        setCartItems(cartItems.filter(item => item._id !== itemId));
-        toast({
-          title: "Item removed",
-          description: "Item has been removed from your cart"
-        });
-      }
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to remove item"
-      });
-    }
-  };
+  }, [fetchCartItems]);
 
   return (
     <span className="flex items-center justify-center max-w-fit mx-auto p-1">
@@ -77,7 +39,13 @@ const CartItem = () => {
                 <Button 
                   variant="destructive" 
                   size="sm"
-                  onClick={() => removeItem(item._id)}
+                  onClick={async () => {
+                    await removeFromCart(item._id);
+                    toast({
+                      title: "Item removed",
+                      description: "Item has been removed from your cart"
+                    });
+                  }}
                 >
                   <Trash className="h-4 w-4" />
                 </Button>
@@ -95,4 +63,4 @@ const CartItem = () => {
   );
 };
 
-export default CartItem; 
+export default CartItem;
