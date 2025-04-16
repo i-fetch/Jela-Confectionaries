@@ -10,8 +10,12 @@ import OurMenu from "@/components/OurMenu/OurMenu";
 import OurVideo from "@/components/OurVideo/OurVideo";
 import ReserveTable from "@/components/ReserveTable/ReserveTable";
 import TestimonialSlider from "@/components/Testimonials/Testimonials";
-export default function Home() {
- 
+import { getAllProducts } from "@/controllers/getAllProducts";
+
+
+export default async function Home() {
+  // Fetch products server-side
+   const foodItems = await getAllProducts();
 
   return (
     <main>
@@ -20,7 +24,7 @@ export default function Home() {
       <AboutSection />
       <DailyOffers /> 
       <OurMenu />
-      <Menu2 />
+      <Menu2 foodItems={foodItems} />
       <MainDish />
       <OurVideo />
       <OurIngredient />

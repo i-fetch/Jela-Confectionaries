@@ -8,7 +8,8 @@ export async function getAllProducts() {
     // Fetch products and return only the specified fields
     const products = await Product.find({}, "name description price category image").lean();
 
-    return products.map((product) => ({
+    return products.map((product) => (
+      {
       _id: product._id.toString(),
       name: product.name,
       description: product.description,
