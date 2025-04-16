@@ -61,7 +61,34 @@ const foodItems = [
     categories: ["Cakes"],
     dietary: ["Vegetarian"],
   },
-]
+  {
+    id: "7",
+    name: "Apple Danish",
+    price: 55,
+    description: "Flaky pastry with a sweet apple filling",
+    image: "/apple-danish.jpg",
+    categories: ["Pastries"],
+    dietary: ["Vegetarian"],
+  },
+  {
+    id: "8",
+    name: "Lemon Cheesecake",
+    price: 95,
+    description: "Tangy, creamy cheesecake with a hint of lemon zest",
+    image: "/lemon-cheese-cake",
+    categories: ["Cakes"],
+    dietary: ["Vegetarian"],
+  },
+  {
+    id: "9",
+    name: "Vanilla Macaron",
+    price: 30,
+    description: "Delicate, crisp macaron filled with vanilla cream",
+    image: "/vannila-macaron.jpg",
+    categories: ["Pastries"],
+    dietary: ["Vegetarian"],
+  },
+];
 
 // Available categories and dietary options
 const categories = ["All", "Pastries", "Cakes", "Beverages", "Breads"]

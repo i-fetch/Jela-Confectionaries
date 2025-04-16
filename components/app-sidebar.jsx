@@ -74,7 +74,7 @@ export function AppSidebar({ ...props }) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="/dashboard" className="flex items-center gap-3">
+              <a href="/" className="flex items-center gap-3">
                 <div className="flex items-center justify-center rounded-xl bg-[#FFD700] text-black p-2 shadow-md">
                   <Command className="h-5 w-5" />
                 </div>
