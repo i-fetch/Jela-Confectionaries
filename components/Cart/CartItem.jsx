@@ -51,12 +51,12 @@ const CartItem = () => {
   };
 
   return (
-    <span className="flex items-center justify-center max-w-fit border mx-auto p-1">
+    <span className="flex items-center justify-center max-w-fit mx-auto p-1">
       <ShoppingBag className="text-2xl text-white font-bold" />
       {loading ? (
         <Loader size={10} className="animate-spin" />
       ) : cartItems.length === 0 ? (
-        <span className="text-xs text-center text-gray-100">Your cart is empty</span>
+        <span className="hidden text-xs text-center text-gray-100">Your cart is empty</span>
       ) : (
         <div className="space-y-6">
           {cartItems.map((item) => (

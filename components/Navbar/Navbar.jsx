@@ -15,9 +15,6 @@ import { Button } from "@/components/ui/button";
 import LogoImg from "@/public/logo-img.jpg";
 import Image from "next/image";
 import CartItem from '../Cart/CartItem';
-// import Cart from '@/components/Cart/CartItem';
-
-
 
 
 const Navbar = ({
@@ -66,6 +63,7 @@ const Navbar = ({
             ))}
           </div>
           <div className="flex gap-2">
+        <CartItem />
             <Button asChild variant="outline" size="sm" className=" bg-white text-black hover:bg-[#cd9d22] hover:text-white">
               <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
@@ -78,7 +76,6 @@ const Navbar = ({
         </nav>
 
         {/* Cart System Icon  */}
-        <CartItem />
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">
