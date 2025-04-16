@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeader from '@/public/page-header-bg.jpg';
+import PageHeader from '@/public/page-header-bg2.jpg';
 import AboutSection from '@/components/AboutSection/AboutSection';
 import DailyOffers from '@/components/DailyOffers/DailyOffers';
 import ReserveTable from '@/components/ReserveTable/ReserveTable';
