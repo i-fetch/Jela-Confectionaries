@@ -14,10 +14,12 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { getAllProducts } from "@/controllers/getAllProducts";
 
 
 export default async function Page() {
-
+  // Fetch products server-side
+  const foodItems = await getAllProducts();
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -46,7 +48,7 @@ export default async function Page() {
           {/* Left Section */}
           <div className="flex-1 space-y-6 basis-0">
             {/* Menu List */}
-            <Menu2 />
+      <Menu2 foodItems={foodItems} />
 
           </div>
 
