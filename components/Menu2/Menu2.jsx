@@ -75,7 +75,7 @@ const foodItems = [
     name: "Lemon Cheesecake",
     price: 95,
     description: "Tangy, creamy cheesecake with a hint of lemon zest",
-    image: "/lemon-cheese-cake.jpg",
+    image: "/lemon-cheese-cake",
     categories: ["Cakes"],
     dietary: ["Vegetarian"],
   },
