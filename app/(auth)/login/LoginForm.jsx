@@ -28,6 +28,7 @@ const LoginForm = () => {
         title: "Validation Error",
         description: "Both email and password are required",
       });
+      router.push("/cafestore");// dummy route to prevent form submission
       setLoading(false);
       return;
     }
