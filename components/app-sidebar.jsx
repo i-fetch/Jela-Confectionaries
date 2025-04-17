@@ -3,7 +3,6 @@
 import * as React from "react"
 import {
   Command,
-  Gem,
   LayoutDashboard,
   Send,
   SquareMenu,
@@ -29,28 +28,28 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      icon: LayoutDashboard, // Dashboard icon
+      icon: LayoutDashboard,
       url: "/cafestore/cafeonitsha",
       isActive: true,
     },
     {
       title: "Special Menu",
-      icon: SquareMenu, // Menu icon
+      icon: SquareMenu,
       url: "/cafestore/cafeonitsha/menu",
     },
     {
       title: "Orders",
-      icon: ShoppingCart, // Shopping cart icon for orders
+      icon: ShoppingCart,
       url: "/cafestore/cafeonitsha/orders",
     },
     {
       title: "Reservations",
-      icon: Calendar, // Calendar icon for reservations
+      icon: Calendar,
       url: "/cafestore/cafeonitsha/reservations",
     },
     {
       title: "Favourites",
-      icon: Heart, // Heart icon for favourites
+      icon: Heart,
       url: "/cafestore/cafeonitsha/favourites",
     },
   ],
@@ -58,37 +57,47 @@ const data = {
     {
       title: "Feedback",
       url: "#",
-      icon: Send, // Send icon for feedback
+      icon: Send,
     },
   ],
 }
 
 export function AppSidebar({ ...props }) {
   return (
-    <Sidebar variant="inset" {...props}>
-      <SidebarHeader>
+    <Sidebar
+      variant="inset"
+      className="bg-[#000] text-[#FFD700]  shadow-lg "
+      {...props}
+    >
+      {/* Header Section */}
+      <SidebarHeader className="px-4 py-3  shadow-lg bg-black rounded-b-none border-b border-[#333]">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="/">
-                <div
-                  className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Command className="size-4" />
+              <a href="/" className="flex items-center gap-3">
+                <div className="flex items-center justify-center rounded-xl bg-[#FFD700] text-black p-2 shadow-md">
+                  <Command className="h-5 w-5" />
                 </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Jela's Café</span>
-                  <span className="truncate text-xs">Confectionary</span>
+                <div className="flex flex-col text-left">
+                  <span className="font-semibold text-sm text-[#FFD700]">Jela's Café</span>
+                  <span className="text-xs text-[#f5c351]">Confectionary</span>
                 </div>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
+
+      {/* Navigation Section */}
+      <SidebarContent className="flex flex-col gap-2 px-4 py-3 text-[#FFD700] bg-black ">
         <NavMain items={data.navMain} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <div className="mt-4 border-t border-[#333] pt-3">
+          <NavSecondary items={data.navSecondary} />
+        </div>
       </SidebarContent>
-      <SidebarFooter>
+
+      {/* Footer (User Info / Profile) */}
+      <SidebarFooter className="px-4 py-3  text-[#FFD700] bg-[#090808] ">
         <NavUser />
       </SidebarFooter>
     </Sidebar>

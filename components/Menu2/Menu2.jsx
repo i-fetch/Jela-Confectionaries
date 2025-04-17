@@ -59,16 +59,16 @@ const Menu2 = ({ foodItems }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-4 md:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-[#060400] text-white p-4 md:p-2 lg:p-8 ">
+      <div className="max-w-7xl mx-auto bg-black">
         {/* Search and Filters */}
-        <div className="mb-6 space-y-4">
+        <div className="mb-6 space-y-4 bg-black">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               placeholder="Search..."
-              className="w-full bg-gray-900 border border-gray-800 rounded-full py-2 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-gray-700"
+              className="w-full bg-bg-[#060400] border border-gray-800 rounded-full py-2 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-gray-700"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -96,11 +96,10 @@ const Menu2 = ({ foodItems }) => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-md text-sm font-medium ${
-                  selectedCategory === category
-                    ? "bg-white text-gray-900"
-                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                }`}
+                className={`px-4 py-2 rounded-md text-sm font-medium ${selectedCategory === category
+                  ? "bg-white text-gray-900"
+                  : "bg-[#392903] text-gray-300 hover:bg-[#000]"
+                  }`}
               >
                 {category}
               </button>
@@ -109,14 +108,11 @@ const Menu2 = ({ foodItems }) => {
         </div>
 
         {/* Food Items Grid */}
-        <h2 className="text-2xl font-semibold text-center text-white my-5">
-          Our Confections
-        </h2>
-        
+        <h2 className="text-2xl font-semibold text-center text-white my-5">Our Confectionaries</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredItems.length > 0 ? (
-            filteredItems.map(item => (
-              <div key={item._id} className="bg-gray-900 rounded-lg overflow-hidden">
+            filteredItems.map((item) => (
+              <div key={item.id} className="bg-black rounded-lg overflow-hidden shadow-lg shadow-white transition-transform duration-300 hover:scale-[1.02]">
                 <div className="relative h-48">
                   <Image 
                     src={item.image || "/placeholder.svg"} 
