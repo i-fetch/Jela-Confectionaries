@@ -25,7 +25,7 @@ export default async function Page() {
       <AppSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 bg-[#000] ">
-          <div className="flex items-center gap-2 px-4">
+          <div className="flex items-center gap-2 px-4 bg-black">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
@@ -44,7 +44,7 @@ export default async function Page() {
           </div>
         </header>
 
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0 bg-black shadow-white shadow-lg">
           {/* Left Section */}
           <div className="flex-1 space-y-6 basis-0">
             {/* Menu List */}

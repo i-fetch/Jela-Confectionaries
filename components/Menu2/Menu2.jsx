@@ -59,10 +59,10 @@ const Menu2 = ({ foodItems }) => {
   }
 
   return (
-    <div className="min-h-screen bg-[#060400] text-white p-4 md:p-2 lg:p-8 w-full">
+    <div className="min-h-screen bg-[#060400] text-white p-4 md:p-2 lg:p-8 ">
       <div className="max-w-7xl mx-auto bg-black">
         {/* Search and Filters */}
-        <div className="mb-6 space-y-4">
+        <div className="mb-6 space-y-4 bg-black">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input

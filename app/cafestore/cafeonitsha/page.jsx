@@ -47,7 +47,7 @@ export default async function Page() {
           {/* Cards Section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Reservations */}
-            <div className="bg-black rounded-xl shadow-md shadow-white p-6 hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-black rounded-xl shadow-sm shadow-white p-6 hover:scale-[1.02] transition-transform duration-300">
               <div className="p-4 bg-green-100/10 text-green-400 rounded-full inline-block">
                 <Calendar className="w-6 h-6" />
               </div>
