@@ -57,7 +57,6 @@ export default async function Page() {
                 <p className="text-sm text-gray-500 dark:text-gray-400">Reservations</p>
               </div>
             </div>
-
             {/* Orders Card */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex items-center gap-4">
               <div className="p-4 bg-blue-100 text-blue-600 rounded-full">
