@@ -26,6 +26,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-[#0f1520] text-white">
       {/* Navigation */}
+      {/* <CafeHeader totalItems={totalItems} toggleCart={toggleCart} /> */}
       <CafeHeader totalItems={totalItems} toggleCart={toggleCart} />
 
 

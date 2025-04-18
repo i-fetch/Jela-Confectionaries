@@ -40,13 +40,13 @@ const AboutSection = () => {
 
             <div className="hero-btn flex flex-col lg:flex-row gap-4 animate-fadeInUp">
               <Link
-                href="#"
+                href="/cafestore"
                 className="font-semibold px-6 py-3 w-fit flex space-x-2 items-center justify-center slide-in-from-bottom ease-in-out duration-300 text-white rounded-3xl bg-[#A6A182] hover:bg-white hover:text-black transition"
               >
                 <span>Order Now</span> <MoveRight />
               </Link>
               <Link
-                href="#"
+                href="/about"
                 className="font-semibold px-6 py-3 w-fit flex space-x-2 items-center justify-center ease-in-out duration-300 bg-white text-black rounded-3xl hover:bg-[#A6A182] hover:text-white transition"
               >
                 <span>Read More</span> <MoveRight />

@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 import PizzaImage from '@/public/pizza.png';
 import { CircleCheck, CircleCheckBig, Dot, MoveRight } from 'lucide-react';
@@ -49,11 +50,11 @@ const DailyOffers = () => {
           <li className='flex items-center space-x-2'> <CircleCheckBig size={15} className="text-white" /> <span> Exquisite Pairings & Unique Flavors</span></li>
         </ul>
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
-          <Link href="#"
+          <Link href="/cafestore"
             className="font-semibold px-6 py-3 w-fit flex space-x-2 items-center justify-center slide-in-from-bottom ease-in-out duration-300 text-white rounded-3xl bg-[#A6A182] hover:bg-white hover:text-black transition" >
             <span>Book Now</span> <MoveRight />
           </Link>
-          <Link href="#"
+          <Link href="/menu"
             className="font-semibold px-6 py-3 w-fit flex space-x-2 items-center justify-center slide-in-from-bottom ease-in-out duration-300 text-white rounded-3xl bg-[#A6A182] hover:bg-white hover:text-black transition">
             <span>Explore Menu</span> <MoveRight />
           </Link>

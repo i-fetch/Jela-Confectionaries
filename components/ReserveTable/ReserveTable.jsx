@@ -26,7 +26,7 @@ const ReserveTable = () => {
   const [date, setDate] = useState(null);
 
   return (
-    <section className="bg-[#1f2120] text-white py-20 px-4 md:px-20">
+    <section id="book-a-table" className="bg-[#1f2120] text-white py-20 px-4 md:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Left - Heading and Open Hours */}
         <div>

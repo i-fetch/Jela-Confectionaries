@@ -3,56 +3,76 @@ import { persist } from "zustand/middleware";
 
 export const useCartStore = create(
   persist(
-    (set, get) => ({
+    (set) => ({
       cartItems: [],
-      loading: false,
+      totalItems: 0,
 
-      // Fetch items from your API and update cartItems.
-      fetchCartItems: async () => {
-        set({ loading: true });
-        try {
-          const res = await fetch("/api/cart");
-          const data = await res.json();
-          if (res.ok) {
-            set({ cartItems: data });
-          }
-        } catch (error) {
-          console.error("Error fetching cart items:", error);
-        } finally {
-          set({ loading: false });
-        }
-      },
+      // Add item to cart
+      addToCart: (product) =>
+        set((state) => {
+          const existingItem = state.cartItems.find((item) => item._id === product._id);
 
-      // Add a product to the cart via your API then refresh items.
-      addToCart: async (product) => {
-        try {
-          const res = await fetch("/api/cart", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ productId: product._id, quantity: 1 }),
-          });
-          if (res.ok) {
-            get().fetchCartItems();
+          if (existingItem) {
+            return {
+              cartItems: state.cartItems.map((item) =>
+                item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item
+              ),
+              totalItems: state.totalItems + 1,
+            };
+          } else {
+            return {
+              cartItems: [...state.cartItems, { ...product, quantity: 1 }],
+              totalItems: state.totalItems + 1,
+            };
           }
-        } catch (error) {
-          console.error("Error adding to cart:", error);
-        }
-      },
+        }),
 
-      // Remove an item from the cart and update the state.
-      removeFromCart: async (itemId) => {
-        try {
-          const res = await fetch(`/api/cart/${itemId}`, { method: "DELETE" });
-          if (res.ok) {
-            set({
-              cartItems: get().cartItems.filter((item) => item._id !== itemId),
-            });
+      // Remove item from cart
+      removeFromCart: (productId) =>
+        set((state) => {
+          const itemToRemove = state.cartItems.find((item) => item._id === productId);
+
+          if (itemToRemove) {
+            return {
+              cartItems: state.cartItems.filter((item) => item._id !== productId),
+              totalItems: state.totalItems - itemToRemove.quantity,
+            };
           }
-        } catch (error) {
-          console.error("Error removing item:", error);
-        }
-      }
+          return state;
+        }),
+
+      // Increment item quantity
+      incrementItem: (productId) =>
+        set((state) => ({
+          cartItems: state.cartItems.map((item) =>
+            item._id === productId ? { ...item, quantity: item.quantity + 1 } : item
+          ),
+          totalItems: state.totalItems + 1,
+        })),
+
+      // Decrement item quantity
+      decrementItem: (productId) =>
+        set((state) => {
+          const itemToDecrement = state.cartItems.find((item) => item._id === productId);
+
+          if (itemToDecrement && itemToDecrement.quantity > 1) {
+            return {
+              cartItems: state.cartItems.map((item) =>
+                item._id === productId ? { ...item, quantity: item.quantity - 1 } : item
+              ),
+              totalItems: state.totalItems - 1,
+            };
+          } else if (itemToDecrement && itemToDecrement.quantity === 1) {
+            return {
+              cartItems: state.cartItems.filter((item) => item._id !== productId),
+              totalItems: state.totalItems - 1,
+            };
+          }
+          return state;
+        }),
     }),
-    { name: "cart-storage" } // key name for localStorage persistence
+    {
+      name: "cart-storage", // Key for localStorage
+    }
   )
 );

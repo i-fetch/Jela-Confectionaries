@@ -1,3 +1,4 @@
+"use server";
 import { connectToDB } from "@/lib/ConnectDB";
 import Product from "@/models/Product";
 

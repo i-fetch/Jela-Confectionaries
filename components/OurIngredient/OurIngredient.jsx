@@ -56,7 +56,7 @@ const OurIngredient = () => {
 
             {/* CTA Button */}
             <div className="my-2 flex justify-center lg:justify-start">
-              <Link href="/menu"
+              <Link href="#book-a-table"
                 className="bg-[#cd9d22] w-fit mx-0 lg:mx-auto text-black px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-[#8a866c] transition-colors">
                 Book Table <ArrowRight className="w-4 h-4" />
               </Link>
