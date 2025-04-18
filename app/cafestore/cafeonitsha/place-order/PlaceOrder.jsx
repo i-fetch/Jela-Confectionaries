@@ -58,6 +58,7 @@ export default function PlaceOrder({ products }) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
+     
       <CafeHeader totalItems={totalItems} toggleCart={toggleCart} />
 
       <main className="container mx-auto px-6 py-8">

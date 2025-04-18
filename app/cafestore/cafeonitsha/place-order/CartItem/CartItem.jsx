@@ -6,9 +6,9 @@ const CartItem = ({ totalItems, toggleCart }) => {
   return (
 
     <span className="flex items-center space-x-2">
-      <Link href="/cafestore/cafeonitsha/place-order" className="text-gray-900 font-medium hover:text-gray-900">
+      {/* <Link href="/cafestore/cafeonitsha/place-order" className="text-gray-900 font-medium hover:text-gray-900">
         Place Order
-      </Link>
+      </Link> */}
       <button onClick={toggleCart} className="animate-bounce relative text-gray-900" aria-label="Shopping cart">
         <ShoppingCart className="h-6 w-6" />
         {totalItems > 0 && (

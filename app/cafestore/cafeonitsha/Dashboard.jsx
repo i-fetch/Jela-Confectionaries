@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Heart, ShoppingCart } from "lucide-react"
+import { Heart, StoreIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -26,8 +26,24 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-[#0f1520] text-white">
       {/* Navigation */}
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/cafestore/cafeonitsha" className="text-xl font-bold text-gray-900">
+          <StoreIcon />
+        </Link>
+
+        {/* Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          <Link href="/cafestore/cafeonitsha/menu" className="text-gray-900 font-medium hover:text-gray-900">
+            Café Menu
+          </Link>
+          <Link href="/cafestore/cafeonitsha/place-order" className="text-gray-900 font-medium hover:text-gray-900">
+            Place Order
+          </Link>
+        </nav>
+
+      </header>
       {/* <CafeHeader totalItems={totalItems} toggleCart={toggleCart} /> */}
-      <CafeHeader totalItems={totalItems} toggleCart={toggleCart} />
 
 
       {/* Dashboard Content */}
