@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const menuItemSchema = new mongoose.Schema(
   {
     name: String,
@@ -15,6 +17,5 @@ const menuItemSchema = new mongoose.Schema(
   }
 );
 
-const MenuItem =
-  mongoose.models.MenuItem || mongoose.model("MenuItem", menuItemSchema);
+const MenuItem =  mongoose.models.MenuItem || mongoose.model("MenuItem", menuItemSchema);
 export default MenuItem;
