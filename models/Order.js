@@ -1,28 +1,58 @@
+import mongoose from "mongoose";
+
 const orderSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "User", // Reference to the User model
+      required: true,
     },
     items: [
       {
         product: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Product",
+          ref: "Product", // Reference to the Product model
+          required: true,
         },
-        quantity: Number,
+        name: {
+          type: String,
+          required: true,
+        },
+        price: {
+          type: Number,
+          required: true,
+        },
+        quantity: {
+          type: Number,
+          required: true,
+          min: 1,
+        },
       },
     ],
-    totalAmount: Number,
+    totalAmount: {
+      type: Number,
+      required: true,
+    },
     status: {
       type: String,
-      enum: ["pending", "paid", "completed"],
+      enum: ["pending", "paid", "processing", "completed", "delivered"],
       default: "pending",
     },
-    paymentRef: String,
+    paymentRef: {
+      type: String, // Reference to the payment transaction ID
+      default: null,
+    },
+    deliveryDate: {
+      type: Date, // Optional field for delivery date
+      default: null,
+    },
+    notes: {
+      type: String, // Optional field for additional order notes
+      default: "",
+    },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically add createdAt and updatedAt fields
   }
 );
 

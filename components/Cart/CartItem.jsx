@@ -1,3 +1,5 @@
+"use client"
+import React from "react";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader, ShoppingBag, Trash } from "lucide-react";
@@ -20,7 +22,7 @@ const CartItem = () => {
       ) : cartItems.length === 0 ? (
         <span className="hidden text-xs text-center text-gray-100">Your cart is empty</span>
       ) : (
-        <div className="space-y-6">
+        <div className="fixed right-0 top-16 w-full md:w-96 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 h-screen p-4 z-40 overflow-y-auto space-y-6">
           {cartItems.map((item) => (
             <div key={item._id} className="flex items-center justify-between p-4 bg-white rounded-lg shadow">
               <div className="flex items-center gap-4">
