@@ -7,6 +7,7 @@ import ContactUs from "@/components/ContactUs/ContactUs";
 import CafeMap from "@/components/JelaCafeMap/CafeMap";
 import Navbar from "@/components/Navbar/Navbar";
 import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
+import Menu2 from "@/components/Menu2/Menu2";
 
 
 export default function page() {
