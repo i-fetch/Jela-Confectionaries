@@ -20,7 +20,7 @@ const menuItems = [
     name: "Chocolate Éclair",
     price: 5.0,
     description: "Choux pastry filled with vanilla cream and topped with chocolate",
-    image: "/eclair.jpg",
+    image: "/chocolate-clair.jpg",
     categories: ["Pastries"],
     dietary: ["Vegetarian"],
   },
@@ -102,7 +102,14 @@ export default function CafeMenu() {
   }
 
   return (
-    <div className="w-full bg-[#0f1520] text-white py-6 px-4 md:px-6">
+    <div className="w-full min-h-screen bg-[#0f1520] text-white py-6 px-4 md:px-6">
+
+      <h1 className="text-center text-2xl font-bold mt-10">Cafe Onitsha</h1>
+      <p className="text-center text-lg mt-4">Welcome to Cafe Onitsha!</p>
+      <p className="text-center text-lg my-4">Explore our menu and place your order.</p>
+
+
+
       {/* Search and Filters */}
       <div className="mb-8">
         <div className="relative mb-6">
@@ -121,9 +128,8 @@ export default function CafeMenu() {
         <div className="flex flex-wrap gap-2 mb-6">
           <button
             onClick={() => toggleDietaryFilter("Vegetarian")}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-              dietaryFilters.Vegetarian ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-            }`}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters.Vegetarian ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+              }`}
           >
             <Leaf className="w-4 h-4" />
             <span>Vegetarian</span>
@@ -131,9 +137,8 @@ export default function CafeMenu() {
 
           <button
             onClick={() => toggleDietaryFilter("Vegan")}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-              dietaryFilters.Vegan ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-            }`}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters.Vegan ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+              }`}
           >
             <Wine className="w-4 h-4" />
             <span>Vegan</span>
@@ -141,9 +146,8 @@ export default function CafeMenu() {
 
           <button
             onClick={() => toggleDietaryFilter("Gluten-Free")}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-              dietaryFilters["Gluten-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-            }`}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters["Gluten-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+              }`}
           >
             <Wheat className="w-4 h-4" />
             <span>Gluten-Free</span>
@@ -151,9 +155,8 @@ export default function CafeMenu() {
 
           <button
             onClick={() => toggleDietaryFilter("Nut-Free")}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-              dietaryFilters["Nut-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-            }`}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters["Nut-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+              }`}
           >
             <AlertCircle className="w-4 h-4" />
             <span>Nut-Free</span>
@@ -165,9 +168,8 @@ export default function CafeMenu() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-lg ${
-                selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
-              }`}
+              className={`px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
+                }`}
             >
               {category}
             </button>
@@ -201,7 +203,7 @@ export default function CafeMenu() {
                     </span>
                   ))}
                 </div>
-              
+
               </div>
             </div>
           </div>
