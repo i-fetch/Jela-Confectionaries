@@ -7,50 +7,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 // Mock data for menu items (in a real app, this would come from a database)
-const menuItems = [
-  {
-    id: 1,
-    name: "Classic Croissant",
-    price: 4.5,
-    description: "Buttery, flaky layers of hand-rolled pastry",
-    image: "/classic-croissant.jpg"
-  },
-  {
-    id: 2,
-    name: "Chocolate Éclair",
-    price: 5.0,
-    description: "Choux pastry filled with vanilla cream and topped with chocolate",
-    image: "/chocolate-clair.jpg"
-  },
-  {
-    id: 3,
-    name: "Berry Tart",
-    price: 6.5,
-    description: "Fresh seasonal berries atop vanilla custard in a sweet pastry shell",
-    image: "/berry-tart.jpg"
-  },
-  {
-    id: 4,
-    name: "Cappuccino",
-    price: 3.5,
-    description: "Espresso with steamed milk and a light layer of foam",
-    image: "/cappuccino.jpg"
-  },
-  {
-    id: 5,
-    name: "Sourdough Bread",
-    price: 5.5,
-    description: "Artisanal sourdough with a crisp crust and chewy interior",
-    image: "/sourdough-bread.jpg"
-  },
-  {
-    id: 6,
-    name: "Carrot Cake",
-    price: 5.75,
-    description: "Moist spiced cake with cream cheese frosting",
-    image: "/carrot-cake.jpg"
-  },
-]
+
 
 export default function CafeMenu({ menuItems }) {
   const [searchQuery, setSearchQuery] = useState("")
