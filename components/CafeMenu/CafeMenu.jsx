@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Search, Leaf, Wine, Wheat, AlertCircle, ShoppingCart, StoreIcon, ShoppingBag } from "lucide-react"
 import Link from "next/link"
+import { Button } from "../ui/button"
 
 // Mock data for menu items (in a real app, this would come from a database)
 const menuItems = [
@@ -114,12 +115,14 @@ export default function CafeMenu() {
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/cafestore/cafeonitsha/place-order" className="flex items-center space-x-2 text-gray-900 font-medium hover:text-gray-900">
-            <span>Place Order</span> <ShoppingBag className="animate-bounce"/>
+            <span>Place Order</span> <ShoppingBag className="animate-bounce" />
           </Link>
         </nav>
 
       </header>
-      <div className="w-full bg-[#0f1520] text-white py-6 px-4 md:px-6">
+
+
+      <div className="w-full bg-white text-[#0f1520] py-6 px-4 md:px-6">
 
 
         <h1 className="text-center text-2xl font-bold mt-10">Welcome to Cafe Onitsha!</h1>
@@ -137,7 +140,7 @@ export default function CafeMenu() {
             </div>
             <input
               type="text"
-              className="w-full p-3 pl-10 bg-[#1a2332] border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gray-600"
+              className="w-full p-3 pl-10 bg-[#fff] border border-gray-700 rounded-lg text-[#1a2332] focus:outline-none focus:ring-2 focus:ring-gray-600"
               placeholder="Search menu..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -145,55 +148,60 @@ export default function CafeMenu() {
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            <button
+            <Button
+            variant={"outline"}
               onClick={() => toggleDietaryFilter("Vegetarian")}
               className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters.Vegetarian ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
                 }`}
             >
               <Leaf className="w-4 h-4" />
               <span>Vegetarian</span>
-            </button>
+            </Button>
 
-            <button
+            <Button
+            variant={"outline"}
               onClick={() => toggleDietaryFilter("Vegan")}
               className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters.Vegan ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
                 }`}
             >
               <Wine className="w-4 h-4" />
               <span>Vegan</span>
-            </button>
+            </Button>
 
-            <button
+            <Button
+            variant={"outline"}
               onClick={() => toggleDietaryFilter("Gluten-Free")}
               className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters["Gluten-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
                 }`}
             >
               <Wheat className="w-4 h-4" />
               <span>Gluten-Free</span>
-            </button>
+            </Button>
 
-            <button
+            <Button
+            variant={"outline"}
               onClick={() => toggleDietaryFilter("Nut-Free")}
               className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters["Nut-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
                 }`}
             >
               <AlertCircle className="w-4 h-4" />
               <span>Nut-Free</span>
-            </button>
+            </Button>
           </div>
           {/* </div> */}
 
 
           <div className="flex flex-wrap gap-2">
             {["All", "Pastries", "Cakes", "Beverages", "Breads"].map((category) => (
-              <button
+              <Button
+                variant={"outline"}
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
                   }`}
               >
                 {category}
-              </button>
+              </Button>
             ))}
           </div>
         </div>
@@ -201,7 +209,7 @@ export default function CafeMenu() {
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <div key={item.id} className="bg-[#1a2332] rounded-lg overflow-hidden">
+            <div key={item.id} className="bg-[#fff] text-[#1a2332] shadow-sm rounded-lg overflow-hidden">
               <div className="relative h-48">
                 <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
               </div>
