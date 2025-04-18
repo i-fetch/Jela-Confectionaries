@@ -10,9 +10,8 @@ import OurVideo from "@/components/OurVideo/OurVideo";
 import ReserveTable from "@/components/ReserveTable/ReserveTable";
 import TestimonialSlider from "@/components/Testimonials/Testimonials";
 
-
 export default async function Home() {
-
+ 
 
   return (
     <main>
