@@ -17,19 +17,19 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
+
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
 
     if (!email || !password) {
-      toast({
+      setLoading(false);
+      return toast({
         variant: "destructive",
         title: "Validation Error",
-        description: "Both email and password are required",
+        description: "Email and Password are required",
       });
-      setLoading(false);
-      return;
+      ;
     }
 
     try {
@@ -40,24 +40,26 @@ const LoginForm = () => {
       });
 
       if (result?.error) {
-        toast({
+        return toast({
           variant: "destructive",
           title: "Login Failed",
           description: "Invalid email or password",
         });
-        return;
+  
+      } else {
+        toast({
+          title: "Login Successful",
+          description: "Redirecting to your dashboard...",
+        });
+        router.push("/cafestore");
       }
 
-      toast({
-        title: "Login Successful",
-        description: "Redirecting to your dashboard...",
-      });
-      router.push("/cafestore");
+     
     } catch (err) {
       toast({
         variant: "destructive",
-        title: "Login Error",
-        description: err.message || "An unexpected error occurred",
+        title: "Error occurred.",
+        description: "An error occurred while processing your request.",
       });
     } finally {
       setLoading(false);
@@ -69,7 +71,7 @@ const LoginForm = () => {
       <div className="bg-[#1a1c1a] w-full max-w-md p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-white text-center mb-6">Welcome Back</h2>
         <p className="text-sm text-gray-400 text-center mb-8">Login to access our special menu</p>
-        
+
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
             <Label htmlFor="email" className="text-gray-300">Email</Label>
@@ -82,7 +84,7 @@ const LoginForm = () => {
               className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="password" className="text-gray-300">Password</Label>
             <Input
@@ -94,7 +96,7 @@ const LoginForm = () => {
               className="bg-[#2b2e2b] text-white border-[#2b2e2b] focus-visible:ring-yellow-600"
             />
           </div>
-          
+
           <Button
             type="submit"
             disabled={loading}
@@ -105,7 +107,7 @@ const LoginForm = () => {
             ) : "Login"}
           </Button>
         </form>
-        
+
         <div className="mt-6 text-center text-sm text-gray-400">
           Don't have an account?{' '}
           <Link href="/register" className="text-yellow-500 hover:underline">

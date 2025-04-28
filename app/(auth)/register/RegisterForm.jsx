@@ -44,14 +44,14 @@ const RegisterForm = () => {
         toast({
           variant: "destructive",
           title: "Error",
-          description: response?.message || "An error occurred while registering.",
+          description: "An error occurred while registering.",
         });
       }
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",
-        description: error.message || "An error occurred. Please try again later.",
+        description: "Failed Internet Connection. Please try again later.",
       });
     } finally {
       setLoading(false);

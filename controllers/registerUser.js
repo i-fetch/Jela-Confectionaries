@@ -34,9 +34,7 @@ export async function registerUser({ username, email, password, phone }) {
     if (existingUser) {
       return { 
         success: false, 
-        message: existingUser.email === email 
-          ? "Email already in use" 
-          : "Username already taken"
+        message: existingUser.email === email ? "Email already in use" : "Username already taken"
       };
     }
 
@@ -61,20 +59,21 @@ export async function registerUser({ username, email, password, phone }) {
     });
 
     await newUser.save();
-
+    
     revalidatePath("/login");
 
     return {
       success: true,
       message: "User registered successfully",
-      userID: userID
+      // userID: userID
     };
+
     
   } catch (error) {
-    console.error("Error registering user:", error);
+    console.error("Error registering user", error);
     return { 
       success: false, 
-      message: error.message || "Error creating user" 
+      message: "Check Internet Connection" 
     };
   }
 }

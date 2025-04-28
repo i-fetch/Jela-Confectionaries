@@ -1,6 +1,5 @@
 import { connectToDB } from "@/lib/ConnectDB";
 import CafeMenu from "@/models/CafeMenu";
-import MenuItem from "@/models/MenuItem";
 
 export async function getMenuItems() {
   const branchId = "6801fcbb174da61c935dc25c"; // The _id of the CafeBranch

@@ -1,8 +1,9 @@
+//auth.js
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
-import { connectToDB } from "./lib/ConnectDB";
 import bcrypt from "bcrypt";
+import { connectToDB } from "./lib/ConnectDB";
 
 export const authOptions = {
   providers: [
@@ -10,47 +11,36 @@ export const authOptions = {
       name: "Credentials",
       id: "credentials",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "email@example.com" },
+        email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         try {
-          if (!credentials?.email || !credentials?.password) {
-            throw new Error("Email and password are required");
-          }
-
+          // Connect to MongoDB
           await connectToDB();
 
-          const user = await User.findOne({ email: credentials.email.toLowerCase().trim() });
+          const { email, password } = credentials;
+
+          const user = await User.findOne({ email });
 
           if (!user) {
-            throw new Error("Invalid email or password");
+            throw new Error("No user found with that email");
           }
-
-          if (!user.password) {
-            throw new Error("Account not properly configured");
-          }
-
-          // Optional: Check if user is verified
-          if (user.isVerified === false) {
-            throw new Error("Please verify your email first");
-          }
-
-          const isValid = await bcrypt.compare(credentials.password, user.password);
+          const isValid = await bcrypt.compare(password, user.password);
           if (!isValid) {
-            throw new Error("Invalid email or password");
+            throw new Error("Invalid credentials");
           }
-
+          // Return a minimal user object
           return {
             id: user._id.toString(),
             email: user.email,
-            username: user.username,  // Changed from 'name' to 'username'
-            role: user.role || 'user', // Default role if not specified
+            name: user.username,
+            role: user.role,
             userId: user.userID,
           };
         } catch (error) {
-          console.error("Authorization error:", error.message);
-          throw new Error(error.message || "Login failed");
+          console.error("Error during authorization:", error);
+          throw new Error("Authorization failed");
         }
       },
     }),
@@ -64,33 +54,28 @@ export const authOptions = {
       if (user) {
         token.id = user.id;
         token.email = user.email;
-        token.username = user.username; // Fixed to match returned user object
+        token.name = user.name;
         token.role = user.role;
-        token.userId = user.userId;
+        token.userId = user.userID;
       }
       return token;
     },
     async session({ session, token }) {
-      if (token) {
-        session.user = {
-          id: token.id,
-          email: token.email,
-          username: token.username, // Now matches jwt callback
-          role: token.role,
-          userId: token.userId,
-        };
-      }
+      session.user = {
+        id: token.id,
+        email: token.email,
+        username: token.username,
+        role: token.role,
+        userId: token.userId,
+      };
       return session;
     },
   },
   pages: {
     signIn: "/login",
-    signOut: "/logout",
     error: "/auth/error",
-    newUser: "/register", // Redirect after first login
   },
   secret: process.env.NEXTAUTH_SECRET,
-  debug: process.env.NODE_ENV === "development",
 };
 
 export default NextAuth(authOptions);
