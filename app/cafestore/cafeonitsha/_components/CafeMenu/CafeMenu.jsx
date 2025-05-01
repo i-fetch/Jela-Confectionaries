@@ -18,7 +18,7 @@ export default function CafeMenu({ menuItems }) {
     "Gluten-Free": false,
     "Nut-Free": false,
   })
-
+ 
   // Filter menu items based on search, category, and dietary preferences
   const filteredItems = menuItems.filter((item) => {
     // Search filter

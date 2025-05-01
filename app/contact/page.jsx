@@ -6,8 +6,6 @@ import Footers from '@/components/Footers/Footers';
 import ContactUs from "@/components/ContactUs/ContactUs";
 import CafeMap from "@/components/JelaCafeMap/CafeMap";
 import Navbar from "@/components/Navbar/Navbar";
-import JelaCafeMap from "@/components/JelaCafeMap/JelaCafeMap";
-import Menu2 from "@/components/Menu2/Menu2";
 
 
 export default function page() {
@@ -28,7 +26,6 @@ export default function page() {
 
       </header>
       <ContactUs />
-      {/* <JelaCafeMap /> */}
       <CafeMap />
       <ReserveTable />
       <Footers />
