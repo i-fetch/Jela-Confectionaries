@@ -1,13 +1,18 @@
 import React from "react";
 import CafeMenu from "../_components/CafeMenu/CafeMenu";
+import { getProducts } from "@/controllers/getAllProducts";
+import { getCategories } from "@/controllers/getCategories";
+import { getDietaries } from "@/controllers/getDietaries";
 
 export default async function page() {
   try {
-    // const menuItems = await getMenuItems();
+    const products = await getProducts();
+    const categories = await getCategories();
+    const dietaries = await getDietaries();
 
     return (
       <div className="min-h-screen bg-gray-50">
-        {/* <CafeMenu menuItems={menuItems} /> */}
+        <CafeMenu products={products} dietaries={dietaries} categories={categories} />
       </div>
     );
   } catch (error) {

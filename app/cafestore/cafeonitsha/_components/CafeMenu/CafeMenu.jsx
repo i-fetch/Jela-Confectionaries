@@ -1,21 +1,32 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Image from "next/image";
+import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-// Mock data for menu items (in a real app, this would come from a database)
+export default function CafeMenu({ products, categories, dietaries }) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedDietary, setSelectedDietary] = useState([]);
 
-
-export default function CafeMenu({ menuItems }) {
-  const [searchQuery, setSearchQuery] = useState("")
-  c
   // Filter menu items based on search, category, and dietary preferences
- 
+  const filteredItems = products.filter((item) => {
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === "All" || item.category.includes(selectedCategory.toLowerCase());
+    const matchesDietary =
+      selectedDietary.length === 0 || selectedDietary.every((diet) => item.dietary.includes(diet));
+
+    return matchesSearch && matchesCategory && matchesDietary;
+  });
+
   // Toggle dietary filter
- 
+  const toggleDietaryFilter = (diet) => {
+    setSelectedDietary((prev) =>
+      prev.includes(diet) ? prev.filter((d) => d !== diet) : [...prev, diet]
+    );
+  };
 
   return (
     <div className="w-full min-h-screen">
@@ -28,26 +39,22 @@ export default function CafeMenu({ menuItems }) {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/cafestore/cafeonitsha/place-order" className="flex items-center space-x-2 text-gray-900 font-medium hover:text-gray-900">
+          <Link
+            href="/cafestore/cafeonitsha/place-order"
+            className="flex items-center space-x-2 text-gray-900 font-medium hover:text-gray-900"
+          >
             <span>Place Order</span> <ShoppingBag className="animate-bounce" />
           </Link>
         </nav>
-
       </header>
 
-
       <div className="w-full bg-white text-[#0f1520] py-6 px-4 md:px-6">
-
-
         <h1 className="text-center text-2xl font-bold mt-10">Welcome to Cafe Onitsha!</h1>
         <p className="text-center text-lg mt-4">Explore our Confectionary Menu</p>
 
-
-
         {/* Search and Filters */}
         <div className="my-8">
-
-          {/* <div className="w-full p-2 flex items-center justify-between space-x-2"> */}
+          {/* Search Bar */}
           <div className="relative mb-6">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <Search className="w-5 h-5 text-gray-400" />
@@ -61,58 +68,36 @@ export default function CafeMenu({ menuItems }) {
             />
           </div>
 
+          {/* Dietary Filters */}
           <div className="flex flex-wrap gap-2 mb-6">
-            <Button
-              variant={"outline"}
-              onClick={() => toggleDietaryFilter("Vegetarian")}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters.Vegetarian ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                }`}
-            >
-              <Leaf className="w-4 h-4" />
-              <span>Vegetarian</span>
-            </Button>
-
-            <Button
-              variant={"outline"}
-              onClick={() => toggleDietaryFilter("Vegan")}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters.Vegan ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                }`}
-            >
-              <Wine className="w-4 h-4" />
-              <span>Vegan</span>
-            </Button>
-
-            <Button
-              variant={"outline"}
-              onClick={() => toggleDietaryFilter("Gluten-Free")}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters["Gluten-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                }`}
-            >
-              <Wheat className="w-4 h-4" />
-              <span>Gluten-Free</span>
-            </Button>
-
-            <Button
-              variant={"outline"}
-              onClick={() => toggleDietaryFilter("Nut-Free")}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg ${dietaryFilters["Nut-Free"] ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                }`}
-            >
-              <AlertCircle className="w-4 h-4" />
-              <span>Nut-Free</span>
-            </Button>
-          </div>
-          {/* </div> */}
-
-
-          <div className="flex flex-wrap gap-2">
-            {["All", "Pastries", "Cakes", "Beverages", "Breads"].map((category) => (
+            {dietaries.map((diet) => (
               <Button
+                key={diet}
                 variant={"outline"}
+                onClick={() => toggleDietaryFilter(diet)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+                  selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+                }`}
+              >
+                {diet === "Vegetarian" && <Leaf className="w-4 h-4" />}
+                {diet === "Vegan" && <Wine className="w-4 h-4" />}
+                {diet === "Gluten-Free" && <Wheat className="w-4 h-4" />}
+                {diet === "Nut-Free" && <AlertCircle className="w-4 h-4" />}
+                <span>{diet}</span>
+              </Button>
+            ))}
+          </div>
+
+          {/* Category Filters */}
+          <div className="flex flex-wrap gap-2">
+            {["All", ...categories].map((category) => (
+              <Button
                 key={category}
+                variant={"outline"}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
-                  }`}
+                className={`px-4 py-2 rounded-lg ${
+                  selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
+                }`}
               >
                 {category}
               </Button>
@@ -134,19 +119,16 @@ export default function CafeMenu({ menuItems }) {
                 </div>
                 <p className="text-gray-400 mb-4">{item.description}</p>
 
-                <div className="flex justify-between items-center">
-                  <div className="flex flex-wrap gap-2">
-                    {item.dietary.map((diet) => (
-                      <span key={diet} className="inline-flex items-center text-xs text-gray-400">
-                        {diet === "Vegetarian" && <Leaf className="w-3 h-3 mr-1" />}
-                        {diet === "Vegan" && <Wine className="w-3 h-3 mr-1" />}
-                        {diet === "Gluten-Free" && <Wheat className="w-3 h-3 mr-1" />}
-                        {diet === "Nut-Free" && <AlertCircle className="w-3 h-3 mr-1" />}
-                        {diet}
-                      </span>
-                    ))}
-                  </div>
-
+                <div className="flex flex-wrap gap-2">
+                  {item.dietary.map((diet) => (
+                    <span key={diet} className="inline-flex items-center text-xs text-gray-400">
+                      {diet === "Vegetarian" && <Leaf className="w-3 h-3 mr-1" />}
+                      {diet === "Vegan" && <Wine className="w-3 h-3 mr-1" />}
+                      {diet === "Gluten-Free" && <Wheat className="w-3 h-3 mr-1" />}
+                      {diet === "Nut-Free" && <AlertCircle className="w-3 h-3 mr-1" />}
+                      {diet}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -154,5 +136,5 @@ export default function CafeMenu({ menuItems }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
