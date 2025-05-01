@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Search, Leaf, Wine, Wheat, AlertCircle, ShoppingCart, StoreIcon, ShoppingBag } from "lucide-react"
+import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
