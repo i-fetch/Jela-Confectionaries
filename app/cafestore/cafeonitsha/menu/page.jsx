@@ -1,14 +1,13 @@
 import React from "react";
-import { getMenuItems } from "@/controllers/getMenuItems";
 import CafeMenu from "../_components/CafeMenu/CafeMenu";
 
 export default async function page() {
   try {
-    const menuItems = await getMenuItems();
+    // const menuItems = await getMenuItems();
 
     return (
       <div className="min-h-screen bg-gray-50">
-        <CafeMenu menuItems={menuItems} />
+        {/* <CafeMenu menuItems={menuItems} /> */}
       </div>
     );
   } catch (error) {
