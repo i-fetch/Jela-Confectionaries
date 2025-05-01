@@ -1,12 +1,12 @@
 import React from "react";
 import CafeMenu from "../_components/CafeMenu/CafeMenu";
-import { getProducts } from "@/controllers/getAllProducts";
 import { getCategories } from "@/controllers/getCategories";
 import { getDietaries } from "@/controllers/getDietaries";
+import { getAllProducts } from "@/controllers/getAllProducts";
 
 export default async function page() {
   try {
-    const products = await getProducts();
+    const products = await getAllProducts();
     const categories = await getCategories();
     const dietaries = await getDietaries();
 

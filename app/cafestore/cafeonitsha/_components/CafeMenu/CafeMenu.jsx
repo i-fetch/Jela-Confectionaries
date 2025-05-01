@@ -14,9 +14,10 @@ export default function CafeMenu({ products, categories, dietaries }) {
   // Filter menu items based on search, category, and dietary preferences
   const filteredItems = products.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || item.category.includes(selectedCategory.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "All" || item.category.some((cat) => cat.toLowerCase() === selectedCategory.toLowerCase());
     const matchesDietary =
-      selectedDietary.length === 0 || selectedDietary.every((diet) => item.dietary.includes(diet));
+      selectedDietary.length === 0 || selectedDietary.every((diet) => (item.dietary || []).includes(diet));
 
     return matchesSearch && matchesCategory && matchesDietary;
   });
@@ -70,9 +71,9 @@ export default function CafeMenu({ products, categories, dietaries }) {
 
           {/* Dietary Filters */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {dietaries.map((diet) => (
+            {dietaries.map((diet, index) => (
               <Button
-                key={diet}
+                key={`diet-${index}`} // Ensure unique key
                 variant={"outline"}
                 onClick={() => toggleDietaryFilter(diet)}
                 className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
@@ -90,9 +91,9 @@ export default function CafeMenu({ products, categories, dietaries }) {
 
           {/* Category Filters */}
           <div className="flex flex-wrap gap-2">
-            {["All", ...categories].map((category) => (
+            {["All", ...categories].map((category, index) => (
               <Button
-                key={category}
+                key={`category-${index}`} // Ensure unique key
                 variant={"outline"}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg ${
@@ -108,7 +109,7 @@ export default function CafeMenu({ products, categories, dietaries }) {
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <div key={item.id} className="bg-[#fff] text-[#1a2332] shadow-sm rounded-lg overflow-hidden">
+            <div key={item.id || item._id} className="bg-[#fff] text-[#1a2332] shadow-sm rounded-lg overflow-hidden">
               <div className="relative h-48">
                 <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
               </div>
@@ -120,8 +121,8 @@ export default function CafeMenu({ products, categories, dietaries }) {
                 <p className="text-gray-400 mb-4">{item.description}</p>
 
                 <div className="flex flex-wrap gap-2">
-                  {item.dietary.map((diet) => (
-                    <span key={diet} className="inline-flex items-center text-xs text-gray-400">
+                  {(item.dietary || []).map((diet, index) => (
+                    <span key={`dietary-${item.id || item._id}-${index}`} className="inline-flex items-center text-xs text-gray-400">
                       {diet === "Vegetarian" && <Leaf className="w-3 h-3 mr-1" />}
                       {diet === "Vegan" && <Wine className="w-3 h-3 mr-1" />}
                       {diet === "Gluten-Free" && <Wheat className="w-3 h-3 mr-1" />}
