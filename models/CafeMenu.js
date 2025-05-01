@@ -10,7 +10,7 @@ const cafeMenuSchema = new mongoose.Schema(
     items: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "MenuItem", // Reference to the MenuItem model
+        ref: "Product", // Reference to the Product model
         required: true,
       },
     ],
