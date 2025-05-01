@@ -59,10 +59,11 @@ const CafeStorePage = () => {
                   <Link
                     key={cafe.id}
                     href={`/cafestore/${cafe.slug}`}
-                  >
-                    <button className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 transition-colors">
-                      Visit Cafe
-                    </button></Link>
+                    className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 transition-colors">
+                    Visit Cafe
+                  </Link>
+
+
 
                 </div>
               </div>
