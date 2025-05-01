@@ -11,42 +11,11 @@ import { Button } from "@/components/ui/button"
 
 export default function CafeMenu({ menuItems }) {
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("All")
-  const [dietaryFilters, setDietaryFilters] = useState({
-    Vegetarian: false,
-    Vegan: false,
-    "Gluten-Free": false,
-    "Nut-Free": false,
-  })
- 
+  c
   // Filter menu items based on search, category, and dietary preferences
-  const filteredItems = menuItems.filter((item) => {
-    // Search filter
-    const matchesSearch =
-      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchQuery.toLowerCase())
-
-    // Category filter
-    const matchesCategory = selectedCategory === "All" || item.categories.includes(selectedCategory)
-
-    // Dietary filter
-    const activeDietaryFilters = Object.entries(dietaryFilters)
-      .filter(([_, isActive]) => isActive)
-      .map(([name]) => name)
-
-    const matchesDietary =
-      activeDietaryFilters.length === 0 || activeDietaryFilters.every((filter) => item.dietary.includes(filter))
-
-    return matchesSearch && matchesCategory && matchesDietary
-  })
-
+ 
   // Toggle dietary filter
-  const toggleDietaryFilter = (filter) => {
-    setDietaryFilters((prev) => ({
-      ...prev,
-      [filter]: !prev[filter],
-    }))
-  }
+ 
 
   return (
     <div className="w-full min-h-screen">
