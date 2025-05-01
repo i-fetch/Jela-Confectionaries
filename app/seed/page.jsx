@@ -9,84 +9,63 @@ export default async function Home() {
 
     const updatedProducts = [
       {
+        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
         name: "Classic Croissant",
         description: "Buttery, flaky layers of hand-rolled pastry",
-        price: 45, // Changed to Number
-        category: "pastries", // Ensure this is an array
-        dietary: "Nut-Free", // Ensure this is an array
+        price: 45,
+        category: ["pastries"],
+        dietary: ["Nut-Free"],
         image: "/classic-croissant.jpg",
         available: true,
       },
       {
+        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
         name: "Chocolate Éclair",
         description: "Choux pastry filled with vanilla cream and topped with chocolate",
         price: 50,
-        category: ["pastries", "cakes"], // ✅ fixed
-        dietary: "Vegetarian",
+        category: ["pastries", "cakes"],
+        dietary: ["Vegetarian"],
         image: "/chocolate-clair.jpg",
         available: true,
       },
       {
+        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
         name: "Berry Tart",
         description: "Fresh seasonal berries atop vanilla custard in a sweet pastry shell",
         price: 65,
-        category: ["pastries", "cakes"], // ✅ fixed
-        dietary: "Vegetarian",
+        category: ["pastries", "cakes"],
+        dietary: ["Vegetarian"],
         image: "/berry-tart.jpg",
         available: true,
       },
       {
+        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
         name: "Cappuccino",
         description: "Espresso with steamed milk and a light layer of foam",
         price: 375,
-        category: "beverages",
-        dietary: "Vegan",
+        category: ["beverages"],
+        dietary: ["Vegan"],
         image: "/cappuccino.jpg",
         available: true,
       },
       {
+        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
         name: "Sourdough Bread",
         description: "Artisanal sourdough with a crispy crust and chewy interior",
         price: 525,
-        category: "breads",
-        dietary: "Vegan",
+        category: ["breads"],
+        dietary: ["Vegan"],
         image: "/sourdough-bread.jpg",
         available: true,
       },
       {
+        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
         name: "Carrot Cake",
         description: "Moist cake with carrots, walnuts, and cream cheese frosting",
         price: 575,
-        category: "cakes",
-        dietary: "Vegetarian",
+        category: ["cakes"],
+        dietary: ["Vegetarian"],
         image: "/carrot-cake.jpg",
-        available: true,
-      },
-      {
-        name: "Apple Danish",
-        description: "Flaky pastry with a sweet apple filling",
-        price: 55,
-        category: "pastries",
-        dietary: "Nut-Free",
-        image: "/apple-danish.jpg",
-        available: true,
-      },
-      {
-        name: "Lemon Cheesecake",
-        description: "Tangy, creamy cheesecake with a hint of lemon zest",
-        price: 95,
-        category: "cakes",
-        dietary: "Nut-Free",
-        image: "/lemon-cheese-cake.jpg",
-        available: true,
-      },
-      {
-        name: "Vanilla Macaron",
-        description: "Delicate, crisp macaron filled with vanilla cream",
-        price: 30,
-        category: "pastries",
-        dietary: "Nut-Free",
-        image: "/vannila-macaron.jpg",
         available: true,
       },
     ];
@@ -102,7 +81,6 @@ export default async function Home() {
     // Close the database connection
     await mongoose.connection.close();
   }
-
 
   return <main>Products seeded successfully.</main>;
 }

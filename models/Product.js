@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
   {
+    cafeId: {
+      type: String,
+      required: true, // Ensure every product is associated with a cafe
+    },
     name: {
       type: String,
       required: true,
@@ -13,12 +17,12 @@ const productSchema = new mongoose.Schema(
       trim: true,
     },
     price: {
-      type: String,
+      type: Number, // Changed to Number for proper calculations
       required: true,
-      trim: true,
+      min: [0, "Price must be a positive number"],
     },
     category: {
-      type: [String],
+      type: [String], // Array of strings for multiple categories
       enum: [
         "pastries",
         "cakes",
@@ -31,7 +35,7 @@ const productSchema = new mongoose.Schema(
       ],
     },
     dietary: {
-      type: [String],
+      type: [String], // Array of strings for multiple dietary options
       enum: [
         "Vegan",
         "Vegetarian",
@@ -52,7 +56,7 @@ const productSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically adds createdAt and updatedAt fields
   }
 );
 

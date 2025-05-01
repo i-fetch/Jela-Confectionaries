@@ -2,11 +2,11 @@ import React from "react";
 import CafeMenu from "../_components/CafeMenu/CafeMenu";
 import { getCategories } from "@/controllers/getCategories";
 import { getDietaries } from "@/controllers/getDietaries";
-import { getAllProducts } from "@/controllers/getAllProducts";
+import { getOnitshaCafeMenu } from "@/controllers/getOnitshaCafeMenu";
 
 export default async function page() {
   try {
-    const products = await getAllProducts();
+    const products = await getOnitshaCafeMenu(); // Fetch products for Onitsha Cafe
     const categories = await getCategories();
     const dietaries = await getDietaries();
 
