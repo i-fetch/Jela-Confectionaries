@@ -15,9 +15,9 @@ const OrdersTab = ({ userOrders }) => {
         <div key={order.id} className="bg-[#1a2235] rounded-lg p-6">
           {/* Order Header */}
           <div className="flex justify-between items-start mb-4">
-            <div className="flex ">
+            <div className="flex space-x-2 items-baseline">
               <span className="text-gray-400">Order #{order.orderNumber}</span>
-              <span className="text-gray-400">
+              <span className="text-gray-400 text-sm">
                 {new Date(order.createdAt).toLocaleDateString()}
               </span>
             </div>

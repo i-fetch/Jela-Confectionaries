@@ -1,48 +1,47 @@
 import mongoose from "mongoose";
 import { connectToDB } from "@/lib/ConnectDB";
-import Order from "@/models/Order";
-import Product from "@/models/Product";
-import User from "@/models/User";
+import Reservation from "@/models/Reservation";
 
-export default async function seedOrders() {
+export default async function seedReservations() {
   try {
     // Connect to the database
     await connectToDB();
 
-    // Fetch two products (replace with valid product IDs if needed)
-    const products = await Product.find().limit(2); // Fetch the first two products
-    if (products.length < 2) {
-      throw new Error("Not enough products found. Please seed the Product collection first.");
-    }
+    // User ID for the reservations
+    const userId = "67fe774d1323dfbdd5a7c04d";
 
-    // Create an order
-    const order = new Order({
-      orderNumber: Math.floor(Math.random() * 1000000), // Generate a random order number
-      user: "67fe774d1323dfbdd5a7c04d",
-      items: products.map((product) => ({
-        product: product._id,
-        name: product.name,
-        price: product.price,
-        quantity: 1, // Default quantity
-      })),
-      totalAmount: products.reduce((total, product) => total + product.price, 0), // Calculate total amount
-      status: "pending",
-      deliveryAddress: {
-        street: "123 Main Street",
-        city: "Onitsha",
-        state: "Anambra",
-        postalCode: "435101",
-        country: "Nigeria",
+    // Create two reservations
+    const reservations = [
+      {
+        userId,
+        name: "Blessing Esther",
+        email: "pinky20@aol.com",
+        phone: "+123 456 8792",
+        date: new Date("2025-01-20T00:00:00.000Z"), // Reservation date
+        time: "07:00 PM", // Reservation time
+        numberOfPersons: 4, // Number of persons
+        status: "confirmed", // Reservation status
+        notes: "Please prepare a table near the window.",
       },
-      notes: "This is a test order.",
-    });
+      {
+        userId,
+        name: "Jane Smith",
+        email: "jane022@aol.com",
+        phone: "+123 456 8793",
+        date: new Date("2025-01-22T00:00:00.000Z"), // Reservation date
+        time: "06:00 PM", // Reservation time
+        numberOfPersons: 2, // Number of persons
+        status: "pending", // Reservation status
+        notes: "Celebrating an anniversary.",
+      },
+    ];
 
-    // Save the order to the database
-    await order.save();
+    // Insert reservations into the database
+    await Reservation.insertMany(reservations);
 
-    console.log("✅ Order seeded successfully:", order);
+    console.log("✅ Reservations seeded successfully:", reservations);
   } catch (error) {
-    console.error("❌ Error seeding order:", error);
+    console.error("❌ Error seeding reservations:", error);
   } finally {
     // Close the database connection
     await mongoose.connection.close();
