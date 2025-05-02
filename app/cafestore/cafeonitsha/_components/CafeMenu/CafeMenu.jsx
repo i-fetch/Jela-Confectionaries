@@ -107,7 +107,7 @@ export default function CafeMenu({ products, categories, dietaries }) {
         </div>
 
         {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div key={item.id || item._id} className="bg-[#fff] text-[#1a2332] shadow-sm rounded-lg overflow-hidden">
               <div className="relative h-48">
