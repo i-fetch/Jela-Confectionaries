@@ -33,7 +33,7 @@ export default function Dashboard() {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="flex items-center space-x-6">
           <Link href="/cafestore/cafeonitsha/menu" className="text-gray-900 font-medium hover:text-gray-900">
             Café Menu
           </Link>
