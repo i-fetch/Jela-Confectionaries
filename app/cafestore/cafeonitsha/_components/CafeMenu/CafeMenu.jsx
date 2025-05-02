@@ -131,8 +131,8 @@ export default function CafeMenu({ products, categories, dietaries }) {
                     ))}
                   </div>
 
-                  <Button className="text-red-500">
-                    <Heart className="h-5 w-5 fill-current" />
+                  <Button className="border">
+                    <Heart className="h-5 w-5" />
                   </Button></div>
               </div>
             </div>
