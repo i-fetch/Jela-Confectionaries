@@ -5,12 +5,15 @@ import Image from "next/image";
 import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag, Heart } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import useFavoriteStore from "@/store/useFavoriteStore"; // Import Zustand store
 
 export default function CafeMenu({ products, categories, dietaries }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedDietary, setSelectedDietary] = useState([]);
-  const [favorites, setFavorites] = useState([]); // Track favorite products
+
+  // Zustand store for managing favorites
+  const { favorites, toggleFavorite } = useFavoriteStore();
 
   // Filter menu items based on search, category, and dietary preferences
   const filteredItems = products.filter((item) => {
@@ -28,17 +31,6 @@ export default function CafeMenu({ products, categories, dietaries }) {
     setSelectedDietary((prev) =>
       prev.includes(diet) ? prev.filter((d) => d !== diet) : [...prev, diet]
     );
-  };
-
-  // Toggle favorite status
-  const toggleFavoriteHandler = async (productId) => {
-    try {
-      // Replace 'userId' with the actual logged-in user's ID
-      const userId = "67fe774d1323dfbdd5a7c04d";
-      await toggleFavorite(userId, productId);
-    } catch (error) {
-      console.error("Error toggling favorite:", error);
-    }
   };
 
   return (
@@ -145,7 +137,7 @@ export default function CafeMenu({ products, categories, dietaries }) {
                   {/* Favourite Button */}
                   <Button
                     className="border cursor-pointer"
-                    onClick={() => toggleFavoriteHandler(item.id || item._id)}
+                    onClick={() => toggleFavorite(item.id || item._id)}
                   >
                     <Heart
                       className={`h-5 w-5 ${favorites.includes(item.id || item._id) ? "text-red-600 fill-current" : "text-gray-400"}`}
