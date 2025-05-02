@@ -7,8 +7,8 @@ import ReservationsTab from "../ReservationsTab/ReservationsTab";
 import ProfileTab from "../ProfileTab/ProfileTab";
 import FavoritesTab from "../FavouritesTab/FavouritesTab";
 
-export default function DashboardTabs({ userDetails }) {
-  const [activeTab, setActiveTab] = useState("profile"); // Default to "profile" for testing
+export default function DashboardTabs({ userDetails, userOrders }) {
+  const [activeTab, setActiveTab] = useState("orders");
 
   return (
     <div>
@@ -58,7 +58,7 @@ export default function DashboardTabs({ userDetails }) {
 
       {/* Tab Content */}
       <div className="mt-6">
-        {activeTab === "orders" && <OrdersTab />}
+        {activeTab === "orders" && <OrdersTab userOrders={userOrders} />}
         {activeTab === "reservations" && <ReservationsTab />}
         {activeTab === "profile" && <ProfileTab userDetails={userDetails} />}
         {activeTab === "favorites" && <FavoritesTab />}

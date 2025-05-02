@@ -1,64 +1,60 @@
-import React from 'react'
-import { Heart, StoreIcon } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
+import React from "react";
 
-const OrdersTab = () => {
+const OrdersTab = ({ userOrders }) => {
+  if (!userOrders || userOrders.length === 0) {
+    return (
+      <div className="text-gray-400 text-center">
+        <p>No orders found.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
-      <div className="bg-[#1a2235] rounded-lg p-6">
-        <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-gray-400">Order #1</h3>
-            <p className="text-gray-400 text-sm">2025-01-15</p>
+      {userOrders.map((order) => (
+        <div key={order.id} className="bg-[#1a2235] rounded-lg p-6">
+          {/* Order Header */}
+          <div className="flex justify-between items-start mb-4">
+            <div className="flex ">
+              <span className="text-gray-400">Order #{order.orderNumber}</span>
+              <span className="text-gray-400">
+                {new Date(order.createdAt).toLocaleDateString()}
+              </span>
+            </div>
+            <span
+              className={`text-xs px-3 py-1 rounded-full ${
+                order.status === "delivered"
+                  ? "bg-green-100 text-green-800"
+                  : order.status === "processing"
+                  ? "bg-yellow-100 text-yellow-800"
+                  : "bg-gray-100 text-gray-800"
+              }`}
+            >
+              {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+            </span>
           </div>
-          <span className="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Delivered</span>
-        </div>
-        <div className="space-y-2 mb-4">
-          <div className="flex justify-between">
-            <span>2x Classic Croissant</span>
-            <span>$9.00</span>
-          </div>
-          <div className="flex justify-between">
-            <span>1x Berry Tart</span>
-            <span>$6.50</span>
-          </div>
-        </div>
-        <div className="flex justify-between pt-4 border-t border-gray-700">
-          <span className="font-medium">Total</span>
-          <span className="font-medium">$15.50</span>
-        </div>
-      </div>
 
-      <div className="bg-[#1a2235] rounded-lg p-6">
-        <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-gray-400">Order #2</h3>
-            <p className="text-gray-400 text-sm">2025-01-14</p>
+          {/* Order Items */}
+          <div className="space-y-2 mb-4">
+            {order.items.map((item, index) => (
+              <div key={index} className="flex justify-between">
+                <span>
+                  {item.quantity}x {item.name}
+                </span>
+                <span>${(item.price * item.quantity).toFixed(2)}</span>
+              </div>
+            ))}
           </div>
-          <span className="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Processing</span>
-        </div>
-        <div className="space-y-2 mb-4">
-          <div className="flex justify-between">
-            <span>3x Chocolate Éclair</span>
-            <span>$15.00</span>
-          </div>
-          <div className="flex justify-between">
-            <span>2x Vanilla Macaron</span>
-            <span>$6.00</span>
+
+          {/* Order Total */}
+          <div className="flex justify-between pt-4 border-t border-gray-700">
+            <span className="font-medium">Total</span>
+            <span className="font-medium">${order.totalAmount.toFixed(2)}</span>
           </div>
         </div>
-        <div className="flex justify-between pt-4 border-t border-gray-700">
-          <span className="font-medium">Total</span>
-          <span className="font-medium">$21.00</span>
-        </div>
-      </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default OrdersTab;

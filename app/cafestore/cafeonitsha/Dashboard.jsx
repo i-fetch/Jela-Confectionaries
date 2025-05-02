@@ -4,6 +4,7 @@ import { StoreIcon } from "lucide-react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import { getUser } from "@/controllers/getUser";
+import { getUserOrder } from "@/controllers/getUserOrder"; // Import the getUserOrder server action
 import DashboardTabs from "./_components/DashboardTabs/DashboardTabs";
 
 export default async function Dashboard() {
@@ -13,6 +14,11 @@ export default async function Dashboard() {
 
   // Fetch user details if a session exists
   const userDetails = currentUser ? await getUser(currentUser.email) : null;
+
+  // Fetch user orders if a session exists
+  const userOrders = currentUser ? await getUserOrder(currentUser.id) : [];
+
+// console.log("userOrder:", userOrders)
 
   return (
     <div className="min-h-screen bg-[#0f1520] text-white">
@@ -39,7 +45,7 @@ export default async function Dashboard() {
         <h1 className="text-3xl font-bold mb-6">My Dashboard</h1>
 
         {/* Tabs */}
-        <DashboardTabs userDetails={userDetails} />
+        <DashboardTabs userDetails={userDetails} userOrders={userOrders} />
       </main>
     </div>
   );

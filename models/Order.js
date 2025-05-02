@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
+    orderNumber: {
+      type: Number,
+      unique: true,
+      required: true,
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // Reference to the User model
@@ -45,6 +50,28 @@ const orderSchema = new mongoose.Schema(
     deliveryDate: {
       type: Date, // Optional field for delivery date
       default: null,
+    },
+    deliveryAddress: {
+      street: {
+        type: String,
+        default: "",
+      },
+      city: {
+        type: String,
+        default: "",
+      },
+      state: {
+        type: String,
+        default: "",
+      },
+      postalCode: {
+        type: String,
+        default: "",
+      },
+      country: {
+        type: String,
+        default: "",
+      },
     },
     notes: {
       type: String, // Optional field for additional order notes

@@ -1,86 +1,50 @@
 import mongoose from "mongoose";
 import { connectToDB } from "@/lib/ConnectDB";
+import Order from "@/models/Order";
 import Product from "@/models/Product";
+import User from "@/models/User";
 
-export default async function Home() {
+export default async function seedOrders() {
   try {
     // Connect to the database
     await connectToDB();
 
-    const updatedProducts = [
-      {
-        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
-        name: "Classic Croissant",
-        description: "Buttery, flaky layers of hand-rolled pastry",
-        price: 45,
-        category: ["pastries"],
-        dietary: ["Nut-Free"],
-        image: "/classic-croissant.jpg",
-        available: true,
-      },
-      {
-        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
-        name: "Chocolate Éclair",
-        description: "Choux pastry filled with vanilla cream and topped with chocolate",
-        price: 50,
-        category: ["pastries", "cakes"],
-        dietary: ["Vegetarian"],
-        image: "/chocolate-clair.jpg",
-        available: true,
-      },
-      {
-        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
-        name: "Berry Tart",
-        description: "Fresh seasonal berries atop vanilla custard in a sweet pastry shell",
-        price: 65,
-        category: ["pastries", "cakes"],
-        dietary: ["Vegetarian"],
-        image: "/berry-tart.jpg",
-        available: true,
-      },
-      {
-        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
-        name: "Cappuccino",
-        description: "Espresso with steamed milk and a light layer of foam",
-        price: 375,
-        category: ["beverages"],
-        dietary: ["Vegan"],
-        image: "/cappuccino.jpg",
-        available: true,
-      },
-      {
-        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
-        name: "Sourdough Bread",
-        description: "Artisanal sourdough with a crispy crust and chewy interior",
-        price: 525,
-        category: ["breads"],
-        dietary: ["Vegan"],
-        image: "/sourdough-bread.jpg",
-        available: true,
-      },
-      {
-        cafeId: "718f211c-279e-448e-87b1-d6defd761842", // Onitsha Cafe ID
-        name: "Carrot Cake",
-        description: "Moist cake with carrots, walnuts, and cream cheese frosting",
-        price: 575,
-        category: ["cakes"],
-        dietary: ["Vegetarian"],
-        image: "/carrot-cake.jpg",
-        available: true,
-      },
-    ];
+    // Fetch two products (replace with valid product IDs if needed)
+    const products = await Product.find().limit(2); // Fetch the first two products
+    if (products.length < 2) {
+      throw new Error("Not enough products found. Please seed the Product collection first.");
+    }
 
-    // Clear existing data and insert new
-    await Product.deleteMany({});
-    await Product.insertMany(updatedProducts);
+    // Create an order
+    const order = new Order({
+      orderNumber: Math.floor(Math.random() * 1000000), // Generate a random order number
+      user: "67fe774d1323dfbdd5a7c04d",
+      items: products.map((product) => ({
+        product: product._id,
+        name: product.name,
+        price: product.price,
+        quantity: 1, // Default quantity
+      })),
+      totalAmount: products.reduce((total, product) => total + product.price, 0), // Calculate total amount
+      status: "pending",
+      deliveryAddress: {
+        street: "123 Main Street",
+        city: "Onitsha",
+        state: "Anambra",
+        postalCode: "435101",
+        country: "Nigeria",
+      },
+      notes: "This is a test order.",
+    });
 
-    console.log("✅ Products seeded successfully.");
+    // Save the order to the database
+    await order.save();
+
+    console.log("✅ Order seeded successfully:", order);
   } catch (error) {
-    console.error("❌ Error seeding products:", error);
+    console.error("❌ Error seeding order:", error);
   } finally {
     // Close the database connection
     await mongoose.connection.close();
   }
-
-  return <main>Products seeded successfully.</main>;
 }
