@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag } from "lucide-react";
+import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag, Heart } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -76,9 +76,8 @@ export default function CafeMenu({ products, categories, dietaries }) {
                 key={`diet-${index}`} // Ensure unique key
                 variant={"outline"}
                 onClick={() => toggleDietaryFilter(diet)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-                  selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                }`}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+                  }`}
               >
                 {diet === "Vegetarian" && <Leaf className="w-4 h-4" />}
                 {diet === "Vegan" && <Wine className="w-4 h-4" />}
@@ -96,9 +95,8 @@ export default function CafeMenu({ products, categories, dietaries }) {
                 key={`category-${index}`} // Ensure unique key
                 variant={"outline"}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg ${
-                  selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
-                }`}
+                className={`px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
+                  }`}
               >
                 {category}
               </Button>
@@ -120,17 +118,22 @@ export default function CafeMenu({ products, categories, dietaries }) {
                 </div>
                 <p className="text-gray-400 mb-4">{item.description}</p>
 
-                <div className="flex flex-wrap gap-2">
-                  {(item.dietary || []).map((diet, index) => (
-                    <span key={`dietary-${item.id || item._id}-${index}`} className="inline-flex items-center text-xs text-gray-400">
-                      {diet === "Vegetarian" && <Leaf className="w-3 h-3 mr-1" />}
-                      {diet === "Vegan" && <Wine className="w-3 h-3 mr-1" />}
-                      {diet === "Gluten-Free" && <Wheat className="w-3 h-3 mr-1" />}
-                      {diet === "Nut-Free" && <AlertCircle className="w-3 h-3 mr-1" />}
-                      {diet}
-                    </span>
-                  ))}
-                </div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-wrap gap-2">
+                    {(item.dietary || []).map((diet, index) => (
+                      <span key={`dietary-${item.id || item._id}-${index}`} className="inline-flex items-center text-xs text-gray-400">
+                        {diet === "Vegetarian" && <Leaf className="w-3 h-3 mr-1" />}
+                        {diet === "Vegan" && <Wine className="w-3 h-3 mr-1" />}
+                        {diet === "Gluten-Free" && <Wheat className="w-3 h-3 mr-1" />}
+                        {diet === "Nut-Free" && <AlertCircle className="w-3 h-3 mr-1" />}
+                        {diet}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Button className="text-red-500">
+                    <Heart className="h-5 w-5 fill-current" />
+                  </Button></div>
               </div>
             </div>
           ))}
