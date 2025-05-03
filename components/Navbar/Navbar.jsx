@@ -1,5 +1,7 @@
 "use client";
+
 import { useState } from "react";
+import { useSession } from "next-auth/react"; // Import useSession from next-auth
 import { ArrowRight, Menu } from "lucide-react";
 import {
   Sheet,
@@ -12,6 +14,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LogoImg from "@/public/logo-img.jpg";
 import Image from "next/image";
+import LogOutBtn from "@/components/LogOut/LogOutBtn"; // Import the LogOutBtn component
 
 const Navbar = ({
   logo = {
@@ -33,7 +36,7 @@ const Navbar = ({
   },
 }) => {
   const [open, setOpen] = useState(false);
-
+  const { data: session } = useSession(); // Get session data
 
   return (
     <section className="absolute py-2 border-b-2 border-[#c3c0c06b] top-0 left-0 w-full z-50 bg-transparent border-bottom">
@@ -60,30 +63,28 @@ const Navbar = ({
             ))}
           </div>
           <div className="flex gap-2 items-center relative">
-           
-            {/* <Button 
-              asChild
-              variant="outline"
-              size="sm"
-              className="bg-white text-black hover:bg-[#cd9d22] hover:text-white"
-            >
-              <Link href={auth.login.url}>{auth.login.title}</Link>
-            </Button> */}
-            {/* <Button 
-              asChild
-              size="sm"
-              className="text-white bg-[#cd9d22] hover:bg-white hover:text-black"
-            >
-              <Link href={auth.signup.url}>{auth.signup.title}</Link>
-            </Button>
-          </div> */}
-            <Button 
-              asChild
-              size="sm"
-              className="text-white bg-[#cd9d22] hover:bg-white hover:text-black"
-            >
-              <Link href={auth.placeorder.url}>{auth.placeorder.title}</Link>
-            </Button>
+            {session ? (
+              // Show LogOutBtn when user is logged in
+              <LogOutBtn />
+            ) : (
+              // Show Login and Sign up buttons when user is not logged in
+              <>
+                <Button
+                  asChild
+                  size="sm"
+                  className="text-white bg-[#cd9d22] hover:bg-white hover:text-black"
+                >
+                  <Link href={auth.login.url}>{auth.login.title}</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className="text-white bg-[#cd9d22] hover:bg-white hover:text-black"
+                >
+                  <Link href={auth.signup.url}>{auth.signup.title}</Link>
+                </Button>
+              </>
+            )}
           </div>
         </nav>
 
@@ -127,16 +128,24 @@ const Navbar = ({
                     </Link>
                   ))}
                   <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <Link href={auth.login.url} onClick={() => setOpen(false)}>
-                        {auth.login.title}
-                      </Link>
-                    </Button>
-                    <Button asChild>
-                      <Link href={auth.signup.url} onClick={() => setOpen(false)}>
-                        {auth.signup.title}
-                      </Link>
-                    </Button>
+                    {session ? (
+                      // Show LogOutBtn when user is logged in
+                      <LogOutBtn />
+                    ) : (
+                      // Show Login and Sign up buttons when user is not logged in
+                      <>
+                        <Button asChild variant="outline">
+                          <Link href={auth.login.url} onClick={() => setOpen(false)}>
+                            {auth.login.title}
+                          </Link>
+                        </Button>
+                        <Button asChild>
+                          <Link href={auth.signup.url} onClick={() => setOpen(false)}>
+                            {auth.signup.title}
+                          </Link>
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </div>
               </SheetContent>
