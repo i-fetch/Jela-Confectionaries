@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ShoppingCart, X, Plus, Minus, StoreIcon } from "lucide-react";
+import PageHeader from '@/public/page-header-bg2.jpg';
+import { X, Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CartItem from "./CartItem/CartItem";
 import CafeHeader from "../_components/CafeHeader/CafeHeader";
 
 export default function PlaceOrder({ products }) {
@@ -57,9 +56,22 @@ export default function PlaceOrder({ products }) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-     
+
       <CafeHeader totalItems={totalItems} toggleCart={toggleCart} />
+      {/* Header */}
+
+      <header className="pb-20 relative bg-fixed bg-bottom bg-cover bg-no-repeat h-[50vh] md:h-[45vh] lg:h-[50vh] overflow-hidden"
+        style={{ backgroundImage: `url(${PageHeader?.src || ''})` }} >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-70 z-10" />
+
+        {/* Breadcrumb  */}
+        <div className='absolute inset-0 z-20 flex flex-col items-center justify-center h-full pt-20 px-4 md:pb-20'>
+          <h1 className='text-gray-300 font-bold uppercase text-2xl xl:4xl'>Jela</h1>
+          <p className='text-gray-300 text-xs xl:text-2xl font-medium space-x-1.5'>Where every bite tells a story</p>
+        </div>
+
+      </header>
 
       <main className="container mx-auto px-6 py-8">
         <h1 className="text-3xl font-bold mb-8 text-gray-900">Our Confections</h1>
