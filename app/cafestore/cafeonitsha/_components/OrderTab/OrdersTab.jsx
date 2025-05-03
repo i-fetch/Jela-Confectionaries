@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns"; // Import date-fns for consistent date formatting
 
 const OrdersTab = ({ userOrders }) => {
   if (!userOrders || userOrders.length === 0) {
@@ -18,7 +19,7 @@ const OrdersTab = ({ userOrders }) => {
             <div className="flex space-x-2 items-baseline">
               <span className="text-gray-400">Order #{order.orderNumber}</span>
               <span className="text-gray-400 text-sm">
-                {new Date(order.createdAt).toLocaleDateString()}
+                {format(new Date(order.createdAt), "MM/dd/yyyy")} {/* Consistent date format */}
               </span>
             </div>
             <span
