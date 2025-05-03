@@ -8,6 +8,7 @@ import { getUserOrder } from "@/controllers/getUserOrder"; // Import the getUser
 import DashboardTabs from "./_components/DashboardTabs/DashboardTabs";
 import { getUserReservation } from "@/controllers/getUserReservation";
 import { getUserFavorites } from "@/controllers/getUserFavorites";
+import LogOutBtn from "@/components/LogOut/LogOutBtn";
 
 export default async function Dashboard() {
   // Fetch the current user session
@@ -19,11 +20,11 @@ export default async function Dashboard() {
 
   // Fetch user orders if a session exists
   const userOrders = currentUser ? await getUserOrder(currentUser.id) : [];
-  
+
   // Fetch user reservations if a session exists
   const userReservations = currentUser ? await getUserReservation(currentUser.id) : [];
 
-    // Fetch user favorite products if a session exists
+  // Fetch user favorite products if a session exists
   const userFavorites = currentUser ? await getUserFavorites(currentUser.id) : [];
 
   return (
@@ -43,6 +44,8 @@ export default async function Dashboard() {
           <Link href="/cafestore/cafeonitsha/place-order" className="text-gray-900 font-medium hover:text-gray-900">
             Place Order
           </Link>
+          {/* Log out button */}
+          <LogOutBtn />
         </nav>
       </header>
 

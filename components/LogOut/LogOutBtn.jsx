@@ -1,6 +1,8 @@
 "use client";
 
 import { signOut } from "next-auth/react";
+import { Button } from "../ui/button";
+import { LogOutIcon } from "lucide-react";
 // import { useRouter } from "next/navigation";
 
 export default function LogOutBtn() {
@@ -14,8 +16,8 @@ export default function LogOutBtn() {
   };
 
   return (
-    <button onClick={handleLogout} className="py-2 w-full text-left text-red-500 font-medium rounded">
-      Logout
-    </button>
+    <Button onClick={handleLogout} className="py-2 w-fit text-left text-red-500 font-medium rounded">
+     <LogOutIcon /> <span> Logout</span>
+    </Button>
   );
 }
