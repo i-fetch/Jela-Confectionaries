@@ -21,28 +21,38 @@ export const authOptions = {
 
           const { email, password } = credentials;
 
+          console.log("Authorizing user with email:", email);
+
           const user = await User.findOne({ email });
 
           if (!user) {
-            throw new Error("No user found with that email");
+            console.error("No user found with the provided email.");
+            throw new Error("No user found with the provided email.");
           }
+
+          console.log("User found:", user);
+
           const isValid = await bcrypt.compare(password, user.password);
           if (!isValid) {
-            throw new Error("Invalid credentials");
+            console.error("Invalid password for user:", email);
+            throw new Error("Invalid email or password.");
           }
+
+          console.log("User authorized successfully:", email);
+
           // Return a minimal user object
           return {
             id: user._id.toString(),
             email: user.email,
             name: user.username,
             role: user.role,
-            userId: user.userID,
+            userId: user._id.toString(),
           };
         } catch (error) {
-          console.error("Error during authorization:", error);
-          throw new Error("Authorization failed");
+          console.error("Error during authorization:", error.message);
+          throw new Error("Authorization failed. Please try again.");
         }
-      },
+      }
     }),
   ],
   session: {
@@ -54,9 +64,9 @@ export const authOptions = {
       if (user) {
         token.id = user.id;
         token.email = user.email;
-        token.name = user.name;
+        token.name = user.name; // Ensure consistency
         token.role = user.role;
-        token.userId = user.userID;
+        token.userId = user.userId;
       }
       return token;
     },
@@ -64,7 +74,7 @@ export const authOptions = {
       session.user = {
         id: token.id,
         email: token.email,
-        username: token.username,
+        name: token.name, // Ensure consistency
         role: token.role,
         userId: token.userId,
       };
