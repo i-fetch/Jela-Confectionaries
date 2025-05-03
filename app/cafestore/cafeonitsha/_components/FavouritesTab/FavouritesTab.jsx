@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFavoriteStore from "@/store/useFavoriteStore"; // Import Zustand store
 
-const FavoritesTab = ({ products }) => {
+const FavoritesTab = ({ userFavorites }) => {
   const { favorites, toggleFavorite } = useFavoriteStore(); // Access favorites and toggleFavorite from Zustand
 
   // Filter products to only include favorited items
-  const favoritedItems = products.filter((product) =>
+  const favoritedItems = userFavorites.filter((product) =>
     favorites.includes(product.id || product._id)
   );
 

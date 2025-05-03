@@ -21,7 +21,7 @@ export const authOptions = {
 
           const { email, password } = credentials;
 
-          console.log("Authorizing user with email:", email);
+          // console.log("Authorizing user with email:", email);
 
           const user = await User.findOne({ email });
 
@@ -30,7 +30,7 @@ export const authOptions = {
             throw new Error("No user found with the provided email.");
           }
 
-          console.log("User found:", user);
+          // console.log("User found:", user);
 
           const isValid = await bcrypt.compare(password, user.password);
           if (!isValid) {
@@ -38,7 +38,7 @@ export const authOptions = {
             throw new Error("Invalid email or password.");
           }
 
-          console.log("User authorized successfully:", email);
+          // console.log("User authorized successfully:", email);
 
           // Return a minimal user object
           return {

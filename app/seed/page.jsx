@@ -5,7 +5,7 @@ import Reservation from "@/models/Reservation";
 export default async function seedReservations() {
   try {
     // Connect to the database
-    await connectToDB();
+    // await connectToDB();
 
     // User ID for the reservations
     const userId = "67fe774d1323dfbdd5a7c04d";

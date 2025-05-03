@@ -54,13 +54,15 @@ export default function CafeMenu({ products, categories, dietaries, userId }) {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="flex items-center space-x-6">
           <Link
             href="/cafestore/cafeonitsha/place-order"
             className="flex items-center space-x-2 text-gray-900 font-medium hover:text-gray-900"
           >
             <span>Place Order</span> <ShoppingBag className="animate-bounce" />
           </Link>
+          {/* Logout Button  */}
+          {/* <LogOutBtn /> */}
         </nav>
       </header>
 
@@ -91,9 +93,8 @@ export default function CafeMenu({ products, categories, dietaries, userId }) {
                 key={`diet-${index}`}
                 variant={"outline"}
                 onClick={() => toggleDietaryFilter(diet)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-                  selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                }`}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+                  }`}
               >
                 {diet === "Vegetarian" && <Leaf className="w-4 h-4" />}
                 {diet === "Vegan" && <Wine className="w-4 h-4" />}
@@ -111,9 +112,8 @@ export default function CafeMenu({ products, categories, dietaries, userId }) {
                 key={`category-${index}`}
                 variant={"outline"}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg ${
-                  selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
-                }`}
+                className={`px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
+                  }`}
               >
                 {category}
               </Button>
@@ -142,9 +142,8 @@ export default function CafeMenu({ products, categories, dietaries, userId }) {
                     onClick={() => handleToggleFavorite(item.id || item._id)}
                   >
                     <Heart
-                      className={`h-5 w-5 ${
-                        favorites.includes(item.id || item._id) ? "text-red-600 fill-current" : "text-gray-400"
-                      }`}
+                      className={`h-5 w-5 ${favorites.includes(item.id || item._id) ? "text-red-600 fill-current" : "text-gray-400"
+                        }`}
                     />
                   </Button>
                 </div>
