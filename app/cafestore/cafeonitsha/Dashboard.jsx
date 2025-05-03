@@ -9,6 +9,7 @@ import DashboardTabs from "./_components/DashboardTabs/DashboardTabs";
 import { getUserReservation } from "@/controllers/getUserReservation";
 import { getUserFavorites } from "@/controllers/getUserFavorites";
 import LogOutBtn from "@/components/LogOut/LogOutBtn";
+import DashboardNav from "./_components/DashboardNav/DashboardNav";
 
 export default async function Dashboard() {
   // Fetch the current user session
@@ -37,16 +38,7 @@ export default async function Dashboard() {
         </Link>
 
         {/* Navigation */}
-        <nav className="flex items-center space-x-6">
-          <Link href="/cafestore/cafeonitsha/menu" className="text-gray-900 font-medium hover:text-gray-900">
-            Café Menu
-          </Link>
-          <Link href="/cafestore/cafeonitsha/place-order" className="text-gray-900 font-medium hover:text-gray-900">
-            Place Order
-          </Link>
-          {/* Log out button */}
-          <LogOutBtn />
-        </nav>
+        <DashboardNav />
       </header>
 
       {/* Dashboard Content */}
