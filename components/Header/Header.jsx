@@ -35,7 +35,7 @@ const Header = () => {
             </p>
             <div className="flex gap-4 animate-fadeInUp flex-wrap">
               <Link
-                href="#"
+                href="#book-a-table"
                 className="px-5 py-3 bg-[#a6a182] font-bold text-white rounded-4xl hover:bg-opacity-90 transition"
               >
                 Book a Table
