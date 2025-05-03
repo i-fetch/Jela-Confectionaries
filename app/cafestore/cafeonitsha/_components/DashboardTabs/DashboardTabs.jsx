@@ -7,7 +7,7 @@ import ReservationsTab from "../ReservationsTab/ReservationsTab";
 import ProfileTab from "../ProfileTab/ProfileTab";
 import FavoritesTab from "../FavouritesTab/FavouritesTab";
 
-export default function DashboardTabs({ userDetails, userOrders, userReservations }) {
+export default function DashboardTabs({ userDetails, userOrders, userReservations, userFavorites }) {
   const [activeTab, setActiveTab] = useState("orders");
 
   return (
@@ -61,7 +61,7 @@ export default function DashboardTabs({ userDetails, userOrders, userReservation
         {activeTab === "orders" && <OrdersTab userOrders={userOrders} />}
         {activeTab === "reservations" && <ReservationsTab userReservations={userReservations} />}
         {activeTab === "profile" && <ProfileTab userDetails={userDetails} />}
-        {activeTab === "favorites" && <FavoritesTab />}
+        {activeTab === "favorites" && <FavoritesTab userFavorites={userFavorites} />}
       </div>
     </div>
   );

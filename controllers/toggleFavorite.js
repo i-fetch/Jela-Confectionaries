@@ -1,7 +1,7 @@
 "use server";
 
 import { connectToDB } from "@/lib/ConnectDB";
-import Favorite from "@/models/Favorite";
+import Favorite from "@/models/Favourite";
 import { revalidatePath } from "next/cache";
 
 export async function toggleFavorite(userId, productId) {

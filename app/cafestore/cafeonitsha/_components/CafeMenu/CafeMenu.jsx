@@ -6,14 +6,15 @@ import { Search, Leaf, Wine, Wheat, AlertCircle, StoreIcon, ShoppingBag, Heart }
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import useFavoriteStore from "@/store/useFavoriteStore"; // Import Zustand store
+import { toggleFavorite } from "@/controllers/toggleFavorite"; // Import server action
 
-export default function CafeMenu({ products, categories, dietaries }) {
+export default function CafeMenu({ products, categories, dietaries, userId }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedDietary, setSelectedDietary] = useState([]);
 
   // Zustand store for managing favorites
-  const { favorites, toggleFavorite } = useFavoriteStore();
+  const { favorites, toggleFavorite: toggleLocalFavorite } = useFavoriteStore();
 
   // Filter menu items based on search, category, and dietary preferences
   const filteredItems = products.filter((item) => {
@@ -31,6 +32,16 @@ export default function CafeMenu({ products, categories, dietaries }) {
     setSelectedDietary((prev) =>
       prev.includes(diet) ? prev.filter((d) => d !== diet) : [...prev, diet]
     );
+  };
+
+  // Handle favorite toggle
+  const handleToggleFavorite = async (productId) => {
+    try {
+      await toggleFavorite(userId, productId); // Call the server action
+      toggleLocalFavorite(productId); // Update Zustand store
+    } catch (error) {
+      console.error("Error toggling favorite:", error);
+    }
   };
 
   return (
@@ -77,11 +88,12 @@ export default function CafeMenu({ products, categories, dietaries }) {
           <div className="flex flex-wrap gap-2 mb-6">
             {dietaries.map((diet, index) => (
               <Button
-                key={`diet-${index}`} // Ensure unique key
+                key={`diet-${index}`}
                 variant={"outline"}
                 onClick={() => toggleDietaryFilter(diet)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
-                  }`}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+                  selectedDietary.includes(diet) ? "bg-green-700 text-white" : "bg-[#1a2332] text-gray-300"
+                }`}
               >
                 {diet === "Vegetarian" && <Leaf className="w-4 h-4" />}
                 {diet === "Vegan" && <Wine className="w-4 h-4" />}
@@ -96,11 +108,12 @@ export default function CafeMenu({ products, categories, dietaries }) {
           <div className="flex flex-wrap gap-2">
             {["All", ...categories].map((category, index) => (
               <Button
-                key={`category-${index}`} // Ensure unique key
+                key={`category-${index}`}
                 variant={"outline"}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
-                  }`}
+                className={`px-4 py-2 rounded-lg ${
+                  selectedCategory === category ? "bg-white text-[#0f1520]" : "bg-[#1a2332] text-white"
+                }`}
               >
                 {category}
               </Button>
@@ -123,24 +136,15 @@ export default function CafeMenu({ products, categories, dietaries }) {
                 <p className="text-gray-400 mb-4">{item.description}</p>
 
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {(item.dietary || []).map((diet, index) => (
-                      <span key={`dietary-${item.id || item._id}-${index}`} className="inline-flex items-center text-xs text-gray-400">
-                        {diet === "Vegetarian" && <Leaf className="w-3 h-3 mr-1" />}
-                        {diet === "Vegan" && <Wine className="w-3 h-3 mr-1" />}
-                        {diet === "Gluten-Free" && <Wheat className="w-3 h-3 mr-1" />}
-                        {diet === "Nut-Free" && <AlertCircle className="w-3 h-3 mr-1" />}
-                        {diet}
-                      </span>
-                    ))}
-                  </div>
-                  {/* Favourite Button */}
+                  {/* Favorite Button */}
                   <Button
                     className="border cursor-pointer"
-                    onClick={() => toggleFavorite(item.id || item._id)}
+                    onClick={() => handleToggleFavorite(item.id || item._id)}
                   >
                     <Heart
-                      className={`h-5 w-5 ${favorites.includes(item.id || item._id) ? "text-red-600 fill-current" : "text-gray-400"}`}
+                      className={`h-5 w-5 ${
+                        favorites.includes(item.id || item._id) ? "text-red-600 fill-current" : "text-gray-400"
+                      }`}
                     />
                   </Button>
                 </div>

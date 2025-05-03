@@ -7,6 +7,7 @@ import { getUser } from "@/controllers/getUser";
 import { getUserOrder } from "@/controllers/getUserOrder"; // Import the getUserOrder server action
 import DashboardTabs from "./_components/DashboardTabs/DashboardTabs";
 import { getUserReservation } from "@/controllers/getUserReservation";
+import { getUserFavorites } from "@/controllers/getUserFavorites";
 
 export default async function Dashboard() {
   // Fetch the current user session
@@ -21,6 +22,9 @@ export default async function Dashboard() {
   
   // Fetch user reservations if a session exists
   const userReservations = currentUser ? await getUserReservation(currentUser.id) : [];
+
+    // Fetch user favorite products if a session exists
+  const userFavorites = currentUser ? await getUserFavorites(currentUser.id) : [];
 
   return (
     <div className="min-h-screen bg-[#0f1520] text-white">
@@ -47,7 +51,7 @@ export default async function Dashboard() {
         <h1 className="text-3xl font-bold mb-6">My Dashboard</h1>
 
         {/* Tabs */}
-        <DashboardTabs userDetails={userDetails} userOrders={userOrders} userReservations={userReservations} />
+        <DashboardTabs userDetails={userDetails} userOrders={userOrders} userReservations={userReservations} userFavorites={userFavorites} />
       </main>
     </div>
   );

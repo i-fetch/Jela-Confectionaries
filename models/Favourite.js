@@ -19,7 +19,6 @@ const favoriteSchema = new mongoose.Schema(
 );
 
 // Avoid model overwrite issues in development
-const Favorite =
-  mongoose.models.Favorite || mongoose.model("Favorite", favoriteSchema);
+const Favorite =  mongoose.models.Favorite || mongoose.model("Favorite", favoriteSchema);
 
 export default Favorite;
