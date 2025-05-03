@@ -44,6 +44,9 @@ export default async function Dashboard() {
       {/* Dashboard Content */}
       <main className="container mx-auto px-6 py-8">
         <h1 className="text-3xl font-bold mb-6">My Dashboard</h1>
+       < h4 className="text-gray-400 mb-4">Welcome, {userDetails?.name || "Guest"}!</h4>
+        <p className="text-gray-400 mb-6">Manage your orders, reservations, and profile settings.</p>
+        
 
         {/* Tabs */}
         <DashboardTabs userDetails={userDetails} userOrders={userOrders} userReservations={userReservations} userFavorites={userFavorites} />

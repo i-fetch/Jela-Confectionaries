@@ -16,9 +16,9 @@ const OrdersTab = ({ userOrders }) => {
         <div key={order.id} className="bg-[#1a2235] rounded-lg p-6">
           {/* Order Header */}
           <div className="flex justify-between items-start mb-4">
-            <div className="flex space-x-2 items-baseline">
-              <span className="text-gray-400">Order #{order.orderNumber}</span>
-              <span className="text-gray-400 text-sm">
+            <div className="flex flex-col space-x-2 space-y-2 items-baseline">
+              <span className="text-gray-400 text-sm">Order #{order.orderNumber}</span>
+              <span className="text-gray-400 text-xs">
                 {format(new Date(order.createdAt), "MM/dd/yyyy")} {/* Consistent date format */}
               </span>
             </div>

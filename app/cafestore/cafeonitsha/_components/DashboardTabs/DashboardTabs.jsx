@@ -14,11 +14,11 @@ export default function DashboardTabs({ userDetails, userOrders, userReservation
     <div>
       {/* Tabs */}
       <div className="border-b border-gray-800 mb-6">
-        <div className="flex space-x-8">
+        <div className="flex space-x-6">
           <button
             onClick={() => setActiveTab("orders")}
             className={cn(
-              "pb-2 font-medium",
+              "pb-2 font-medium text-xs",
               activeTab === "orders" ? "text-white border-b-2 border-white" : "text-gray-400 hover:text-gray-300"
             )}
           >
@@ -27,7 +27,7 @@ export default function DashboardTabs({ userDetails, userOrders, userReservation
           <button
             onClick={() => setActiveTab("reservations")}
             className={cn(
-              "pb-2 font-medium",
+              "pb-2 font-medium text-xs",
               activeTab === "reservations"
                 ? "text-white border-b-2 border-white"
                 : "text-gray-400 hover:text-gray-300"
@@ -38,7 +38,7 @@ export default function DashboardTabs({ userDetails, userOrders, userReservation
           <button
             onClick={() => setActiveTab("profile")}
             className={cn(
-              "pb-2 font-medium",
+              "pb-2 font-medium text-xs",
               activeTab === "profile" ? "text-white border-b-2 border-white" : "text-gray-400 hover:text-gray-300"
             )}
           >
@@ -47,7 +47,7 @@ export default function DashboardTabs({ userDetails, userOrders, userReservation
           <button
             onClick={() => setActiveTab("favorites")}
             className={cn(
-              "pb-2 font-medium",
+              "pb-2 font-medium text-xs",
               activeTab === "favorites" ? "text-white border-b-2 border-white" : "text-gray-400 hover:text-gray-300"
             )}
           >
