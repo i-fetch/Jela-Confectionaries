@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import useFavoriteStore from "@/store/useFavoriteStore"; // Import Zustand store
 import { toggleFavorite } from "@/controllers/toggleFavorite"; // Import server action
 
-export default function CafeMenu({ products, categories, dietaries, userId }) {
+export default function CafeMenu({ products, categories, dietaries }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedDietary, setSelectedDietary] = useState([]);
@@ -37,7 +37,7 @@ export default function CafeMenu({ products, categories, dietaries, userId }) {
   // Handle favorite toggle
   const handleToggleFavorite = async (productId) => {
     try {
-      await toggleFavorite(userId, productId); // Call the server action
+      await toggleFavorite(productId); // Call the server action
       toggleLocalFavorite(productId); // Update Zustand store
     } catch (error) {
       console.error("Error toggling favorite:", error);
