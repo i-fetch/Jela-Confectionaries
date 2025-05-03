@@ -13,7 +13,7 @@ const ServiceSection2 = () => {
                 {/* Main Services Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-6">
                     {/* Catering Services */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col cursor-pointer hover:border-yellow-500 transition">
                         <h3 className="text-center mb-1 text-base md:text-lg font-medium">Catering Services</h3>
                         <div className="h-44 sm:h-52 md:h-60 overflow-hidden mb-1 rounded-sm">
                             <img
@@ -30,7 +30,7 @@ const ServiceSection2 = () => {
                     </div>
 
                     {/* Custom Cake Orders */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col cursor-pointer hover:border-yellow-500 transition">
                         <h3 className="text-center mb-1 text-base md:text-lg font-medium">Custom Cake Orders</h3>
                         <div className="h-44 sm:h-52 md:h-60 overflow-hidden mb-1 rounded-sm">
                             <img
@@ -47,7 +47,7 @@ const ServiceSection2 = () => {
                     </div>
 
                     {/* Private Events & Parties */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col cursor-pointer hover:border-yellow-500 transition">
                         <h3 className="text-center mb-1 text-base md:text-lg font-medium">Private Events & Parties</h3>
                         <div className="h-44 sm:h-52 md:h-60 overflow-hidden mb-1 rounded-sm">
                             <img
@@ -64,7 +64,7 @@ const ServiceSection2 = () => {
                     </div>
 
                     {/* Corporate Packages */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col cursor-pointer hover:border-yellow-500 transition">
                         <h3 className="text-center mb-1 text-base md:text-lg font-medium">Corporate Packages</h3>
                         <div className="h-44 sm:h-52 md:h-60 overflow-hidden mb-1 rounded-sm">
                             <img

@@ -51,12 +51,15 @@ const ServiceSection = () => {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="bg-[#0D0D0D] border border-gray-800 p-6 rounded-lg hover:border-yellow-500 transition"
+              className="bg-[#0D0D0D] border border-gray-800 p-6 rounded-lg hover:border-yellow-500 transition group"
             >
               <Image src={service.icon} alt={service.title} className="mb-4" />
               <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
               <p className="text-gray-400 mb-4">{service.description}</p>
-              <Link href="/about" className="inline-flex items-center text-sm font-semibold text-white hover:text-yellow-500">
+              <Link
+                href="/about"
+                className="inline-flex items-center text-sm font-semibold text-white group-hover:text-yellow-500"
+              >
                 Read More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
